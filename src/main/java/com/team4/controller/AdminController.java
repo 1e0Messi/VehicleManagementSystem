@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 @Controller
@@ -29,7 +31,13 @@ public class AdminController {
             modelMap.addAttribute("description","账号或密码错误");
             pageReturn = "resInfo";
         }
-
         return pageReturn;
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response){
+        request.getSession().removeAttribute("id");
+        request.getSession().removeAttribute("password");
+        return "redirect:/";
     }
 }

@@ -32,8 +32,8 @@
             <a href="javascript:;">${requestScope.admin.name}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a href="#">个人信息</a></dd>
-                <dd><a href="#">切换帐号</a></dd>
-                <dd><a href="#">退出</a></dd>
+                <dd><a href="/logout">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
     </ul>
