@@ -17,8 +17,6 @@ public class LoginInterceptor implements HandlerInterceptor {
         if(id == null || password == null ){
             flag = false;
             httpServletRequest.getRequestDispatcher("/index.html").forward(httpServletRequest,httpServletResponse);
-        }else {
-            System.out.println(id+";"+password);
         }
         return flag;
     }
