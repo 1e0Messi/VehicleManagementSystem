@@ -109,18 +109,18 @@ $(function () {
     });
 
     //左侧菜单效果
-    $('.left-nav #nav li').click(function () {
+    $('.left-nav #nav li a[name = "switch"]').click(function () {
         if($(this).hasClass('open')){
             $(this).removeClass('open');
             $(this).find('.nav_right').html('&#xe697;');
-            $(this).children('.sub-menu').slideUp();
+            $(this).next('.sub-menu').slideUp();
             // $(this).siblings().children('.sub-menu').slideUp();
         }else{
             $(this).addClass('open');
             $(this).find('.nav_right').html('&#xe6a6;');
-            $(this).children('.sub-menu').slideDown();
-            $(this).siblings().children('.sub-menu').slideUp();
-            $(this).siblings().removeClass('open');
+            $(this).next('.sub-menu').slideDown();
+            $(this).parent().siblings().children('.sub-menu').slideUp();
+            $(this).parent().siblings().removeClass('open');
         }
         
     })

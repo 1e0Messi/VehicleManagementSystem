@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         会员管理
                         <i class="iconfont nav_right">&#xe697;</i>
@@ -114,12 +114,12 @@
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','member-add.html','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/html/adminAdd.html','600','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.admins.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" value="0">
+                        <input type="checkbox" name = "selectAllAdmin" onclick="selectAllAdmin()">
                     </th>
                     <th>
                         ID
@@ -237,7 +237,6 @@
 <!-- 背景切换结束 -->
 <!-- 页面动态效果 -->
 <script>
-
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件
 
@@ -321,6 +320,11 @@
 
         });
     }
+
+    function selectAllAdmin() {
+        $("input[name = 'adminItem']:checkbox").prop("checked",$("input[name = 'selectAllAdmin']:checkbox").prop("checked"));
+    }
+
 </script>
 </body>
 </html>

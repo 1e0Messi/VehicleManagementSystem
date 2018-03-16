@@ -21,6 +21,14 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    /**
+     * 验证用户登陆，并添加用户登录状态记录
+     * @param id
+     * @param password
+     * @param modelMap
+     * @param request
+     * @return
+     */
     @RequestMapping("/loginVerification")
     public String loginVerification(String id, String password, ModelMap modelMap, HttpServletRequest request){
         Admin admin = adminService.loginVerification(id,password);
@@ -38,6 +46,12 @@ public class AdminController {
         return pageReturn;
     }
 
+    /**
+     * 退出系统并清除登录状态
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response){
         request.getSession().removeAttribute("id");
@@ -57,7 +71,7 @@ public class AdminController {
     }
 
     /**
-     *
+     *依据admin的id来删除admin
      * @param id
      * @return  删除结果
      */
@@ -67,6 +81,11 @@ public class AdminController {
         return adminService.delAdminById(id).toString();
     }
 
+    /**
+     * 依据admin的id来删除admin的批处理方式
+     * @param adminItems
+     * @return
+     */
     @RequestMapping("/batchDelAdmin")
     @ResponseBody
     public String batchDelAdmin( String adminItems) {
@@ -80,5 +99,12 @@ public class AdminController {
             return "fail";
         }
         return "success";
+    }
+
+    @RequestMapping("/adminAdd")
+    @ResponseBody
+    public String adminAdd(Admin admin){
+        System.out.println(admin.toString());
+        return "ok!";
     }
 }
