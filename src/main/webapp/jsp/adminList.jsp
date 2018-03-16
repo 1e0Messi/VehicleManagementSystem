@@ -82,12 +82,6 @@
                         <li>
                             <a href="#">
                                 <i class="iconfont">&#xe6a7;</i>
-                                积分管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
                                 浏览记录
                             </a>
                         </li>
