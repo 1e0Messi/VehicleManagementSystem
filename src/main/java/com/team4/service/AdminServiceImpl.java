@@ -40,8 +40,19 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
-    public Integer adminAdd(Admin admin) {
-        return adminMapper.adminAdd(admin);
+    public void adminAdd(Admin admin) {
+        adminMapper.adminAdd(admin);
     }
 
+    public void passwordModify(String id,String oldpass,String newpass){
+        adminMapper.passwordModify(id,oldpass,newpass);
+    }
+
+    public void adminModify(String id, String name, String tel, String email, String address) {
+        adminMapper.adminModify(id,name,tel,email,address);
+    }
+
+    public Admin getAdminById(String id) {
+        return adminMapper.getAdminById(id);
+    }
 }

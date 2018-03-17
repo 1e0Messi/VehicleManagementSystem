@@ -9,5 +9,8 @@ public interface AdminService {
     List<Admin> getAllFrontAdmin();
     Integer delAdminById(String id);
     boolean batchDelAdmin(String[] adminItems) throws RuntimeException;
-    Integer adminAdd(Admin admin);
+    void adminAdd(Admin admin);
+    void passwordModify(String id,String oldpass,String newpass);
+    void adminModify(String id,String name,String tel,String email,String address);
+    Admin getAdminById(String id);
 }

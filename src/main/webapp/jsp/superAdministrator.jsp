@@ -65,30 +65,6 @@
                                 会员列表
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                会员删除
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                等级管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                积分管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                浏览记录
-                            </a>
-                        </li>
                     </ul>
                 </li>
             </ul>
@@ -147,9 +123,6 @@
 </div>
 <!-- 中部结束 -->
 <!-- 底部开始 -->
-<div class="footer">
-    <div class="copyright">本后台系统由team4进行制作</div>
-</div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">

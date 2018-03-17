@@ -8,12 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="8915fcf0-66bc-4cd0-a711-e032e19b1dfc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/xadmin.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/xadmin.js" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/controller/AdminController.class" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/dao/AdminMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/service/AdminService.class" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/service/AdminService.class" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/service/AdminServiceImpl.class" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/service/AdminServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/jsp/adminList.jsp" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/jsp/adminList.jsp" />
       <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/jsp/superAdministrator.jsp" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/jsp/superAdministrator.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/static/css/xadmin.css" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/static/css/xadmin.css" />
+      <change beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/static/js/xadmin.js" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/static/js/xadmin.js" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/team4/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/team4/controller/AdminController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/team4/dao/AdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/team4/dao/AdminMapper.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/team4/service/AdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/team4/service/AdminService.class" />
@@ -29,28 +39,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="107" column="41" lean-forward="false" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAdd.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/adminAdd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="144" column="14" lean-forward="false" selection-start-line="144" selection-start-column="14" selection-end-line="144" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,9 +47,9 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="Class" />
-        <option value="Jsp File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -70,7 +59,6 @@
       <find>img</find>
       <find>member_show</find>
       <find>delAll</find>
-      <find>member_del</find>
       <find>member_stop</find>
       <find>list</find>
       <find>sub-menu opened</find>
@@ -86,6 +74,13 @@
       <find>sub</find>
       <find>jquery</find>
       <find>x_admin_close</find>
+      <find>member_del</find>
+      <find>member_password</find>
+      <find>save</find>
+      <find>x-right</find>
+      <find>opened</find>
+      <find>member_edit</find>
+      <find>page-content</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +108,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/adminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/adminServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/adminController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/testSpringMVC.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -123,17 +117,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/team4/entity/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/xadmin.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/ajax.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/html/adminAdd.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/passwordEdit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/passwordEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/xadmin.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/html/adminAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/adminEdit.jsp" />
       </list>
     </option>
   </component>
@@ -182,8 +180,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,6 +212,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="team4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VehicleManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VehicleManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="team4" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VehicleManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -282,14 +287,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VehicleManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VehicleManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,7 +530,9 @@
       <workItem from="1521026649933" duration="10402000" />
       <workItem from="1521169715749" duration="28401000" />
       <workItem from="1521249631989" duration="2282000" />
-      <workItem from="1521252001091" duration="2528000" />
+      <workItem from="1521252001091" duration="12342000" />
+      <workItem from="1521270619694" duration="7939000" />
+      <workItem from="1521285433338" duration="2330000" />
     </task>
     <task id="LOCAL-00001" summary="1、添加了登录功能及相关界面；&#10;2、添加了登录拦截器以及登录状态记录，用于拦截未经登录的用户访问页面；">
       <created>1520943060448</created>
@@ -579,11 +597,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521254535559</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1.添加了注册管理人员的功能及其相关的界面元素以及他们之间的跳转处理">
+      <created>1521254664228</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1521254664228</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105368000" />
+    <option name="totallyTimeSpent" value="125451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -631,24 +656,16 @@
     <MESSAGE value="1、添加了登录功能及相关界面；&#10;2、添加了登录拦截器以及登录状态记录，用于拦截未经登录的用户访问页面；" />
     <MESSAGE value="1、更完善的框架&#10;2、添加了登录功能及相关界面；&#10;3、添加了登录拦截器以及登录状态记录，用于拦截未经登录的用户访问页面；" />
     <MESSAGE value="1、添加了个体的删除功能及相关的界面元素；&#10;2、添加了批量删除的功能及界面元素；&#10;3、添加了对全部普通人员数据的显示功能及界面；" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、添加了个体的删除功能及相关的界面元素；&#10;2、添加了批量删除的功能及界面元素；&#10;3、添加了对全部普通人员数据的显示功能及界面；" />
+    <MESSAGE value="1.添加了注册管理人员的功能及其相关的界面元素以及他们之间的跳转处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.添加了注册管理人员的功能及其相关的界面元素以及他们之间的跳转处理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/entity/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1058">
@@ -764,13 +781,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/admin" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
@@ -795,14 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="55" column="57" lean-forward="true" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/ajax.js" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/admin.sql">
       <provider selected="true" editor-type-id="text-editor">
@@ -823,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="329" column="17" lean-forward="true" selection-start-line="329" selection-start-column="17" selection-end-line="329" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/echarts-for-x-admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -845,69 +840,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/entity/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="345">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="method#loginVerification#0;class#AdminServiceImpl#0" expanded="false" />
-            <element signature="method#batchDelAdmin#0;class#AdminServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="107" column="41" lean-forward="false" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/passwordEdit.html" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/xadmin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="176" column="30" lean-forward="true" selection-start-line="176" selection-start-column="4" selection-end-line="176" selection-end-column="30" />
+        <state relative-caret-position="1058">
+          <caret line="127" column="85" lean-forward="true" selection-start-line="127" selection-start-column="85" selection-end-line="127" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/entity/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/xadmin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="353" column="22" lean-forward="true" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/passwordEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="94" column="15" lean-forward="true" selection-start-line="94" selection-start-column="15" selection-end-line="94" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/superAdministrator.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1193">
+          <caret line="124" column="13" lean-forward="false" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/adminAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="150" column="1" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="150" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="316" column="24" lean-forward="false" selection-start-line="316" selection-start-column="24" selection-end-line="316" selection-end-column="24" />
+        <state relative-caret-position="-1356">
+          <caret line="118" column="28" lean-forward="true" selection-start-line="117" selection-start-column="20" selection-end-line="118" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/adminAdd.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="144" column="14" lean-forward="false" selection-start-line="144" selection-start-column="14" selection-end-line="144" selection-end-column="14" />
+        <state relative-caret-position="253">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="154" column="19" lean-forward="true" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
+          <folding>
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2580#2581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+          <folding>
+            <element signature="method#loginVerification#0;class#AdminServiceImpl#0" expanded="false" />
+            <element signature="method#batchDelAdmin#0;class#AdminServiceImpl#0" expanded="false" />
+            <element signature="method#passwordModify#0;class#AdminServiceImpl#0" expanded="false" />
+            <element signature="method#adminModify#0;class#AdminServiceImpl#0" expanded="false" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding />
         </state>
       </provider>

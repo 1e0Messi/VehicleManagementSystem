@@ -109,7 +109,7 @@ $(function () {
     });
 
     //左侧菜单效果
-    $('.left-nav #nav li a[name = "switch"]').click(function () {
+    $('.left-nav #nav li a[name="switch"]').click(function () {
         if($(this).hasClass('open')){
             $(this).removeClass('open');
             $(this).find('.nav_right').html('&#xe697;');
@@ -120,22 +120,14 @@ $(function () {
             $(this).find('.nav_right').html('&#xe6a6;');
             $(this).next('.sub-menu').slideDown();
             $(this).parent().siblings().children('.sub-menu').slideUp();
-            $(this).parent().siblings().removeClass('open');
+            $(this).parent().siblings().children().removeClass('open');
         }
-        
-    })
+    });
 
     //初始化菜单展开样式
     $('.left-nav #nav li .opened').siblings('a').find('.nav_right').html('&#xe6a6;');
 
-    
-
-
-
-
-
-    
-})
+});
 
 /*弹出层*/
 /*
