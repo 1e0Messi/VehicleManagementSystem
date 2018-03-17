@@ -2,10 +2,10 @@ package com.team4.dao;
 
 import com.team4.entity.Admin;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository
@@ -19,4 +19,7 @@ public interface AdminMapper {
 
     @Delete("delete from admin where id = #{id}")
     Integer delAdminById(@Param("id")String id);
+
+    @Insert("insert into admin values(#{id},#{name},#{gender},#{tel},#{email},#{id_card},#{address},#{date},#{password},#{authority})")
+    Integer adminAdd(Admin admin);
 }

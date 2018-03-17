@@ -9,4 +9,5 @@ public interface AdminService {
     List<Admin> getAllFrontAdmin();
     Integer delAdminById(String id);
     boolean batchDelAdmin(String[] adminItems) throws RuntimeException;
+    Integer adminAdd(Admin admin);
 }
