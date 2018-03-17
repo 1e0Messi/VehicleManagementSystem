@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         会员管理
                         <i class="iconfont nav_right">&#xe697;</i>

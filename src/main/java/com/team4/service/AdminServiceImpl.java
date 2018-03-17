@@ -40,4 +40,8 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
+    public Integer adminAdd(Admin admin) {
+        return adminMapper.adminAdd(admin);
+    }
+
 }
