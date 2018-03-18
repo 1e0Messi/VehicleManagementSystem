@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
+    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" / -->
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -21,7 +21,6 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
 <body>
@@ -55,7 +54,7 @@
                         收入管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
+                    <ul class="sub-menu">
                         <li>
                             <a href="/GetAllIncomeItem">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -70,7 +69,7 @@
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened" >
+                    <ul class="sub-menu" >
                         <li>
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -85,7 +84,7 @@
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
+                    <ul class="sub-menu">
                         <li>
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
