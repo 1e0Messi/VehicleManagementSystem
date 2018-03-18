@@ -13,6 +13,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<a rel="contents" href="/" style="position: absolute;left: 45%; top:10%;">${requestScope.description}</a>
+<a rel="contents" href="/" style="position: absolute;left: 45%; top:10%;">账号或密码错误</a>
 </body>
 </html>

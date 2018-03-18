@@ -40,11 +40,14 @@ public class AdminController {
         String pageReturn;
         if(admin != null){
             modelMap.addAttribute("admin",admin);
-            pageReturn = "superAdministrator";
             request.getSession().setAttribute("id",admin.getId());
             request.getSession().setAttribute("name",admin.getName());
+            if(admin.getAuthority() != 0){
+                pageReturn = "Administrator";
+            }else {
+                pageReturn = "superAdministrator";
+            }
         }else{
-            modelMap.addAttribute("description","账号或密码错误");
             pageReturn = "resInfo";
         }
         return pageReturn;
