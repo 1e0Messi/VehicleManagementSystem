@@ -38,179 +38,57 @@
     <div class="wrapper">
         <!-- 左侧菜单开始 -->
         <div class="left-nav">
-          <div id="side-nav">
-            <ul id="nav">
-                <li class="list" current>
-                    <a href="./index.html">
-                        <i class="iconfont">&#xe761;</i>
-                        欢迎页面
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe70b;</i>
-                        会员管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu ">
-                        <li class="current">
-                            <a href="member-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                会员列表
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-del.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                会员删除
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-level.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                等级管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-kiss.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                积分管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-view.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                浏览记录
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        收入管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                     <ul class="sub-menu opened">
-                        <li class="current">
-                            <a href="incomeList">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入列表
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-del.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入删除
-                            </a>
-                        </li>           
-                        <li>
-                            <a href="member-view.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                浏览记录
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        轮播管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./banner-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        管理员管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./banner-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        系统统计
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./echarts1.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                拆线图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts2.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                柱状图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts3.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                地图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts4.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                饼图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts5.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                k线图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts6.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                仪表图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://echarts.baidu.com/examples.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                更多案例
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        系统设置
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./banner-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-          </div>
+            <div id="side-nav">
+                <ul id="nav">
+
+                    <li class="list">
+                        <a href="javascript:;" name="switch">
+                            <i class="iconfont">&#xe70b;</i>
+                            收入管理
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/GetAllIncomeItem">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    收入列表
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <a href="javascript:;" name="switch">
+                            <i class="iconfont">&#xe70b;</i>
+                            事故/违章管理
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/AllAccident">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    事故/违章列表
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list">
+                        <a href="javascript:;" name="switch">
+                            <i class="iconfont">&#xe70b;</i>
+                            相关费用管理
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/AllFee">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    相关费用列表
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
         </div>
         <!-- 左侧菜单结束 -->
         <!-- 右侧主体开始 -->
@@ -287,10 +165,6 @@
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a style="text-decoration:none"  onclick="member_password('修改密码','member-password.html','10001','600','400')"
-                               href="javascript:;" title="修改密码">
-                                <i class="layui-icon">&#xe631;</i>
-                            </a>
                             <a title="删除" href="javascript:;" onclick="member_del(this,'${incomes.id}')"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
@@ -308,7 +182,7 @@
     <!-- 中部结束 -->
     <!-- 底部开始 -->
     <div class="footer">
-        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>  
+        <div class="copyright">Copyright ©2017 车辆管理系统. 本后台系统由TEAM4前端框架提供前端技术支持</div>
     </div>
     <!-- 底部结束 -->
     <!-- 背景切换开始 -->

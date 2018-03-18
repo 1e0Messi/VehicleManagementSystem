@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.team4.dao.FeeMapper">
+
+
+    <insert id="saveFee" parameterType="com.team4.entity.Fee">
+        insert into Fee values (#{feeid},#{time},#{carid},#{type},#{cost},#{applicantid},#{approverid},#{text})
+    </insert>
+
+    <delete id="deleteFee" parameterType="string">
+        delete from Fee where feeid=#{feeid}
+    </delete>
+
+    <update id="updateFee" parameterType="com.team4.entity.Fee">
+        update Fee set time=#{time},carid=#{carid},type=#{type},cost=#{cost},applicantid=#{applicantid},approverid=#{approverid},text=#{text} where feeid=#{feeid}
+    </update>
+
+    <select id="findFeeById" parameterType="string" resultType="com.team4.entity.Fee">
+        select feeid feeid,time time,carid carid,type type,cost cost,applicantid applicantid,approverid approverid,text text from Fee where feeid=#{feeid}
+    </select>
+
+    <select id="findAllFee" resultType="com.team4.entity.Fee">
+        select * from Fee
+    </select>
+
+</mapper>
