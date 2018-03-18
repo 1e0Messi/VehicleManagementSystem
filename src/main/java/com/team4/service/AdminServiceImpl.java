@@ -55,4 +55,8 @@ public class AdminServiceImpl implements AdminService {
     public Admin getAdminById(String id) {
         return adminMapper.getAdminById(id);
     }
+
+    public List<Admin> getAdminByDate(String startTime, String endTime) {
+        return adminMapper.getAdminByDate(startTime,endTime);
+    }
 }

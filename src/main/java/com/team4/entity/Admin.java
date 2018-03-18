@@ -1,6 +1,8 @@
 package com.team4.entity;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
     private String id;
     private String name;
     private String gender;

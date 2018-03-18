@@ -3,6 +3,7 @@ package com.team4.controller;
 import com.team4.entity.Admin;
 import com.team4.service.AdminService;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -39,7 +42,7 @@ public class AdminController {
             modelMap.addAttribute("admin",admin);
             pageReturn = "superAdministrator";
             request.getSession().setAttribute("id",admin.getId());
-            request.getSession().setAttribute("password",admin.getPassword());
+            request.getSession().setAttribute("name",admin.getName());
         }else{
             modelMap.addAttribute("description","账号或密码错误");
             pageReturn = "resInfo";
@@ -56,8 +59,13 @@ public class AdminController {
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response){
         request.getSession().removeAttribute("id");
-        request.getSession().removeAttribute("password");
+        request.getSession().removeAttribute("name");
         return "redirect:/";
+    }
+
+    @RequestMapping("/superAdministrator")
+    public String superAdministrator(){
+        return "superAdministrator";
     }
 
     /**
@@ -160,6 +168,22 @@ public class AdminController {
     public String subAdminEdit(String id,String name,String tel,String email,String address){
         adminService.adminModify(id,name,tel,email,address);
         return "";
+    }
+
+    @RequestMapping("/adminQuery")
+    public String adminQuery(){
+        return "adminQuery";
+    }
+
+    @RequestMapping("/adminQueryById")
+    @ResponseBody
+    public Admin adminQueryById(String id){
+        return adminService.getAdminById(id);
+    }
+    @RequestMapping("/adminQueryByDate")
+    @ResponseBody
+    public List<Admin> adminQueryByDate(String startTime,String endTime){
+        return adminService.getAdminByDate(startTime,endTime);
     }
 
 }

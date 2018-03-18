@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest,HttpServletResponse  httpServletResponse, Object o) throws Exception {
         String id = (String)httpServletRequest.getSession().getAttribute("id");
-        String password = (String)httpServletRequest.getSession().getAttribute("password");
+        String name = (String)httpServletRequest.getSession().getAttribute("name");
         boolean flag = true;
 
-        if(id == null || password == null ){
+        if(id == null || name == null ){
             flag = false;
             httpServletRequest.getRequestDispatcher("/index.html").forward(httpServletRequest,httpServletResponse);
         }

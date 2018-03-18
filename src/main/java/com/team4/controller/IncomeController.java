@@ -97,8 +97,4 @@ public class IncomeController {
     public String jumpTest(){
         return "/member-list";
     }
-
-
-
-
 }

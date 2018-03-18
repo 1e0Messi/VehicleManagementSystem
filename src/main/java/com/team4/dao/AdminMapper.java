@@ -11,7 +11,7 @@ public interface AdminMapper {
     @Select("select * from admin where id = #{id} and password = #{password}")
     Admin getAdmin(@Param("id")String id, @Param("password")String password);
 
-    @Select("select * from admin where id = #{id}")
+    @Select("select * from admin where id = #{id} and authority = 1")
     Admin getAdminById(@Param("id")String id);
 
     @Select("select * from admin where authority = 1")
@@ -28,4 +28,7 @@ public interface AdminMapper {
 
     @Update("update admin set name = #{name},tel = #{tel},email = #{email},address = #{address} where id = #{id}")
     Integer adminModify(@Param("id")String id,@Param("name")String name,@Param("tel")String tel,@Param("email")String email,@Param("address")String address);
+
+    @Select("select * from admin where authority = 1 and date between #{startTime} and  #{endTime};")
+    List<Admin> getAdminByDate(@Param("startTime")String startTime,@Param("endTime")String endTime);
 }

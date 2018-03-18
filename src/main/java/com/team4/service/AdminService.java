@@ -13,4 +13,5 @@ public interface AdminService {
     void passwordModify(String id,String oldpass,String newpass);
     void adminModify(String id,String name,String tel,String email,String address);
     Admin getAdminById(String id);
+    List<Admin> getAdminByDate(String startTime,String endTime);
 }
