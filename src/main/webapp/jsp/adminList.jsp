@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.team4.entity.Admin" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 缑元彪
   Date: 2018/3/14
@@ -7,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -80,7 +82,7 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/html/adminAdd.html','600','700')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.admins.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/html/adminAdd.html','600','700')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.jsonArray.get(0).length()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -119,59 +121,13 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody>
-                    <c:forEach var = "admin" items = "${requestScope.admins}">
-                        <tr>
-                            <td>
-                                <input type="checkbox" value="${admin.id}" name="adminItem">
-                            </td>
-                            <td>
-                                ${admin.id}
-                            </td>
-                            <td>
-                                ${admin.name}
-                            </td>
-                            <td >
-                                 ${admin.gender}
-                            </td>
-                            <td >
-                                ${admin.tel}
-                            </td>
-                            <td >
-                                ${admin.email}
-                            </td>
-                            <td >
-                                ${admin.id_card}
-                            </td>
-                            <td>
-                                ${admin.address}
-                            </td>
-                            <td>
-                                ${admin.date}
-                            </td>
-                            <td>
-                                ${admin.password}
-                            </td>
-                            <td class="td-manage">
-                                <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/adminEdit?id=${admin.id}','4','500','400')"
-                                   class="ml-5" style="text-decoration:none">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a style="text-decoration:none"  onclick="member_password('修改密码','/passwordEdit?id=${admin.id}&password=${admin.password}','10001','500','400')"
-                                   href="javascript:;" title="修改密码">
-                                    <i class="layui-icon">&#xe631;</i>
-                                </a>
-                                <a title="删除" href="javascript:;" onclick="member_del(this,'${admin.id}')"
-                                   style="text-decoration:none">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                <tbody id="tbody">
+
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
+        <div id = "pageNum" align="right" style="bottom:5%;"></div>
     </div>
     <!-- 右侧主体结束 -->
 </div>
@@ -203,6 +159,87 @@
 <!-- 背景切换结束 -->
 <!-- 页面动态效果 -->
 <script>
+    layui.use(['laypage'],function () {
+        laypage = layui.laypage;
+
+        var admins = ${requestScope.jsonArray.get(0)};
+        var length = admins.length;
+
+        var size = 7;
+        var pageNum =  length/size;
+        
+        var render = function (curr) {
+            var str = "";
+            var last = curr * size - 1;
+            last = last >= length ? (length-1) : last;
+            for(var i = (curr - 1) * size;i <= last;i++){
+                str += tbody(admins[i]);
+            }
+            return str;
+        };
+        
+        laypage({
+            cont:$("#pageNum"),
+            pages:Math.ceil(pageNum),
+            skin: '#1E9FFF',
+            jump:function (obj,first) {
+                $("#tbody").html(render(obj.curr));
+            }
+        });
+    });
+
+    function tbody(data) {
+        var html = "<tr>\n" +
+            "<td>\n" +
+            "<input type=\"checkbox\" value=\""+ data.id +"\" name=\"adminItem\">\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.id +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.name +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.gender +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.tel +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.email +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.id_card +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.address +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.date +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.password +"\n" +
+            "</td>\n" +
+            "<td class=\"td-manage\">\n" +
+            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/adminEdit?id="+ data.id +"','4','500','400')\"\n" +
+            "class=\"ml-5\" style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe642;</i>\n" +
+            "</a>\n" +
+            "<a style=\"text-decoration:none\"  onclick=\"member_password('修改密码','/passwordEdit?id="+ data.id +"&password="+ data.password +"','10001','500','400')\"\n" +
+            " href=\"javascript:;\" title=\"修改密码\">\n" +
+            "<i class=\"layui-icon\">&#xe631;</i>\n" +
+            "</a>\n" +
+            "<a title=\"删除\" href=\"javascript:;\" onclick=\"member_del(this,'"+ data.id +"')\"\n" +
+            "style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe640;</i>\n" +
+            "</a>\n" +
+            "</td>\n" +
+            "</tr>";
+        return html;
+    }
+
+
+
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
@@ -215,9 +252,10 @@
                     $("input[name = 'adminItem']:checkbox:checked").each(function (index,element) {
                         $(element).parents("tr").remove();
                     });
-                    layer.msg("已删除!");
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    setTimeout("window.location.reload()",1000);
                 }else
-                    layer.msg("删除失败!");
+                    layer.msg('删除失败!',{icon:1,time:1000});
             });
         });
     }
@@ -245,6 +283,7 @@
                     if(data == "1"){
                         $(obj).parents("tr").remove();
                         layer.msg('已删除!',{icon:1,time:1000});
+                        setTimeout("window.location.reload()",1000);
                     }else {
                         layer.msg('删除失败!',{icon:1,time:1000});
                     }

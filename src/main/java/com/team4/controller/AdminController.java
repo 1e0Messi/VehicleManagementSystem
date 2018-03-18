@@ -78,7 +78,9 @@ public class AdminController {
     @RequestMapping("/allFrontAdmin")
     public String getAllAdmin(ModelMap modelMap){
         List<Admin> admins = adminService.getAllFrontAdmin();
-        modelMap.addAttribute("admins",admins);
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(admins);
+        modelMap.addAttribute("jsonArray",jsonArray);
         return "adminList";
     }
 
