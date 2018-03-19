@@ -19,7 +19,7 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
+    <div class="logo"><a href="/Administrator">车辆管理系统 V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
@@ -39,6 +39,13 @@
         <div id="side-nav">
             <ul id="nav">
 
+                <li class="list" current>
+                    <a href="/Administrator">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
                 <li class="list">
                     <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>

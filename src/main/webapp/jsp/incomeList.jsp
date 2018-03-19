@@ -36,73 +36,79 @@
     <div class="wrapper">
         <!-- 左侧菜单开始 -->
         <div class="left-nav">
-            <div id="side-nav">
-                <ul id="nav">
+        <div id="side-nav">
+            <ul id="nav">
+                <li class="list" current>
+                    <a href="/Administrator">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        车辆信息管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Enter">
+                                <i class="iconfont">&#xe6a7;</i>
+                                车辆信息列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        收入管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/GetAllIncomeItem">
+                                <i class="iconfont">&#xe6a7;</i>
+                                收入列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        事故/违章管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/AllAccident">
+                                <i class="iconfont">&#xe6a7;</i>
+                                事故/违章列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        相关费用管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/AllFee">
+                                <i class="iconfont">&#xe6a7;</i>
+                                相关费用列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-                    <li class="list">
-                        <a href="javascript:;" name="switch">
-                            <i class="iconfont">&#xe70b;</i>
-                            车辆信息管理
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="/Enter">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    车辆信息列表
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list">
-                        <a href="javascript:;" name="switch">
-                            <i class="iconfont">&#xe70b;</i>
-                            收入管理
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="/GetAllIncomeItem">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    收入列表
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list">
-                        <a href="javascript:;" name="switch">
-                            <i class="iconfont">&#xe70b;</i>
-                            事故/违章管理
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="/AllAccident">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    事故/违章列表
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list">
-                        <a href="javascript:;" name="switch">
-                            <i class="iconfont">&#xe70b;</i>
-                            相关费用管理
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="/AllFee">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    相关费用列表
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
+            </ul>
         </div>
+    </div>
         <!-- 左侧菜单结束 -->
         <!-- 右侧主体开始 -->
         <div class="page-content">
@@ -202,17 +208,17 @@
     <div class="bg-changer">
         <div class="swiper-container changer-list">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="../static/a.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/b.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/c.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/d.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/e.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/f.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/g.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/h.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/i.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/j.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/k.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/a.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/b.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/c.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/d.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/e.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/f.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/g.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/h.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/i.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/j.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="../static/images/k.jpg" alt=""></div>
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>

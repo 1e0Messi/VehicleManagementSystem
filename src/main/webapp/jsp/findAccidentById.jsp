@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
+    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" / -->
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -21,22 +21,23 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
+    <div class="logo"><a href="./index.html">X-ADMIN V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
-            <a href="javascript:;"><%= session.getAttribute("name")%></a>
+            <a href="javascript:;">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="/logout">切换帐号</a></dd>
-                <dd><a href="/logout">退出</a></dd>
+                <dd><a href="">个人信息</a></dd>
+                <dd><a href="">切换帐号</a></dd>
+                <dd><a href="./login.html">退出</a></dd>
             </dl>
         </li>
+        <li class="layui-nav-item"><a href="/">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
@@ -46,7 +47,13 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-
+                <li class="list" current>
+                    <a href="/Administrator">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
                 <li class="list">
                     <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
@@ -197,7 +204,7 @@
                                 ${requestScope.fabid.text}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${requestScope.fabid.accid}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${requestScope.fabid.accid}&time=${requestScope.fabid.time}&carid=${requestScope.fabid.carid}&type=${requestScope.fabid.type}&listid=${requestScope.fabid.listid}&personid=${requestScope.fabid.personid}&addr=${requestScope.fabid.addr}&text=${requestScope.fabid.text}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>

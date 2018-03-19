@@ -30,22 +30,29 @@
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
-            <a href="javascript:;"><%= session.getAttribute("name")%></a>
+            <a href="javascript:;">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="">个人信息</a></dd>
                 <dd><a href="/logout">切换帐号</a></dd>
                 <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
+        <li class="layui-nav-item"><a href="#">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
-    <!-- 左侧菜单开始 -->
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-
+                <li class="list" current>
+                    <a href="/Administrator">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
                 <li class="list">
                     <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
@@ -131,12 +138,12 @@
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.fee.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox"  onclick="selectAllFee()" name = "selectAllFee">
+                        <input type="checkbox"  onclick="selectAllFee()"name = "selectAllFee">
                     </th>
                     <th>
                         费用编号
@@ -199,7 +206,7 @@
                     ${fee.text}
                     </td>
                     <td class="td-manage">
-                        <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${fee.feeid}','4','','510')"
+                        <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${fee.feeid}&time=${fee.time}&carid=${fee.carid}&type=${fee.type}&cost=${fee.cost}&applicantid=${fee.applicantid}&approverid=${fee.approverid}&text=${fee.text}','4','','510')"
                            class="ml-5" style="text-decoration:none">
                             <i class="layui-icon">&#xe642;</i>
                         </a>

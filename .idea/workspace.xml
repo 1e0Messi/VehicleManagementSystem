@@ -7,18 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8915fcf0-66bc-4cd0-a711-e032e19b1dfc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/sql/income_management.sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/WEB-INF/classes/com/team4/controller/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/team4/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/team4/controller/AdminController.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/AccidentController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/FeeController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/IncomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/controller/IncomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/addIncomeItem.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/addIncomeItem.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/editIncomeItem.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/editIncomeItem.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/VehicleManagementSystem-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccidentOK.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccidentOK.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateFee.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateFee.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,74 +33,111 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="incomeList.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="incomeList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="179" column="32" lean-forward="true" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
+            <state relative-caret-position="230">
+              <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="46" selection-end-column="21" />
               <folding>
-                <marker date="1521445611916" expanded="true" signature="11756:11776" ph="..." />
-                <marker date="1521445611916" expanded="true" signature="11863:11871" ph="&amp;##xe62f;" />
-                <marker date="1521445611916" expanded="true" signature="12348:12368" ph="..." />
-                <marker date="1521445611916" expanded="true" signature="12454:12462" ph="&amp;##xe601;" />
+                <marker date="1521447285487" expanded="true" signature="11860:11880" ph="..." />
+                <marker date="1521447285487" expanded="true" signature="11967:11975" ph="&amp;##xe62f;" />
+                <marker date="1521447285487" expanded="true" signature="12452:12472" ph="..." />
+                <marker date="1521447285487" expanded="true" signature="12558:12566" ph="&amp;##xe601;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp">
+      <file leaf-file-name="updateAccident.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="84" column="339" lean-forward="true" selection-start-line="84" selection-start-column="339" selection-end-line="84" selection-end-column="339" />
+            <state relative-caret-position="-414">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminEdit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminEdit.jsp">
+      <file leaf-file-name="Administrator.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Administrator.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+            <state relative-caret-position="359">
+              <caret line="116" column="10" lean-forward="true" selection-start-line="43" selection-start-column="2" selection-end-line="116" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editIncomeItem.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/editIncomeItem.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="76" column="90" lean-forward="false" selection-start-line="76" selection-start-column="90" selection-end-line="76" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchIncomeResult.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
+      <file leaf-file-name="AccidentList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
               <folding>
-                <marker date="1521445820147" expanded="true" signature="10809:10829" ph="..." />
-                <marker date="1521445820147" expanded="true" signature="10916:10924" ph="&amp;##xe62f;" />
-                <marker date="1521445820147" expanded="true" signature="11361:11381" ph="..." />
-                <marker date="1521445820147" expanded="true" signature="11467:11475" ph="&amp;##xe601;" />
+                <marker date="1521447285614" expanded="true" signature="12725:12745" ph="..." />
+                <marker date="1521447285614" expanded="true" signature="12832:12840" ph="&amp;##xe62f;" />
+                <marker date="1521447285614" expanded="true" signature="13277:13297" ph="..." />
+                <marker date="1521447285614" expanded="true" signature="13383:13391" ph="&amp;##xe601;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IncomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/IncomeController.java">
+      <file leaf-file-name="searchIncomeResult.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="322">
+              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding>
-                <element signature="e#3037#3038#0" expanded="true" />
-                <element signature="e#3076#3077#0" expanded="true" />
+                <marker date="1521447285658" expanded="true" signature="11110:11130" ph="..." />
+                <marker date="1521447285658" expanded="true" signature="11217:11225" ph="&amp;##xe62f;" />
+                <marker date="1521447285658" expanded="true" signature="11662:11682" ph="..." />
+                <marker date="1521447285658" expanded="true" signature="11768:11776" ph="&amp;##xe601;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeeList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+              <folding>
+                <marker date="1521447285362" expanded="true" signature="12544:12564" ph="..." />
+                <marker date="1521447285362" expanded="true" signature="12651:12659" ph="&amp;##xe62f;" />
+                <marker date="1521447285362" expanded="true" signature="13096:13116" ph="..." />
+                <marker date="1521447285362" expanded="true" signature="13202:13210" ph="&amp;##xe601;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findAccidentById.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+              <folding>
+                <marker date="1521447285436" expanded="true" signature="12916:12936" ph="..." />
+                <marker date="1521447285436" expanded="true" signature="13023:13031" ph="&amp;##xe62f;" />
+                <marker date="1521447285436" expanded="true" signature="13468:13488" ph="..." />
+                <marker date="1521447285436" expanded="true" signature="13574:13582" ph="&amp;##xe601;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findFeeById.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+              <folding>
+                <marker date="1521447285547" expanded="true" signature="12851:12871" ph="..." />
+                <marker date="1521447285547" expanded="true" signature="12958:12966" ph="&amp;##xe62f;" />
+                <marker date="1521447285547" expanded="true" signature="13403:13423" ph="..." />
+                <marker date="1521447285547" expanded="true" signature="13509:13517" ph="&amp;##xe601;" />
               </folding>
             </state>
           </provider>
@@ -108,14 +146,24 @@
       <file leaf-file-name="Vehicle.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Vehicle.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="206" column="32" lean-forward="true" selection-start-line="203" selection-start-column="28" selection-end-line="206" selection-end-column="32" />
+            <state relative-caret-position="253">
+              <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="43" />
               <folding>
                 <marker date="1521428707705" expanded="true" signature="11958:11978" ph="..." />
                 <marker date="1521428707705" expanded="true" signature="12065:12073" ph="&amp;##xe62f;" />
                 <marker date="1521428707705" expanded="true" signature="12510:12530" ph="..." />
                 <marker date="1521428707705" expanded="true" signature="12616:12624" ph="&amp;##xe601;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateFeeOK.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/adminEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/entity/Admin.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/AdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/LoginInterceptor.java" />
@@ -218,17 +265,18 @@
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/Administrator.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/Vehicle.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/Search.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/service/IncomeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/addIncomeItem.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/editIncomeItem.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/team4/controller/IncomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp" />
       </list>
     </option>
@@ -278,8 +326,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +397,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VehicleManagementSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VehicleManagementSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -636,6 +712,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
@@ -655,11 +733,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\VehicleManagementSystem\src\main\java\com\team4\controller" />
       <recent name="E:\project\VehicleManagementSystem\src\main\resources\sql" />
       <recent name="E:\project\VehicleManagementSystem\src\main\resources\mapper" />
       <recent name="E:\project\VehicleManagementSystem\src\main\java\com\team4\service" />
       <recent name="E:\project\VehicleManagementSystem\src\main\java\com\team4\entity" />
-      <recent name="E:\project\VehicleManagementSystem\src\main\java\com\team4\dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\project\VehicleManagementSystem\src\main\webapp\jsp" />
@@ -1266,7 +1344,8 @@
       <workItem from="1521294222343" duration="936000" />
       <workItem from="1521335445076" duration="11734000" />
       <workItem from="1521353420837" duration="10000" />
-      <workItem from="1521438202335" duration="7639000" />
+      <workItem from="1521438202335" duration="8485000" />
+      <workItem from="1521446722767" duration="594000" />
     </task>
     <task id="LOCAL-00001" summary="1、添加了登录功能及相关界面；&#10;2、添加了登录拦截器以及登录状态记录，用于拦截未经登录的用户访问页面；">
       <created>1520943060448</created>
@@ -1373,11 +1452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521429203285</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="改进了收入管理界面容错性">
+      <created>1521445922645</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1521445922645</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162973000" />
+    <option name="totallyTimeSpent" value="164413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1406,7 +1492,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32094595" sideWeight="0.43333334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23717949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23985043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1433,7 +1519,8 @@
     <MESSAGE value="1.整合了相关费用管理&#10;2.整合了收入管理&#10;3.整合了事故/违章管理&#10;4.为普通管理员设计了界面" />
     <MESSAGE value="1.整合了车辆信息管理功能&#10;2.完善了用户界面" />
     <MESSAGE value="添加了数据库文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了数据库文件" />
+    <MESSAGE value="改进了收入管理界面容错性" />
+    <option name="LAST_COMMIT_MESSAGE" value="改进了收入管理界面容错性" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1446,7 +1533,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/admin.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/images/c.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1495,13 +1581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
           <caret line="60" column="26" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1580,19 +1659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-          <folding>
-            <marker date="1521428856538" expanded="true" signature="12030:12050" ph="..." />
-            <marker date="1521428856538" expanded="true" signature="12137:12145" ph="&amp;##xe62f;" />
-            <marker date="1521428856538" expanded="true" signature="12582:12602" ph="..." />
-            <marker date="1521428856538" expanded="true" signature="12688:12696" ph="&amp;##xe601;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Search.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1614,37 +1680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="6" lean-forward="false" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding>
-            <marker date="1521429043213" expanded="true" signature="12386:12406" ph="..." />
-            <marker date="1521429043213" expanded="true" signature="12493:12501" ph="&amp;##xe62f;" />
-            <marker date="1521429043213" expanded="true" signature="12938:12958" ph="..." />
-            <marker date="1521429043213" expanded="true" signature="13044:13052" ph="&amp;##xe601;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="40" column="6" lean-forward="false" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding>
-            <marker date="1521429043276" expanded="true" signature="12307:12327" ph="..." />
-            <marker date="1521429043276" expanded="true" signature="12414:12422" ph="&amp;##xe62f;" />
-            <marker date="1521429043276" expanded="true" signature="12859:12879" ph="..." />
-            <marker date="1521429043276" expanded="true" signature="12965:12973" ph="&amp;##xe601;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/income_management.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1677,8 +1716,8 @@
         <state relative-caret-position="175">
           <caret line="45" column="64" lean-forward="true" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
           <folding>
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1695,14 +1734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1297">
           <caret line="31" column="63" lean-forward="false" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Administrator.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1573">
-          <caret line="68" column="33" lean-forward="true" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1755,26 +1786,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="204" column="28" lean-forward="true" selection-start-line="201" selection-start-column="24" selection-end-line="204" selection-end-column="28" />
-          <folding>
-            <marker date="1521428856458" expanded="true" signature="12154:12174" ph="..." />
-            <marker date="1521428856458" expanded="true" signature="12261:12269" ph="&amp;##xe62f;" />
-            <marker date="1521428856458" expanded="true" signature="12706:12726" ph="..." />
-            <marker date="1521428856458" expanded="true" signature="12812:12820" ph="&amp;##xe601;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/AccidentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="73" selection-end-column="5" />
           <folding>
-            <element signature="e#2084#2085#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2084#2085#0" expanded="false" />
+            <element signature="e#2123#2124#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1787,29 +1805,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/controller/IncomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
+        <state relative-caret-position="552">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#3037#3038#0" expanded="true" />
-            <element signature="e#3076#3077#0" expanded="true" />
+            <element signature="e#3037#3038#0" expanded="false" />
+            <element signature="e#3076#3077#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+        <state relative-caret-position="1978">
+          <caret line="86" column="16" lean-forward="false" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1824,16 +1834,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/adminList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="84" column="339" lean-forward="true" selection-start-line="84" selection-start-column="339" selection-end-line="84" selection-end-column="339" />
+        <state relative-caret-position="1932">
+          <caret line="84" column="339" lean-forward="false" selection-start-line="84" selection-start-column="339" selection-end-line="84" selection-end-column="339" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/team4/dao/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Administrator.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="116" column="10" lean-forward="true" selection-start-line="43" selection-start-column="2" selection-end-line="116" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/Vehicle.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="206" column="32" lean-forward="true" selection-start-line="203" selection-start-column="28" selection-end-line="206" selection-end-column="32" />
+        <state relative-caret-position="253">
+          <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="43" />
           <folding>
             <marker date="1521428707705" expanded="true" signature="11958:11978" ph="..." />
             <marker date="1521428707705" expanded="true" signature="12065:12073" ph="&amp;##xe62f;" />
@@ -1843,28 +1877,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <marker date="1521447285547" expanded="true" signature="12851:12871" ph="..." />
+            <marker date="1521447285547" expanded="true" signature="12958:12966" ph="&amp;##xe62f;" />
+            <marker date="1521447285547" expanded="true" signature="13403:13423" ph="..." />
+            <marker date="1521447285547" expanded="true" signature="13509:13517" ph="&amp;##xe601;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
-            <marker date="1521445820147" expanded="true" signature="10809:10829" ph="..." />
-            <marker date="1521445820147" expanded="true" signature="10916:10924" ph="&amp;##xe62f;" />
-            <marker date="1521445820147" expanded="true" signature="11361:11381" ph="..." />
-            <marker date="1521445820147" expanded="true" signature="11467:11475" ph="&amp;##xe601;" />
+            <marker date="1521447285436" expanded="true" signature="12916:12936" ph="..." />
+            <marker date="1521447285436" expanded="true" signature="13023:13031" ph="&amp;##xe62f;" />
+            <marker date="1521447285436" expanded="true" signature="13468:13488" ph="..." />
+            <marker date="1521447285436" expanded="true" signature="13574:13582" ph="&amp;##xe601;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <folding>
+            <marker date="1521447285362" expanded="true" signature="12544:12564" ph="..." />
+            <marker date="1521447285362" expanded="true" signature="12651:12659" ph="&amp;##xe62f;" />
+            <marker date="1521447285362" expanded="true" signature="13096:13116" ph="..." />
+            <marker date="1521447285362" expanded="true" signature="13202:13210" ph="&amp;##xe601;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <marker date="1521447285614" expanded="true" signature="12725:12745" ph="..." />
+            <marker date="1521447285614" expanded="true" signature="12832:12840" ph="&amp;##xe62f;" />
+            <marker date="1521447285614" expanded="true" signature="13277:13297" ph="..." />
+            <marker date="1521447285614" expanded="true" signature="13383:13391" ph="&amp;##xe601;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="179" column="32" lean-forward="true" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
+        <state relative-caret-position="230">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="46" selection-end-column="21" />
           <folding>
-            <marker date="1521445611916" expanded="true" signature="11756:11776" ph="..." />
-            <marker date="1521445611916" expanded="true" signature="11863:11871" ph="&amp;##xe62f;" />
-            <marker date="1521445611916" expanded="true" signature="12348:12368" ph="..." />
-            <marker date="1521445611916" expanded="true" signature="12454:12462" ph="&amp;##xe601;" />
+            <marker date="1521447285487" expanded="true" signature="11860:11880" ph="..." />
+            <marker date="1521447285487" expanded="true" signature="11967:11975" ph="&amp;##xe62f;" />
+            <marker date="1521447285487" expanded="true" signature="12452:12472" ph="..." />
+            <marker date="1521447285487" expanded="true" signature="12558:12566" ph="&amp;##xe601;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <marker date="1521447285658" expanded="true" signature="11110:11130" ph="..." />
+            <marker date="1521447285658" expanded="true" signature="11217:11225" ph="&amp;##xe62f;" />
+            <marker date="1521447285658" expanded="true" signature="11662:11682" ph="..." />
+            <marker date="1521447285658" expanded="true" signature="11768:11776" ph="&amp;##xe601;" />
           </folding>
         </state>
       </provider>

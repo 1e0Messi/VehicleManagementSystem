@@ -29,6 +29,8 @@ public class FeeController {
         return "FeeList";
     }
 
+
+
     @RequestMapping("/AddFee")
     public String AddFee() {
         return "addFee";
@@ -93,5 +95,6 @@ public class FeeController {
         mav.setViewName("findAllFee");
         return mav;
     }
+
 
 }

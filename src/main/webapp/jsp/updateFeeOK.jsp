@@ -50,7 +50,7 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="time" name="time" required="" lay-verify="required"
+                        <input type="text" id="time" name="time" required="" lay-verify="required" value="${param.time}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <span class="x-red">*</span>车辆编号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="carid" name="carid" required="" lay-verify="required"
+                        <input type="text" id="carid" name="carid" required="" lay-verify="required" value="${param.carid}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <span class="x-red">*</span>类型
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="type" name="type" required="" lay-verify="required"
+                        <input type="text" id="type" name="type" required="" lay-verify="required" value="${param.type}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <span class="x-red">*</span>金额
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="cost" name="cost" required="" lay-verify="required"
+                        <input type="text" id="cost" name="cost" required="" lay-verify="required" value="${param.cost}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         <span class="x-red">*</span>申请人编号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="applicantid" name="applicantid" required="" lay-verify="required"
+                        <input type="text" id="applicantid" name="applicantid" required="" lay-verify="required" value="${param.applicantid}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                         <span class="x-red">*</span>批准人编号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="approverid" name="approverid" required="" lay-verify="required"
+                        <input type="text" id="approverid" name="approverid" required="" lay-verify="required" value="${param.approverid}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         <span class="x-red">*</span>备注
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="text" name="text" required="" lay-verify="required"
+                        <input type="text" id="text" name="text" required="" lay-verify="required" value="${param.text}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>

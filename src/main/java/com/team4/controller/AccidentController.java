@@ -100,4 +100,9 @@ public class AccidentController {
         return mav;
     }
 
+    @RequestMapping("/Echarts1")
+    public String echarts1(){
+        return "showecharts1";
+    }
+
 }
