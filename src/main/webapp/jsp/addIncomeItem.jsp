@@ -36,11 +36,11 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="L_username" class="layui-form-label">
+                    <label for="time" class="layui-form-label">
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_username" name="time" required="" lay-verify="nikename"
+                        <input type="text" id="time" name="time" required="" lay-verify="nikename"
                         autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -101,6 +101,22 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+    </script>
+
+
+    <script>
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('time').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
     </script>
 </body>
 </html>

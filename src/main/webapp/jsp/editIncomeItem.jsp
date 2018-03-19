@@ -37,7 +37,7 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="time" name="time" required lay-verify="required"
-                        autocomplete="off" class="layui-input" value="${param.time}">
+                        autocomplete="off" class="layui-input" value="${param.time}" >
                     </div>
 
                 </div>
@@ -46,8 +46,8 @@
                         车牌号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="carID" name="carID" autocomplete="off" value="${param.carID}"
-                        class="layui-input">
+                        <input type="text" id="carID" name="carID" value="${param.carID}"
+                        class="layui-input" >
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-text">
@@ -104,6 +104,19 @@
             return document.getElementById('incomeList').contentWindow.document.getElementById('id').innerHTML;
 
         }
+
+        layui.use(['laydate'], function(){
+            laydate = layui.laydate;//日期插件
+            var options = {
+                min: '2000-01-01 00:00:00'
+                ,max: '2099-12-31 23:59:59'
+            };
+            document.getElementById('time').onclick = function(){
+                options.elem = this;
+                laydate(options);
+            }
+        });
+
 
     </script>
 </body>

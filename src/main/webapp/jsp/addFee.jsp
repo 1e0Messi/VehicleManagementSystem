@@ -45,7 +45,7 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="time" name="time" required="" lay-verify="required"
+                        <input type="text" id="time" name="time" required="" lay-verify="required" placeholder="年-月-日"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -127,6 +127,18 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('time').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
 </script>
 </body>
 </html>
