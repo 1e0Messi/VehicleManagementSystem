@@ -27,7 +27,7 @@
                   </label>
                   <div class="layui-input-inline">
                       <input type="text" id="id" name="id"
-                             autocomplete="off" value="113664000@qq.com" class="layui-input" placeholder=>
+                             autocomplete="off" value="" class="layui-input">
                   </div>
 
               </div>
@@ -37,7 +37,7 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="time" name="time" required lay-verify="required"
-                        autocomplete="off" value="zhibinm" class="layui-input">
+                        autocomplete="off" value="" class="layui-input">
                     </div>
 
                 </div>
@@ -46,7 +46,7 @@
                         车牌号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="carID" name="carID" autocomplete="off" value="广州"
+                        <input type="text" id="carID" name="carID" autocomplete="off" value=""
                         class="layui-input">
                     </div>
                 </div>

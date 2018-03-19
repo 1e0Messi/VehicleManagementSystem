@@ -48,54 +48,45 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list" current>
-                    <a href="./index.html">
-                        <i class="iconfont">&#xe761;</i>
-                        欢迎页面
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                </li>
+
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
-                        会员管理
+                        车辆信息管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
-                        <li class="current">
-                            <a href="/allFrontAdmin">
-                                <i class="iconfont">&#xe6a7;</i>
-                                会员列表
-                            </a>
-                        </li>
+                    <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="/Enter">
                                 <i class="iconfont">&#xe6a7;</i>
-                                会员删除
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                等级管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe6a7;</i>
-                                浏览记录
+                                车辆信息列表
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        收入管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/GetAllIncomeItem">
+                                <i class="iconfont">&#xe6a7;</i>
+                                收入列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
-                        <li class="current">
+                    <ul class="sub-menu">
+                        <li>
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
                                 事故/违章列表
@@ -104,13 +95,13 @@
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
-                        <li class="current">
+                    <ul class="sub-menu">
+                        <li>
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
                                 相关费用列表
@@ -118,6 +109,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>
