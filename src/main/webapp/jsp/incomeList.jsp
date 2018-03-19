@@ -122,12 +122,12 @@
                   </div>
                 </div> 
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/jsp/addIncomeItem.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/jsp/addIncomeItem.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.incomes.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                     <tr>
                         <th>
-                            <input type="checkbox" name="" value="">
+                            <input type="checkbox" name="selectAllIncomeItem" onclick="selectAllIncomeItem()">
                         </th>
                         <th>
                             ID
@@ -174,7 +174,7 @@
                         </td>
 
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/jsp/editIncomeItem.jsp','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
@@ -320,6 +320,34 @@
                 });
 
             });
+        }
+
+        //批量删除提交
+        function delAll () {
+            layer.confirm('确认要删除吗？',function(index){
+                var incomeItems = new Array();
+                $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                    incomeItems[index] = $(element).val();
+                });
+                $.post("/batchDelIncomeItem",{incomeItems:JSON.stringify(incomeItems)},function (data) {
+                    if(data.toString() == "success"){
+                        $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                            $(element).parents("tr").remove();
+                        });
+                        layer.msg('已删除!',{icon:1,time:1000});
+                        setTimeout("window.location.reload()",1000);
+                    }else
+                        layer.msg('删除失败!',{icon:1,time:1000});
+                });
+            });
+        }
+
+
+        /***
+         * 选中所有条例
+         */
+        function selectAllIncomeItem() {
+            $("input[name = 'incomeItem']:checkbox").prop("checked",$("input[name = 'selectAllIncomeItem']:checkbox").prop("checked"));
         }
         </script>
         <script>

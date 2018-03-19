@@ -13,4 +13,5 @@ public interface IncomeService {
     void saveIncomeItem(Income income);
     void submitEditIncomeForm(Income income);
     List<Income> searchIncomeItemById(String id);
+    boolean batchDelIncomeItem(String[] incomeItems) throws RuntimeException;
 }

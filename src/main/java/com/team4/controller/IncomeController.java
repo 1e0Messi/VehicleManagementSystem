@@ -3,6 +3,7 @@ package com.team4.controller;
 import com.team4.entity.Admin;
 import com.team4.entity.Income;
 import com.team4.service.IncomeService;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,7 @@ public class IncomeController {
     @RequestMapping("/GetAllIncomeItem")
     public String getAllIncomeItem(ModelMap modelMap){
         List<Income> incomes = IncomeService.getAllIncomeItem();
+
         modelMap.addAttribute("incomes",incomes);
        // System.out.println(incomes.toString());
         return "incomeList";
@@ -78,6 +80,21 @@ public class IncomeController {
         return "editIncomeItem";
     }
 
+    @RequestMapping("/batchDelIncomeItem")
+    @ResponseBody
+    public String batchDelIncomeItem( String incomeItems) {
+        JSONArray jsonArray = new JSONArray(incomeItems);
+        String[] incomeItemsId = new String[jsonArray.length()];
+        for(int i = 0; i < jsonArray.length();i++)
+            incomeItemsId[i] = (String)jsonArray.get(i);
+        try{
+            IncomeService.batchDelIncomeItem(incomeItemsId);
+        }catch (RuntimeException e){
+            return "fail";
+        }
+        return "success";
+    }
+
     /***
      * 根据id删除收入条例
      * @param id 需要删除条例的id
@@ -91,6 +108,11 @@ public class IncomeController {
         modelMap.addAttribute("incomes",incomes);
         // System.out.println(incomes.toString());
         return "searchIncomeResult";
+    }
+
+    @RequestMapping("/UpdateIncomeItem")
+    public String UpdateAccident(){
+        return "editIncomeItem";
     }
 
     @RequestMapping("/jumpTest")

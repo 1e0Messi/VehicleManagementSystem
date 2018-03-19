@@ -27,7 +27,7 @@
                   </label>
                   <div class="layui-input-inline">
                       <input type="text" id="id" name="id"
-                             autocomplete="off" value="" class="layui-input">
+                             autocomplete="off" class="layui-input"  readonly="readonly" value="${param.id}">
                   </div>
 
               </div>
@@ -37,7 +37,7 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="time" name="time" required lay-verify="required"
-                        autocomplete="off" value="" class="layui-input">
+                        autocomplete="off" class="layui-input" value="${param.time}">
                     </div>
 
                 </div>
@@ -46,7 +46,7 @@
                         车牌号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="carID" name="carID" autocomplete="off" value=""
+                        <input type="text" id="carID" name="carID" autocomplete="off" value="${param.carID}"
                         class="layui-input">
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                         收入金额
                     </label>
                     <div class="layui-input-block">
-                        <textarea  id="amount" name="amount" autocomplete="off"
-                        class="layui-textarea" style="height: 80px;"></textarea>
+                        <input type="text" id="amount" name="amount" autocomplete="off" value="${param.amount}"
+                               class="layui-input">
                     </div>
                 </div>
 
@@ -66,15 +66,15 @@
                         申请人ID
                     </label>
                     <div class="layui-input-block">
-                        <textarea  id="applicantID" name="applicantID" autocomplete="off"
-                                  class="layui-textarea" style="height: 80px;"></textarea>
+                        <input type="text" id="applicantID" name="applicantID" autocomplete="off" value="${param.applicantID}"
+                               class="layui-input">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">
                     </label>
-                    <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
+                    <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit >
                         保存
                     </button>
                 </div>
@@ -87,6 +87,7 @@
     </div>
     <!-- 中部结束 -->
     <script>
+
     //百度统计可去掉
     var _hmt = _hmt || [];
     (function() {

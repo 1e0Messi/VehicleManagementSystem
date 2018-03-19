@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-03-19 10:23:09
+Date: 2018-03-19 13:54:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `income_management`;
 CREATE TABLE `income_management` (
   `id` varchar(10) NOT NULL,
-  `time` varchar(8) NOT NULL,
+  `time` varchar(20) NOT NULL,
   `carID` varchar(10) NOT NULL,
   `amount` int(20) NOT NULL,
   `applicantID` varchar(10) NOT NULL,
