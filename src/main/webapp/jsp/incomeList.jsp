@@ -119,7 +119,16 @@
                   <div class="layui-form-item" style="display: inline-block;">
                     <label class="layui-form-label xbs768">查找条例</label>
                       <div class="layui-input-inline">
-                          <input type="text" name="id"  placeholder="请输入查找条例ID" autocomplete="off" class="layui-input" id="id">
+                          <input type="text" name="applicantID"  placeholder="请输入报账人ID" autocomplete="off" class="layui-input" id="applicantID">
+                      </div>
+                      <div class="layui-input-inline">
+                          <input type="text" name="carID"  placeholder="请输入车牌号" autocomplete="off" class="layui-input" id="carID">
+                      </div>
+                      <div class="layui-input-inline">
+                          <input type="text" name="beginTime"  placeholder="请输入起始时间" autocomplete="off" class="layui-input" id="beginTime">
+                      </div>
+                      <div class="layui-input-inline">
+                          <input type="text" name="endTime"  placeholder="请输入结束时间" autocomplete="off" class="layui-input" id="endTime">
                       </div>
                     <div class="layui-input-inline" style="width:80px">
                         <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
@@ -233,33 +242,31 @@
 
           //以上模块根据需要引入
           //
-          
 
+
+
+            var start = {
+                min: '2000-01-01 00:00:00'
+                ,max: '2099-12-31 23:59:59'
+                ,istoday: false
+                ,choose: function(datas){
+                    end.min = datas; //开始日选好后，重置结束日的最小日期
+                }
+            };
+            var end = {
+                min: '2000-01-01 00:00:00'
+                ,max: '2099-12-31 23:59:59'
+                ,istoday: false
+                ,choose: function(datas){
+                    start.max = datas; //结束日选好后，重置开始日的最大日期
+                }
+            };
           
-          var start = {
-            min: laydate.now()
-            ,max: '2099-06-16 23:59:59'
-            ,istoday: false
-            ,choose: function(datas){
-              end.min = datas; //开始日选好后，重置结束日的最小日期
-              end.start = datas //将结束日的初始值设定为开始日
-            }
-          };
-          
-          var end = {
-            min: laydate.now()
-            ,max: '2099-06-16 23:59:59'
-            ,istoday: false
-            ,choose: function(datas){
-              start.max = datas; //结束日选好后，重置开始日的最大日期
-            }
-          };
-          
-          document.getElementById('LAY_demorange_s').onclick = function(){
+          document.getElementById('beginTime').onclick = function(){
             start.elem = this;
             laydate(start);
           }
-          document.getElementById('LAY_demorange_e').onclick = function(){
+          document.getElementById('endTime').onclick = function(){
             end.elem = this
             laydate(end);
           }
@@ -356,17 +363,6 @@
         }
         </script>
         <script>
-        //百度统计可去掉
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
-
-        <script>
 
         layui.use(['laydate'], function(){
             laydate = layui.laydate;//日期插件
@@ -380,7 +376,5 @@
             }
         });
         </script>
-
-
 </body>
 </html>

@@ -34,8 +34,8 @@ public class IncomeServiceImpl implements IncomeService{
         IncomeMapper.submitEditIncomeForm(income);
     }
 
-    public List<Income> searchIncomeItemById(String id){
-        return IncomeMapper.searchIncomeItemById(id);
+    public List<Income> searchIncomeItems(String applicantID,String carID,String beginTime,String endTime){
+        return IncomeMapper.searchIncomeItems(applicantID,carID, beginTime, endTime);
     }
 
     @Transactional

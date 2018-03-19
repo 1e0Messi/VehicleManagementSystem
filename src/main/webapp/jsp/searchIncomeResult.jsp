@@ -19,7 +19,7 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="/Administrator">车辆管理系统 V1.1</a></div>
+    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
@@ -38,7 +38,6 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-
                 <li class="list" current>
                     <a href="/Administrator">
                         <i class="iconfont">&#xe761;</i>
@@ -120,7 +119,16 @@
                     <div class="layui-form-item" style="display: inline-block;">
                         <label class="layui-form-label xbs768">查找条例</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="id"  placeholder="请输入查找条例ID" autocomplete="off" class="layui-input" id="searchID">
+                            <input type="text" name="applicantID"  placeholder="请输入报账人ID" autocomplete="off" class="layui-input" id="applicantID">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="carID"  placeholder="请输入车牌号" autocomplete="off" class="layui-input" id="carID">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="beginTime"  placeholder="请输入起始时间" autocomplete="off" class="layui-input" id="beginTime">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="endTime"  placeholder="请输入结束时间" autocomplete="off" class="layui-input" id="endTime">
                         </div>
                         <div class="layui-input-inline" style="width:80px">
                             <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
@@ -133,7 +141,7 @@
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" name="" value="">
+                        <input type="checkbox" name="selectAllIncomeItem" onclick="selectAllIncomeItem()">
                     </th>
                     <th>
                         ID
@@ -163,7 +171,7 @@
                         <td>
                             <input type="checkbox" value="${incomes.id}" name="incomeItem">
                         </td>
-                        <td id="id">
+                        <td >
                                 ${incomes.id}
                         </td>
                         <td>
@@ -180,11 +188,10 @@
                         </td>
 
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;"  onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-
                             <a title="删除" href="javascript:;" onclick="member_del(this,'${incomes.id}')"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
@@ -202,24 +209,24 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ©2017 车辆管理系统. 本后台系统由TEAM4前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">
     <div class="swiper-container changer-list">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img class="item" src="../static/a.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/b.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/c.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/d.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/e.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/f.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/g.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/h.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/i.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/j.jpg" alt=""></div>
-            <div class="swiper-slide"><img class="item" src="../static/k.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/a.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/b.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/c.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/d.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/e.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/f.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/g.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/h.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/i.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/j.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/k.jpg" alt=""></div>
             <div class="swiper-slide"><span class="reset">初始化</span></div>
         </div>
     </div>
@@ -239,29 +246,27 @@
 
 
         var start = {
-            min: laydate.now()
-            ,max: '2099-06-16 23:59:59'
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
             ,istoday: false
             ,choose: function(datas){
                 end.min = datas; //开始日选好后，重置结束日的最小日期
-                end.start = datas //将结束日的初始值设定为开始日
             }
         };
-
         var end = {
-            min: laydate.now()
-            ,max: '2099-06-16 23:59:59'
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
             ,istoday: false
             ,choose: function(datas){
                 start.max = datas; //结束日选好后，重置开始日的最大日期
             }
         };
 
-        document.getElementById('LAY_demorange_s').onclick = function(){
+        document.getElementById('beginTime').onclick = function(){
             start.elem = this;
             laydate(start);
         }
-        document.getElementById('LAY_demorange_e').onclick = function(){
+        document.getElementById('endTime').onclick = function(){
             end.elem = this
             laydate(end);
         }
@@ -328,16 +333,48 @@
 
         });
     }
+
+    //批量删除提交
+    function delAll () {
+        layer.confirm('确认要删除吗？',function(index){
+            var incomeItems = new Array();
+            $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                incomeItems[index] = $(element).val();
+            });
+            $.post("/batchDelIncomeItem",{incomeItems:JSON.stringify(incomeItems)},function (data) {
+                if(data.toString() == "success"){
+                    $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                        $(element).parents("tr").remove();
+                    });
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    setTimeout("window.location.reload()",1000);
+                }else
+                    layer.msg('删除失败!',{icon:1,time:1000});
+            });
+        });
+    }
+
+
+    /***
+     * 选中所有条例
+     */
+    function selectAllIncomeItem() {
+        $("input[name = 'incomeItem']:checkbox").prop("checked",$("input[name = 'selectAllIncomeItem']:checkbox").prop("checked"));
+    }
 </script>
 <script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('time').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
 </script>
 </body>
 </html>

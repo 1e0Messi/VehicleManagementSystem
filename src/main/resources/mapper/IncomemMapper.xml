@@ -5,5 +5,26 @@
     <select id="getAllIncomeItem" resultType="com.team4.entity.Income">
         select * from income_management
     </select>
-
+    <select id="searchIncomeItems" resultType="com.team4.entity.Income" parameterType="String">
+        select * from income_management
+       <where>
+           <if test="applicantID != ''">
+               applicantID = #{applicantID}
+           </if>
+           <if test="carID != ''">
+              AND carID = #{carID}
+           </if>
+           <choose>
+               <when test="beginTime != '' and endTime != ''">
+                  AND time BETWEEN #{beginTime} AND #{endTime}
+               </when>
+               <when test="beginTime != '' and endTime == ''">
+                  AND time >= #{beginTime}
+               </when>
+               <when test="beginTime == '' and endTime != ''">
+                   <![CDATA[AND time <= #{endTime}]]>
+               </when>
+           </choose>
+       </where>
+    </select>
 </mapper>

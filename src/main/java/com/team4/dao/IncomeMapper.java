@@ -24,6 +24,5 @@ public interface IncomeMapper {
     @Update("update income_management set time=#{time},carID=#{carID},amount=#{amount},applicantID=#{applicantID}  where id=#{id}")
     void submitEditIncomeForm(Income income);
 
-    @Select("select * from income_management where id= #{id} ")
-    List<Income> searchIncomeItemById(@Param("id")String id);
+    List<Income> searchIncomeItems(@Param("applicantID")String applicantID,@Param("carID")String carID,@Param("beginTime")String beginTime,@Param("endTime")String endTime);
 }
