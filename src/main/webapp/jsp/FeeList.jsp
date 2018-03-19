@@ -30,14 +30,12 @@
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;"><%= session.getAttribute("name")%></a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="">个人信息</a></dd>
                 <dd><a href="/logout">切换帐号</a></dd>
                 <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="#">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
@@ -46,7 +44,7 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list" current>
+                <li class="list">
                     <a href="/Administrator">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
@@ -98,13 +96,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu opened">
                         <li>
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>

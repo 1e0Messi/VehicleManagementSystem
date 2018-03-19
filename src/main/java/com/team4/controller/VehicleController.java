@@ -69,8 +69,6 @@ public class VehicleController {
     }
     @RequestMapping("/findById")
     public String findById(String id,String name,Model model){
-//       System.out.println("name:"+name);
-//        System.out.println(id);
         if(id==""){
             if(name=="")
             {

@@ -95,12 +95,6 @@ public class IncomeController {
         return "success";
     }
 
-    /***
-     * 根据id删除收入条例
-     * @param id 需要删除条例的id
-     * @param modelMap
-     * @return
-     */
     @RequestMapping("/searchIncomeItem")
     public String searchIncomeItem(String id,ModelMap modelMap){
         List<Income> incomes = IncomeService.searchIncomeItemById(id);

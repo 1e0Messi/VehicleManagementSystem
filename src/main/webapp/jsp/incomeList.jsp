@@ -121,7 +121,6 @@
                       <div class="layui-input-inline">
                           <input type="text" name="id"  placeholder="请输入查找条例ID" autocomplete="off" class="layui-input" id="id">
                       </div>
-
                     <div class="layui-input-inline" style="width:80px">
                         <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
                     </div>
