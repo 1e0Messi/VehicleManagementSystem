@@ -81,7 +81,7 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <blockquote class="layui-elem-quote" style="text-align:center;vertical-align:middle">
-                ${requestScope.admin.name},欢迎使用车辆管理系统<span class="f-14">v1.0</span>
+                <%= session.getAttribute("name")%>,欢迎使用车辆管理系统<span class="f-14">v1.0</span>
             </blockquote>
             <fieldset class="layui-elem-field layui-field-title site-title">
                 <legend><a name="default">信息统计</a></legend>

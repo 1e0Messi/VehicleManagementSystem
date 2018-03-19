@@ -51,7 +51,13 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-
+                <li class="list" current>
+                    <a href="#">
+                        <i class="iconfont">&#xe761;</i>
+                        欢迎页面
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                </li>
                 <li class="list">
                 <a href="javascript:;" name="switch">
                     <i class="iconfont">&#xe70b;</i>
