@@ -5,13 +5,6 @@
   Time: 14:54
   To change this template use File | Settings | File Templates.
 --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: 缑元彪
-  Date: 2018/3/11
-  Time: 21:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -128,7 +121,7 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <blockquote class="layui-elem-quote" style="text-align:center;vertical-align:middle">
-                ${requestScope.admin.name},欢迎使用车辆管理系统<span class="f-14">v1.0</span>
+                <%= session.getAttribute("name")%>,欢迎使用车辆管理系统<span class="f-14">v1.0</span>
             </blockquote>
             <fieldset class="layui-elem-field layui-field-title site-title">
                 <legend><a name="default">信息统计</a></legend>

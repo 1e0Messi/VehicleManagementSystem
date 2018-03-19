@@ -71,6 +71,11 @@ public class AdminController {
         return "superAdministrator";
     }
 
+    @RequestMapping("/Administrator")
+    public String Administrator(){
+        return "Administrator";
+    }
+
     /**
      * 显示所有的前台管理员数据
      * @return  返回用户列表页面
