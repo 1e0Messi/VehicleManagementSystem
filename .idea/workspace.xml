@@ -7,19 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8915fcf0-66bc-4cd0-a711-e032e19b1dfc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/AccidentController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/team4/controller/FeeController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/AccidentList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/FeeList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/findAccidentById.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/findFeeById.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccident.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccidentOK.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateAccidentOK.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateFee.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateFee.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/updateFeeOK.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,8 +25,8 @@
       <file leaf-file-name="incomeList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="46" selection-end-column="21" />
+            <state relative-caret-position="253">
+              <caret line="182" column="243" lean-forward="false" selection-start-line="182" selection-start-column="62" selection-end-line="182" selection-end-column="243" />
               <folding>
                 <marker date="1521447285487" expanded="true" signature="11860:11880" ph="..." />
                 <marker date="1521447285487" expanded="true" signature="11967:11975" ph="&amp;##xe62f;" />
@@ -86,13 +75,13 @@
       <file leaf-file-name="searchIncomeResult.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+            <state relative-caret-position="207">
+              <caret line="183" column="63" lean-forward="false" selection-start-line="183" selection-start-column="63" selection-end-line="183" selection-end-column="63" />
               <folding>
-                <marker date="1521447285658" expanded="true" signature="11110:11130" ph="..." />
-                <marker date="1521447285658" expanded="true" signature="11217:11225" ph="&amp;##xe62f;" />
-                <marker date="1521447285658" expanded="true" signature="11662:11682" ph="..." />
-                <marker date="1521447285658" expanded="true" signature="11768:11776" ph="&amp;##xe601;" />
+                <marker date="1521447963723" expanded="true" signature="11334:11354" ph="..." />
+                <marker date="1521447963723" expanded="true" signature="11441:11449" ph="&amp;##xe62f;" />
+                <marker date="1521447963723" expanded="true" signature="11886:11906" ph="..." />
+                <marker date="1521447963723" expanded="true" signature="11992:12000" ph="&amp;##xe601;" />
               </folding>
             </state>
           </provider>
@@ -335,20 +324,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="VehicleManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VehicleManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VehicleManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1345,7 +1320,7 @@
       <workItem from="1521335445076" duration="11734000" />
       <workItem from="1521353420837" duration="10000" />
       <workItem from="1521438202335" duration="8485000" />
-      <workItem from="1521446722767" duration="594000" />
+      <workItem from="1521446722767" duration="1278000" />
     </task>
     <task id="LOCAL-00001" summary="1、添加了登录功能及相关界面；&#10;2、添加了登录拦截器以及登录状态记录，用于拦截未经登录的用户访问页面；">
       <created>1520943060448</created>
@@ -1459,11 +1434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521445922645</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="改进了收入管理界面容错性">
+      <created>1521447359577</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1521447359577</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164413000" />
+    <option name="totallyTimeSpent" value="165097000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1939,8 +1921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/incomeList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="253">
+          <caret line="182" column="243" lean-forward="false" selection-start-line="182" selection-start-column="62" selection-end-line="182" selection-end-column="243" />
           <folding>
             <marker date="1521447285487" expanded="true" signature="11860:11880" ph="..." />
             <marker date="1521447285487" expanded="true" signature="11967:11975" ph="&amp;##xe62f;" />
@@ -1952,13 +1934,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/searchIncomeResult.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        <state relative-caret-position="207">
+          <caret line="183" column="63" lean-forward="false" selection-start-line="183" selection-start-column="63" selection-end-line="183" selection-end-column="63" />
           <folding>
-            <marker date="1521447285658" expanded="true" signature="11110:11130" ph="..." />
-            <marker date="1521447285658" expanded="true" signature="11217:11225" ph="&amp;##xe62f;" />
-            <marker date="1521447285658" expanded="true" signature="11662:11682" ph="..." />
-            <marker date="1521447285658" expanded="true" signature="11768:11776" ph="&amp;##xe601;" />
+            <marker date="1521447963723" expanded="true" signature="11334:11354" ph="..." />
+            <marker date="1521447963723" expanded="true" signature="11441:11449" ph="&amp;##xe62f;" />
+            <marker date="1521447963723" expanded="true" signature="11886:11906" ph="..." />
+            <marker date="1521447963723" expanded="true" signature="11992:12000" ph="&amp;##xe601;" />
           </folding>
         </state>
       </provider>

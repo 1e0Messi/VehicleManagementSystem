@@ -170,6 +170,9 @@
                         <td>
                                 ${incomes.time}
                         </td>
+                        <td>
+                                ${incomes.carID}
+                        </td>
                         <td >
                                 ${incomes.amount}
                         </td>
@@ -178,7 +181,7 @@
                         </td>
 
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/jsp/editIncomeItem.jsp','4','','510')"
+                            <a title="编辑" href="javascript:;"  onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
