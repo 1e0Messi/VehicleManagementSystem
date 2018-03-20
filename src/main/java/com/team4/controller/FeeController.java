@@ -55,7 +55,7 @@ public class FeeController {
         JSONArray jsonArray = new JSONArray(feeItems);
         String[] feeItemsId = new String[jsonArray.length()];
         for(int i = 0; i < jsonArray.length();i++)
-           feeItemsId[i] = (String)jsonArray.get(i);
+            feeItemsId[i] = (String)jsonArray.get(i);
         try{
             feeService.batchDelFee(feeItemsId);
         }catch (RuntimeException e){
@@ -76,12 +76,13 @@ public class FeeController {
     }
 
 
-    @RequestMapping("/findFeeById")
-    public ModelAndView findFeeByTheId(String feeid) {
+    @RequestMapping("/findFee")
+    public ModelAndView findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime) {
 
         ModelAndView mav = new ModelAndView();
-        mav.addObject("ffbid",feeService.findFeeById(feeid));
-        mav.setViewName("findFeeById");
+        List<Fee> ffbid = feeService.findFee(feeid,carid,type,cost,applicantid,approverid,beginTime,endTime);
+        mav.addObject("ffbid",ffbid);
+        mav.setViewName("findFee");
         return mav;
     }
 

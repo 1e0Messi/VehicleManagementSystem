@@ -16,8 +16,39 @@
         update Accident set time=#{time},carid=#{carid},type=#{type},listid=#{listid},personid=#{personid},addr=#{addr},text=#{text} where accid=#{accid}
     </update>
 
-    <select id="findAccidentById" parameterType="string" resultType="com.team4.entity.Accident">
-        select accid accid,time time,carid carid,type type,listid listid,personid personid,addr addr,text text from Accident where accid=#{accid}
+    <select id="findAccident" parameterType="string" resultType="com.team4.entity.Accident">
+        select * from Accident
+        <where>
+            <if test="accid != ''">
+                accid = #{accid}
+            </if>
+            <if test="carid != ''">
+                AND carid = #{carid}
+            </if>
+            <if test="type != ''">
+                AND type = #{type}
+            </if>
+            <if test="listid != ''">
+                AND listid = #{listid}
+            </if>
+            <if test="personid != ''">
+                AND personid = #{personid}
+            </if>
+            <if test="addr != ''">
+                AND addr = #{addr}
+            </if>
+            <choose>
+                <when test="beginTime != '' and endTime != ''">
+                    AND time BETWEEN #{beginTime} AND #{endTime}
+                </when>
+                <when test="beginTime != '' and endTime == ''">
+                    AND time >= #{beginTime}
+                </when>
+                <when test="beginTime == '' and endTime != ''">
+                    <![CDATA[AND time <= #{endTime}]]>
+                </when>
+            </choose>
+        </where>
     </select>
 
     <select id="findAllAccident" resultType="com.team4.entity.Accident">

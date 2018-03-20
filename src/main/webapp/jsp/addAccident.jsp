@@ -15,6 +15,7 @@
     <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
+    <link rel="stylesheet" href="../static/lib/layui/css/layui.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
@@ -45,10 +46,12 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="time" name="time" required="" lay-verify="required"  placeholder="年-月-日"
+                        <input type="date" id="time" name="time" required="" lay-verify="required"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
+
+
                 <div class="layui-form-item">
                     <label for="carid" class="layui-form-label">
                         <span class="x-red">*</span>车辆编号
@@ -119,8 +122,10 @@
     <!-- 右侧主体结束 -->
 </div>
 <!-- 中部结束 -->
+
+//百度统计可去掉
 <script>
-    //百度统计可去掉
+
     var _hmt = _hmt || [];
     (function() {
         var hm = document.createElement("script");
@@ -140,6 +145,9 @@
             laydate(options);
         }
     });
+
+
+
 </script>
 </body>
 </html>

@@ -45,7 +45,7 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="time" name="time" required="" lay-verify="required" placeholder="年-月-日"
+                        <input type="date" id="time" name="time" required="" lay-verify="required"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>

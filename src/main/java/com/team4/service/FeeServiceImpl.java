@@ -24,9 +24,9 @@ public class FeeServiceImpl implements FeeService {
     public boolean updateFee(Fee fee) {
         return feeMapper.updateFee(fee);
     }
-    public Fee findFeeById(String feeid)
+    public List<Fee> findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime)
     {
-        Fee fee = feeMapper.findFeeById(feeid);
+        List<Fee> fee = feeMapper.findFee(feeid,carid,type,cost,applicantid,approverid,beginTime,endTime);
         return fee;
     }
 

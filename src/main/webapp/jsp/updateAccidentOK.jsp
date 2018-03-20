@@ -50,7 +50,7 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="time" name="time" required="" lay-verify="required" value="${param.time}"
+                        <input type="date" id="time" name="time" required="" lay-verify="required" value="${param.time}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -144,6 +144,7 @@
             laydate(options);
         }
     });
+
 </script>
 </body>
 </html>

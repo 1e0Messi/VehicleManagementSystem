@@ -1,6 +1,7 @@
 package com.team4.service;
 
 import com.team4.entity.Fee;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface FeeService {
 
     public boolean updateFee(Fee fee);
 
-    Fee findFeeById(String feeid);
+    List<Fee> findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime);
 
     public List<Fee> findAllFee();
 

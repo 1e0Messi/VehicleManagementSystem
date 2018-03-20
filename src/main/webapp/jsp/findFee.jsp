@@ -26,18 +26,18 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="./index.html">X-ADMIN V1.1</a></div>
+    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a href="">个人信息</a></dd>
-                <dd><a href="">切换帐号</a></dd>
-                <dd><a href="./login.html">退出</a></dd>
+                <dd><a href="/logout">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="/">前台首页</a></li>
+        <li class="layui-nav-item"><a href="#">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
@@ -48,50 +48,53 @@
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
-                    <a href="/Administrator">
+                    <a href="./index.html">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        车辆信息管理
+                        会员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="/Enter">
+                        <li class="current">
+                            <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
-                                车辆信息列表
+                                会员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员删除
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                等级管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                浏览记录
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
-                        <i class="iconfont">&#xe70b;</i>
-                        收入管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/GetAllIncomeItem">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
                                 事故/违章列表
@@ -100,13 +103,13 @@
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
                                 相关费用列表
@@ -114,7 +117,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -123,26 +125,51 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form xbs" action="/findFeeById" >
+
+
+            <form class="layui-form xbs" action="/findFee" >
                 <div class="layui-form-pane" style="text-align: center;">
                     <div class="layui-form-item" style="display: inline-block;">
-                        <label class="layui-form-label">搜索框</label>
+                        <label class="layui-form-label">搜索列表</label>
                         <div class="layui-input-inline">
                             <input type="text" name="feeid"  placeholder="请输入要查询的费用id" autocomplete="off" class="layui-input">
                         </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="carid"  placeholder="请输入要查询的车辆id" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="type"  placeholder="请输入要查询的类型" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="cost"  placeholder="请输入要查询的金额" autocomplete="off" class="layui-input">
+                        </div>
+                        </br>
+                        <div class="layui-input-inline">
+                            <input type="text" name="applicantid"  placeholder="请输入要查询的申请人id" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="approverid"  placeholder="请输入要查询的批准人id" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label">起止日期</label>
+                        <div class="layui-input-inline">
+                            <input type="date" name="beginTime"  placeholder="请输入要查询的起始时间" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="date" name="endTime"  placeholder="请输入要查询的截止时间" autocomplete="off" class="layui-input">
+                        </div>
                         <div class="layui-input-inline" style="width:80px">
-                            <button class="layui-btn"  lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn"   lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
                         </div>
                     </div>
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddFee','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">数据查找成功</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${ffbid.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox"  value="0">
+                        <input type="checkbox"  onclick="selectAllFee()"name = "selectAllFee">
                     </th>
                     <th>
                         费用编号
@@ -175,45 +202,47 @@
                 </thead>
                 <tbody>
 
+                <c:forEach var = "ffbid" items = "${requestScope.ffbid}">
                     <tr>
                         <td>
-                            <input type="checkbox" value="${requestScope.ffbid.feeid}">
+                            <input type="checkbox" value="${ffbid.feeid}" name="feeItem">
                         </td>
                         <td>
-                            ${requestScope.ffbid.feeid}
+                                ${ffbid.feeid}
                         </td>
                         <td>
-                            ${requestScope.ffbid.time}
+                                ${ffbid.time}
                         </td>
                         <td >
-                            ${requestScope.ffbid.carid}
+                                ${ffbid.carid}
                         </td>
                         <td >
-                            ${requestScope.ffbid.type}
+                                ${ffbid.type}
                         </td>
                         <td >
-                            ${requestScope.ffbid.cost}
+                                ${ffbid.cost}
                         </td>
                         <td >
-                            ${requestScope.ffbid.applicantid}
+                                ${ffbid.applicantid}
                         </td>
                         <td>
-                            ${requestScope.ffbid.approverid}
+                                ${ffbid.approverid}
                         </td>
                         <td>
-                            ${requestScope.ffbid.text}
+                                ${ffbid.text}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${requestScope.ffbid.feeid}&time=${requestScope.ffbid.time}&carid=${requestScope.ffbid.carid}&type=${requestScope.ffbid.type}&cost=${requestScope.ffbid.cost}&applicantid=${requestScope.ffbid.applicantid}&approverid=${requestScope.ffbid.approverid}&text=${requestScope.ffbid.text}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${ffbid.feeid}&time=${ffbid.time}&carid=${ffbid.carid}&type=${ffbid.type}&cost=${ffbid.cost}&applicantid=${ffbid.applicantid}&approverid=${ffbid.approverid}&text=${ffbid.text}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'${requestScope.ffbid.feeid}')"
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'${ffbid.feeid}')"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
                         </td>
                     </tr>
+                </c:forEach>
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
@@ -366,6 +395,10 @@
 
         });
     }
+
+    function selectAllFee(){
+        $("input[name = 'feeItem']:checkbox").prop("checked",$("input[name = 'selectAllFee']:checkbox").prop("checked"));
+    }
 </script>
 <script>
     //百度统计可去掉
@@ -376,6 +409,30 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('beginTime').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('endTime').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
 </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ public interface AccidentService {
 
     public boolean updateAccident(Accident accident);
 
-    Accident findAccidentById(String accid);
+    List<Accident> findAccident(String accid,String carid,String type,String listid,String personid,String addr,String beginTime,String endTime);
 
     public List<Accident> findAllAccident();
 

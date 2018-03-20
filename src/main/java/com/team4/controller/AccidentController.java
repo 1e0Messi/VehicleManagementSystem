@@ -59,7 +59,7 @@ public class AccidentController {
         JSONArray jsonArray = new JSONArray(accidentItems);
         String[] accidentItemsId = new String[jsonArray.length()];
         for(int i = 0; i < jsonArray.length();i++)
-           accidentItemsId[i] = (String)jsonArray.get(i);
+            accidentItemsId[i] = (String)jsonArray.get(i);
         try{
             accidentService.batchDelAccident(accidentItemsId);
         }catch (RuntimeException e){
@@ -80,12 +80,13 @@ public class AccidentController {
     }
 
 
-    @RequestMapping("/findAccidentById")
-    public ModelAndView findAccidentByTheId(String accid) {
+    @RequestMapping("/findAccident")
+    public ModelAndView findAccident(String accid,String carid,String type,String listid,String personid,String addr,String beginTime,String endTime) {
 
         ModelAndView mav = new ModelAndView();
-        mav.addObject("fabid",accidentService.findAccidentById(accid));
-        mav.setViewName("findAccidentById");
+        List<Accident> fabid = accidentService.findAccident(accid,carid,type,listid,personid,addr,beginTime,endTime);
+        mav.addObject("fabid",fabid);
+        mav.setViewName("findAccident");
         return mav;
     }
 
@@ -100,9 +101,5 @@ public class AccidentController {
         return mav;
     }
 
-    @RequestMapping("/Echarts1")
-    public String echarts1(){
-        return "showecharts1";
-    }
 
 }

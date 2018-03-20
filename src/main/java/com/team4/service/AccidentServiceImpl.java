@@ -24,9 +24,9 @@ public class AccidentServiceImpl implements AccidentService {
     public boolean updateAccident(Accident accident) {
         return accidentMapper.updateAccident(accident);
     }
-    public Accident findAccidentById(String accid)
+    public List<Accident> findAccident(String accid,String carid,String type,String listid,String personid,String addr,String beginTime,String endTime)
     {
-        Accident accident = accidentMapper.findAccidentById(accid);
+        List<Accident> accident = accidentMapper.findAccident(accid,carid,type,listid,personid,addr,beginTime,endTime);
         return accident;
     }
 
