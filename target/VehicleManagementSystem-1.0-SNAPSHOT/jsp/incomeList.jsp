@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>后台登录-X-admin1.1</title>
+    <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" / -->
     <link rel="stylesheet" href="../static/css/font.css">
@@ -17,25 +17,25 @@
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
 </head>
 <body>
-    <!-- 顶部开始 -->
-    <div class="container">
-        <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
-        <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
-        <ul class="layui-nav right" lay-filter="">
-            <li class="layui-nav-item">
-                <a href="javascript:;"><%= session.getAttribute("name")%></a>
-                <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                    <dd><a href="/logout">切换帐号</a></dd>
-                    <dd><a href="/logout">退出</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
-    <!-- 顶部结束 -->
-    <!-- 中部开始 -->
-    <div class="wrapper">
-        <!-- 左侧菜单开始 -->
-        <div class="left-nav">
+<!-- 顶部开始 -->
+<div class="container">
+    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
+    <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
+    <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;"><%= session.getAttribute("name")%></a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="/logout">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- 顶部结束 -->
+<!-- 中部开始 -->
+<div class="wrapper">
+    <!-- 左侧菜单开始 -->
+    <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
@@ -60,13 +60,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe70b;</i>
                         收入管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu opened">
                         <li>
                             <a href="/GetAllIncomeItem">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -109,60 +109,60 @@
             </ul>
         </div>
     </div>
-        <!-- 左侧菜单结束 -->
-        <!-- 右侧主体开始 -->
-        <div class="page-content">
-          <div class="content">
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <form class="layui-form xbs" action="/searchIncomeItem" >
                 <div class="layui-form-pane" style="text-align: center;">
-                  <div class="layui-form-item" style="display: inline-block;">
-                    <label class="layui-form-label xbs768">查找条例</label>
-                      <div class="layui-input-inline">
-                          <input type="text" name="applicantID"  placeholder="请输入报账人ID" autocomplete="off" class="layui-input" id="applicantID">
-                      </div>
-                      <div class="layui-input-inline">
-                          <input type="text" name="carID"  placeholder="请输入车牌号" autocomplete="off" class="layui-input" id="carID">
-                      </div>
-                      <div class="layui-input-inline">
-                          <input type="text" name="beginTime"  placeholder="请输入起始时间" autocomplete="off" class="layui-input" id="beginTime">
-                      </div>
-                      <div class="layui-input-inline">
-                          <input type="text" name="endTime"  placeholder="请输入结束时间" autocomplete="off" class="layui-input" id="endTime">
-                      </div>
-                    <div class="layui-input-inline" style="width:80px">
-                        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                    <div class="layui-form-item" style="display: inline-block;">
+                        <label class="layui-form-label xbs768">查找条例</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="applicantID"  placeholder="请输入报账人ID" autocomplete="off" class="layui-input" id="applicantID">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="carID"  placeholder="请输入车牌号" autocomplete="off" class="layui-input" id="carID">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="beginTime"  placeholder="请输入起始时间" autocomplete="off" class="layui-input" id="beginTime">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="endTime"  placeholder="请输入结束时间" autocomplete="off" class="layui-input" id="endTime">
+                        </div>
+                        <div class="layui-input-inline" style="width:80px">
+                            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                        </div>
                     </div>
-                  </div>
-                </div> 
+                </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/jsp/addIncomeItem.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.incomes.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/jsp/addIncomeItem.jsp','550','450')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.incomes.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
-                    <tr>
-                        <th>
-                            <input type="checkbox" name="selectAllIncomeItem" onclick="selectAllIncomeItem()">
-                        </th>
-                        <th>
-                            ID
-                        </th>
-                        <th>
-                            时间
-                        </th>
-                        <th>
-                            车牌号
-                        </th>
-                        <th>
-                            收入金额
-                        </th>
-                        <th>
-                            报账人ID
-                        </th>
-						<th>
-                            操作
-                        </th>
-                        
-                    </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="selectAllIncomeItem" onclick="selectAllIncomeItem()">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        车牌号
+                    </th>
+                    <th>
+                        收入金额
+                    </th>
+                    <th>
+                        报账人ID
+                    </th>
+                    <th>
+                        操作
+                    </th>
+
+                </tr>
                 </thead>
                 <tbody>
                 <c:forEach var = "incomes" items = "${requestScope.incomes}">
@@ -188,7 +188,7 @@
                         </td>
 
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateIncomeItem?id=${incomes.id}&time=${incomes.time}&carID=${incomes.carID}&amount=${incomes.amount}&applicantID=${incomes.applicantID}','4','480','450')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
@@ -202,179 +202,132 @@
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
-          </div>
         </div>
-        <!-- 右侧主体结束 -->
     </div>
-    <!-- 中部结束 -->
-    <!-- 底部开始 -->
-    <div class="footer">
-        <div class="copyright">Copyright ©2017 车辆管理系统. 本后台系统由TEAM4前端框架提供前端技术支持</div>
-    </div>
-    <!-- 底部结束 -->
-    <!-- 背景切换开始 -->
-    <div class="bg-changer">
-        <div class="swiper-container changer-list">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="../static/images/a.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/b.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/c.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/d.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/e.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/f.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/g.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/h.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/i.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/j.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../static/images/k.jpg" alt=""></div>
-                <div class="swiper-slide"><span class="reset">初始化</span></div>
-            </div>
+    <!-- 右侧主体结束 -->
+</div>
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright">Copyright ©2017 车辆管理系统. 本后台系统由TEAM4提供技术支持</div>
+</div>
+<!-- 底部结束 -->
+<!-- 背景切换开始 -->
+<div class="bg-changer">
+    <div class="swiper-container changer-list">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="item" src="../static/images/a.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/b.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/c.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/d.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/e.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/f.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/g.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/h.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/i.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/j.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="item" src="../static/images/k.jpg" alt=""></div>
+            <div class="swiper-slide"><span class="reset">初始化</span></div>
         </div>
-        <div class="bg-out"></div>
-        <div id="changer-set"><i class="iconfont">&#xe696;</i></div>   
     </div>
-    <!-- 背景切换结束 -->
-    <!-- 页面动态效果 -->
-    <script>
+    <div class="bg-out"></div>
+    <div id="changer-set"><i class="iconfont">&#xe696;</i></div>
+</div>
+<!-- 背景切换结束 -->
+<!-- 页面动态效果 -->
+<script>
 
-        layui.use(['laydate'], function(){
-          laydate = layui.laydate;//日期插件
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
 
-          //以上模块根据需要引入
-          //
+        var start = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+            ,istoday: false
+            ,choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+            }
+        };
+        var end = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+            ,istoday: false
+            ,choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
 
-
-
-            var start = {
-                min: '2000-01-01 00:00:00'
-                ,max: '2099-12-31 23:59:59'
-                ,istoday: false
-                ,choose: function(datas){
-                    end.min = datas; //开始日选好后，重置结束日的最小日期
-                }
-            };
-            var end = {
-                min: '2000-01-01 00:00:00'
-                ,max: '2099-12-31 23:59:59'
-                ,istoday: false
-                ,choose: function(datas){
-                    start.max = datas; //结束日选好后，重置开始日的最大日期
-                }
-            };
-          
-          document.getElementById('beginTime').onclick = function(){
+        document.getElementById('beginTime').onclick = function(){
             start.elem = this;
             laydate(start);
-          }
-          document.getElementById('endTime').onclick = function(){
+        }
+        document.getElementById('endTime').onclick = function(){
             end.elem = this
             laydate(end);
-          }
-          
+        }
+
+    });
+
+    //批量删除提交
+    function delAll () {
+        layer.confirm('确认要删除吗？',function(index){
+            //捉到所有被选中的，发异步进行删除
+            layer.msg('删除成功', {icon: 1});
         });
+    }
+    /*收入条例-添加*/
+    function member_add(title,url,w,h){
+        x_admin_show(title,url,w,h);
+    }
 
-        //批量删除提交
-         function delAll () {
-            layer.confirm('确认要删除吗？',function(index){
-                //捉到所有被选中的，发异步进行删除
-                layer.msg('删除成功', {icon: 1});
+
+    // 用户-编辑
+    function member_edit (title,url,id,w,h) {
+        x_admin_show(title,url,w,h);
+    }
+    /*收入条例删除*/
+    function member_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            //发异步删除数据
+            $.post("/delIncome",{id:id},function (data) {
+                if(data == "1"){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                }else {
+                    layer.msg('删除失败!',{icon:1,time:1000});
+                }
             });
-         }
-         /*收入条例-添加*/
-        function member_add(title,url,w,h){
-            x_admin_show(title,url,w,h);
-        }
-        /*用户-查看*/
-        function member_show(title,url,id,w,h){
-            x_admin_show(title,url,w,h);
-        }
 
-         /*用户-停用*/
-        function member_stop(obj,id){
-            layer.confirm('确认要停用吗？',function(index){
-                //发异步把用户状态进行更改
-                $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="layui-icon">&#xe62f;</i></a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-disabled layui-btn-mini">已停用</span>');
-                $(obj).remove();
-                layer.msg('已停用!',{icon: 5,time:1000});
-            });
-        }
-
-        /*用户-启用*/
-        function member_start(obj,id){
-            layer.confirm('确认要启用吗？',function(index){
-                //发异步把用户状态进行更改
-                $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
-                $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
-                $(obj).remove();
-                layer.msg('已启用!',{icon: 6,time:1000});
-            });
-        }
-        // 用户-编辑
-        function member_edit (title,url,id,w,h) {
-            x_admin_show(title,url,w,h); 
-        }
-        /*密码-修改*/
-        function member_password(title,url,id,w,h){
-            x_admin_show(title,url,w,h);  
-        }
-        /*收入条例删除*/
-        function member_del(obj,id){
-            layer.confirm('确认要删除吗？',function(index){
-                //发异步删除数据
-                $.post("/delIncome",{id:id},function (data) {
-                    if(data == "1"){
-                        $(obj).parents("tr").remove();
-                        layer.msg('已删除!',{icon:1,time:1000});
-                    }else {
-                        layer.msg('删除失败!',{icon:1,time:1000});
-                    }
-                });
-
-            });
-        }
-
-        //批量删除提交
-        function delAll () {
-            layer.confirm('确认要删除吗？',function(index){
-                var incomeItems = new Array();
-                $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
-                    incomeItems[index] = $(element).val();
-                });
-                $.post("/batchDelIncomeItem",{incomeItems:JSON.stringify(incomeItems)},function (data) {
-                    if(data.toString() == "success"){
-                        $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
-                            $(element).parents("tr").remove();
-                        });
-                        layer.msg('已删除!',{icon:1,time:1000});
-                        setTimeout("window.location.reload()",1000);
-                    }else
-                        layer.msg('删除失败!',{icon:1,time:1000});
-                });
-            });
-        }
-
-
-        /***
-         * 选中所有条例
-         */
-        function selectAllIncomeItem() {
-            $("input[name = 'incomeItem']:checkbox").prop("checked",$("input[name = 'selectAllIncomeItem']:checkbox").prop("checked"));
-        }
-        </script>
-        <script>
-
-        layui.use(['laydate'], function(){
-            laydate = layui.laydate;//日期插件
-            var options = {
-                min: '2000-01-01 00:00:00'
-                ,max: '2099-12-31 23:59:59'
-            };
-            document.getElementById('time').onclick = function(){
-                options.elem = this;
-                laydate(options);
-            }
         });
-        </script>
+    }
+
+    //批量删除提交
+    function delAll () {
+        layer.confirm('确认要删除吗？',function(index){
+            var incomeItems = new Array();
+            $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                incomeItems[index] = $(element).val();
+            });
+            $.post("/batchDelIncomeItem",{incomeItems:JSON.stringify(incomeItems)},function (data) {
+                if(data.toString() == "success"){
+                    $("input[name = 'incomeItem']:checkbox:checked").each(function (index,element) {
+                        $(element).parents("tr").remove();
+                    });
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    setTimeout("window.location.reload()",1000);
+                }else
+                    layer.msg('删除失败!',{icon:1,time:1000});
+            });
+        });
+    }
+
+
+    /***
+     * 选中所有条例
+     */
+    function selectAllIncomeItem() {
+        $("input[name = 'incomeItem']:checkbox").prop("checked",$("input[name = 'selectAllIncomeItem']:checkbox").prop("checked"));
+    }
+</script>
 </body>
 </html>

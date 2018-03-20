@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>车辆管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
+<!--link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" /-->
 <link rel="stylesheet" href="../static/css/font.css">
 <link rel="stylesheet" href="../static/css/xadmin.css">
 <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicle.size()}条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','500','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicle.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -201,7 +201,7 @@
                             </span>
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','500','520')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>

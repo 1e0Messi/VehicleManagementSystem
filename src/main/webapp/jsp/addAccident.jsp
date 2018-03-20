@@ -109,7 +109,7 @@
 
 
                 <div class="layui-form-item">
-                    <label for="submit" class="layui-form-label">
+                    <label for="" class="layui-form-label">
                     </label>
                     <button  class="layui-btn" lay-filter="add" lay-submit="">
                         增加
@@ -122,18 +122,7 @@
     <!-- 右侧主体结束 -->
 </div>
 <!-- 中部结束 -->
-
-//百度统计可去掉
 <script>
-
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件
         var options = {
@@ -145,9 +134,6 @@
             laydate(options);
         }
     });
-
-
-
 </script>
 </body>
 </html>

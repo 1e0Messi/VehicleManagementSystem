@@ -69,21 +69,21 @@ public class VehicleController {
     }
     @RequestMapping("/findById")
     public String findById(String id,String name,Model model){
+        List<Vehicle> vehicle;
         if(id==""){
-            if(name=="")
-            {
-
-            }else{
-            List<Vehicle> vehicle=vehicleService.findByName(name);
-            model.addAttribute("vehicle",vehicle);}
-            return "Search";
+            if(name==""){
+                vehicle = vehicleService.FindAll();
+            }else {
+                vehicle=vehicleService.findByName(name);
+            }
         }else{
-            List<Vehicle> vehicle = new ArrayList<Vehicle>();
-            vehicle.add(vehicleService.findById(id));
-            model.addAttribute("vehicle",vehicle);
-            return "Search";
+            vehicle = new ArrayList<Vehicle>();
+            Vehicle v = vehicleService.findById(id);
+            if(v != null)
+                vehicle.add(v);
         }
-
+        model.addAttribute("vehicle",vehicle);
+        return "Search";
     }
 //    @RequestMapping("/findByName")
 //    public String findByNmae(String name, Model model){
