@@ -159,6 +159,57 @@
 <!-- 背景切换结束 -->
 <!-- 页面动态效果 -->
 <script>
+    function tbody(data) {
+        var html = "<tr>\n" +
+            "<td>\n" +
+            "<input type=\"checkbox\" value=\""+ data.id +"\" name=\"adminItem\">\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.id +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.name +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.gender +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.tel +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.email +"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            data.id_card +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.address +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.date +"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            data.password +"\n" +
+            "</td>\n" +
+            "<td class=\"td-manage\">\n" +
+            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/adminEdit?id="+ data.id +"','4','500','420')\"\n" +
+            "class=\"ml-5\" style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe642;</i>\n" +
+            "</a>\n" +
+            "<a style=\"text-decoration:none\"  onclick=\"member_password('修改密码','/passwordEdit?id="+ data.id +"&password="+ data.password +"','10001','500','400')\"\n" +
+            " href=\"javascript:;\" title=\"修改密码\">\n" +
+            "<i class=\"layui-icon\">&#xe631;</i>\n" +
+            "</a>\n" +
+            "<a title=\"删除\" href=\"javascript:;\" onclick=\"member_del(this,'"+ data.id +"')\"\n" +
+            "style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe640;</i>\n" +
+            "</a>\n" +
+            "</td>\n" +
+            "</tr>";
+        return html;
+    }
+
+
     layui.use(['laypage'],function () {
         laypage = layui.laypage;
 

@@ -45,10 +45,11 @@ public class VehicleController {
         model.addAttribute("vehicles",vehicles);
         return "Vehicle";
     }
+
     @RequestMapping("/AddVehicle")
     public String AddVehicle(){
         //VehicleService.save(vehicle);
-    return "addCar";
+        return "addCar";
     }
 //    @RequestMapping("/UpdateInfo")
 //    public String UpdateInfo(Model model){

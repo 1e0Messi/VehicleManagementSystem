@@ -31,7 +31,7 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form  action="/insertAccident" class="layui-form">
+                <form  action="/insertAccident" class="layui-form">
                 <div class="layui-form-item">
                     <label for="accid" class="layui-form-label">
                         <span class="x-red">*</span>事故/违章编号
@@ -46,12 +46,10 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="date" id="time" name="time" required="" lay-verify="required"
+                        <input type="text" id="time" name="time" required="" lay-verify="required"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-
-
                 <div class="layui-form-item">
                     <label for="carid" class="layui-form-label">
                         <span class="x-red">*</span>车辆编号
@@ -106,10 +104,8 @@
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-
-
                 <div class="layui-form-item">
-                    <label for="" class="layui-form-label">
+                    <label class="layui-form-label">
                     </label>
                     <button  class="layui-btn" lay-filter="add" lay-submit="">
                         增加

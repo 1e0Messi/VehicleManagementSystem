@@ -82,15 +82,29 @@ public class AccidentController {
 
     @RequestMapping("/findAccident")
     public ModelAndView findAccident(String accid,String carid,String type,String listid,String personid,String addr,String beginTime,String endTime) {
-
+        /*System.out.println(accid);
+        System.out.println(carid);
+        System.out.println(type);
+        System.out.println(listid);
+        System.out.println(personid);
+        System.out.println(addr);
+        System.out.println(beginTime);
+        System.out.println(endTime);
+        System.out.println("----------");
+*/
         ModelAndView mav = new ModelAndView();
         List<Accident> fabid = accidentService.findAccident(accid,carid,type,listid,personid,addr,beginTime,endTime);
+
+        //System.out.println(fabid.size());
+
         mav.addObject("fabid",fabid);
         mav.setViewName("findAccident");
         return mav;
     }
 
-
+/*
+此处代码的用途
+ */
     @RequestMapping("/findAllAccident")
     public ModelAndView findAllAccident() {
 

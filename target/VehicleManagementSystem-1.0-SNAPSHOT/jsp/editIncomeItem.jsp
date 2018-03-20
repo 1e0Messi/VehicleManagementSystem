@@ -50,23 +50,22 @@
                         class="layui-input" >
                     </div>
                 </div>
-                <div class="layui-form-item layui-form-text">
+                <div class="layui-form-item">
                     <label  class="layui-form-label">
                         收入金额
                     </label>
-                    <div class="layui-input-block">
-                        <input type="text" id="amount" name="amount" autocomplete="off" value="${param.amount}"
+                    <div class="layui-input-inline">
+                        <input type="text" id="amount" name="amount" value="${param.amount}"
                                class="layui-input">
                     </div>
                 </div>
 
-
-                <div class="layui-form-item layui-form-text">
+                <div class="layui-form-item">
                     <label  class="layui-form-label">
                         申请人ID
                     </label>
-                    <div class="layui-input-block">
-                        <input type="text" id="applicantID" name="applicantID" autocomplete="off" value="${param.applicantID}"
+                    <div class="layui-input-inline">
+                        <input type="text" id="applicantID" name="applicantID" value="${param.applicantID}"
                                class="layui-input">
                     </div>
                 </div>

@@ -32,11 +32,6 @@
             <!-- 右侧内容框架，更改从这里开始 -->
             <form  action="/updateFee" class="layui-form">
                 <div class="layui-form-item">
-                    <label for="text" class="layui-form-label">
-                        <span class="x-red">*</span>更新数据成功
-                    </label>
-                </div>
-                <div class="layui-form-item">
                     <label for="feeid" class="layui-form-label">
                         <span class="x-red">*</span>费用编号
                     </label>
@@ -110,13 +105,14 @@
                 </div>
 
                 <div class="layui-form-item">
-                    <label for="submit" class="layui-form-label">
+                    <label class="layui-form-label">
                     </label>
                     <button  class="layui-btn" lay-filter="add" lay-submit="">
                         更新
                     </button>
                 </div>
             </form>
+            <pre style="text-align: center;color: #FF0000">更新数据成功!</pre>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -124,15 +120,6 @@
 </div>
 <!-- 中部结束 -->
 <script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件
         var options = {

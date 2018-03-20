@@ -89,16 +89,15 @@
                         <input type="text" id="L_state" name="state" required="" lay-verify="required"
                                autocomplete="off" class="layui-input">
                     </div>
-                    <div class="layui-form-item">
-                        <label for="L_number" class="layui-form-label">
-                        </label>
-                        <div class="layui-btn" onclick="sub()">
-                            确定
-                        </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                    </label>
+                    <div class="layui-btn" onclick="sub()">
+                        确定
                     </div>
                 </div>
             </form>
-
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
