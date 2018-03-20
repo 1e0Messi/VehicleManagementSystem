@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-03-19 13:54:10
+Date: 2018-03-19 22:01:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,6 +31,5 @@ CREATE TABLE `income_management` (
 -- ----------------------------
 -- Records of income_management
 -- ----------------------------
-INSERT INTO `income_management` VALUES ('1', '3', '3', '3', '3');
-INSERT INTO `income_management` VALUES ('11', '11', '11', '0', '11');
-INSERT INTO `income_management` VALUES ('2', '2', '2', '0', '1');
+INSERT INTO `income_management` VALUES ('1', '2018-03-01', '3', '3', '3');
+INSERT INTO `income_management` VALUES ('222', '2018-03-02', '222', '222', '22222');

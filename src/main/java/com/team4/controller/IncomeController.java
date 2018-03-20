@@ -80,6 +80,8 @@ public class IncomeController {
         return "editIncomeItem";
     }
 
+
+
     @RequestMapping("/batchDelIncomeItem")
     @ResponseBody
     public String batchDelIncomeItem( String incomeItems) {
@@ -95,12 +97,14 @@ public class IncomeController {
         return "success";
     }
 
+
+
     @RequestMapping("/searchIncomeItem")
     public String searchIncomeItem(String applicantID,String carID,String beginTime,String endTime,ModelMap modelMap){
-        System.out.println("applicantID:"+applicantID);
-        System.out.println("carID:"+carID);
-        System.out.println("beginTime:"+beginTime);
-        System.out.println("endTime:"+endTime);
+//        System.out.println("applicantID:"+applicantID);
+//        System.out.println("carID:"+carID);
+//        System.out.println("beginTime:"+beginTime);
+//        System.out.println("endTime:"+endTime);
         List<Income> incomes = IncomeService.searchIncomeItems(applicantID,carID,beginTime,endTime);
         System.out.print(incomes.toString());
         modelMap.addAttribute("incomes",incomes);
