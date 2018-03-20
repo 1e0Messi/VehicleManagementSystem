@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.team4.dao.VehicleMapper">
+
+    <update id="update" parameterType="com.team4.entity.Vehicle">
+        UPDATE vehicleinformation SET carname=#{carname},carID=#{carID},ctype=#{ctype},number=#{number},
+                age=#{age},state=#{state},AIP=#{AIP} WHERE carID=#{carID}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM vehicleinformation WHERE carID=#{carID}
+    </delete>
+
+    <select id="findById" parameterType="String" resultType="com.team4.entity.Vehicle">
+        SELECT carID,carname,ctype,AIP,age,state,number FROM vehicleinformation WHERE carID=#{id}
+    </select>
+
+    <insert id="save" parameterType="com.team4.entity.Vehicle">
+        INSERT INTO vehicleinformation(carID,carname,ctype,number,state,age,AIP)VALUES (#{carID},#{carname},#{ctype},#{number},#{state},#{age},#{AIP})
+    </insert>
+    <select id="findByName" parameterType="String" resultType="com.team4.entity.Vehicle">
+        SELECT carID,carname,ctype,AIP,age,state,number FROM vehicleinformation WHERE carname=#{name}
+    </select>
+</mapper>
