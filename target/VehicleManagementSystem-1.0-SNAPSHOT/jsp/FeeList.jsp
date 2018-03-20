@@ -26,18 +26,18 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="./index.html">X-ADMIN V1.1</a></div>
+    <div class="logo"><a href="#">车辆管理系统 V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a href="">个人信息</a></dd>
-                <dd><a href="">切换帐号</a></dd>
-                <dd><a href="./login.html">退出</a></dd>
+                <dd><a href="/logout">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="/">前台首页</a></li>
+        <li class="layui-nav-item"><a href="#">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
@@ -48,50 +48,53 @@
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
-                    <a href="/Administrator">
+                    <a href="./index.html">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        车辆信息管理
+                        会员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="/Enter">
+                        <li class="current">
+                            <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
-                                车辆信息列表
+                                会员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员删除
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                等级管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                浏览记录
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
-                        <i class="iconfont">&#xe70b;</i>
-                        收入管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/GetAllIncomeItem">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
                                 事故/违章列表
@@ -100,13 +103,13 @@
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
                                 相关费用列表
@@ -114,7 +117,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -123,12 +125,14 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form xbs" action="/findAccident" >
+
+
+            <form class="layui-form xbs" action="/findFee" >
                 <div class="layui-form-pane" style="text-align: center;">
                     <div class="layui-form-item" style="display: inline-block;">
                         <label class="layui-form-label">搜索列表</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="accid"  placeholder="请输入要查询的事故/违章id" autocomplete="off" class="layui-input">
+                            <input type="text" name="feeid"  placeholder="请输入要查询的费用id" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-input-inline">
                             <input type="text" name="carid"  placeholder="请输入要查询的车辆id" autocomplete="off" class="layui-input">
@@ -137,15 +141,16 @@
                             <input type="text" name="type"  placeholder="请输入要查询的类型" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-input-inline">
-                            <input type="text" name="listid"  placeholder="请输入要查询的执法单id" autocomplete="off" class="layui-input">
+                            <input type="text" name="cost"  placeholder="请输入要查询的金额" autocomplete="off" class="layui-input">
                         </div>
                         </br>
                         <div class="layui-input-inline">
-                            <input type="text" name="personid"  placeholder="请输入要查询的车主id" autocomplete="off" class="layui-input">
+                            <input type="text" name="applicantid"  placeholder="请输入要查询的申请人id" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-input-inline">
-                            <input type="text" name="addr"  placeholder="请输入要查询的地点" autocomplete="off" class="layui-input">
+                            <input type="text" name="approverid"  placeholder="请输入要查询的批准人id" autocomplete="off" class="layui-input">
                         </div>
+                        <label class="layui-form-label">起止日期</label>
                         <div class="layui-input-inline">
                             <input type="date" name="beginTime"  placeholder="请输入要查询的起始时间" autocomplete="off" class="layui-input">
                         </div>
@@ -159,15 +164,15 @@
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${fabid.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.fee.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" onclick="selectAllAccident()" name="selectAllAccident">
+                        <input type="checkbox"  onclick="selectAllFee()"name = "selectAllFee">
                     </th>
                     <th>
-                        事故/违章编号
+                        费用编号
                     </th>
                     <th>
                         时间
@@ -179,13 +184,13 @@
                         类型
                     </th>
                     <th>
-                        执法单编号
+                        金额
                     </th>
                     <th>
-                        车主编号
+                        申请人编号
                     </th>
                     <th>
-                        地点
+                        批准人编号
                     </th>
                     <th>
                         备注
@@ -196,41 +201,42 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var = "fabid" items = "${requestScope.fabid}">
+
+                <c:forEach var = "fee" items = "${requestScope.fee}">
                     <tr>
                         <td>
-                            <input type="checkbox" value="${fabid.accid}" name="accidentItem">
+                            <input type="checkbox" value="${fee.feeid}" name="feeItem">
                         </td>
                         <td>
-                                ${fabid.accid}
+                                ${fee.feeid}
                         </td>
                         <td>
-                                ${fabid.time}
+                                ${fee.time}
                         </td>
                         <td >
-                                ${fabid.carid}
+                                ${fee.carid}
                         </td>
                         <td >
-                                ${fabid.type}
+                                ${fee.type}
                         </td>
                         <td >
-                                ${fabid.listid}
+                                ${fee.cost}
                         </td>
                         <td >
-                                ${fabid.personid}
+                                ${fee.applicantid}
                         </td>
                         <td>
-                                ${fabid.addr}
+                                ${fee.approverid}
                         </td>
                         <td>
-                                ${fabid.text}
+                                ${fee.text}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${fabid.accid}&time=${fabid.time}&carid=${fabid.carid}&type=${fabid.type}&listid=${fabid.listid}&personid=${fabid.personid}&addr=${fabid.addr}&text=${fabid.text}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${fee.feeid}&time=${fee.time}&carid=${fee.carid}&type=${fee.type}&cost=${fee.cost}&applicantid=${fee.applicantid}&approverid=${fee.approverid}&text=${fee.text}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'${fabid.accid}')"
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'${fee.feeid}')"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
@@ -247,7 +253,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ?2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
@@ -316,13 +322,13 @@
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
-            var accidentItems = new Array();
-            $("input[name = 'accidentItem']:checkbox:checked").each(function (index,element) {
-                accidentItems[index] = $(element).val();
+            var feeItems = new Array();
+            $("input[name = 'feeItem']:checkbox:checked").each(function (index,element) {
+                feeItems[index] = $(element).val();
             });
-            $.post("/batchDelAccident",{accidentItems:JSON.stringify(accidentItems)},function (data) {
+            $.post("/batchDelFee",{feeItems:JSON.stringify(feeItems)},function (data) {
                 if(data.toString() == "success"){
-                    $("input[name = 'accidentItem']:checkbox:checked").each(function (index,element) {
+                    $("input[name = 'feeItem']:checkbox:checked").each(function (index,element) {
                         $(element).parents("tr").remove();
                     });
                     layer.msg("已删除!");
@@ -339,6 +345,7 @@
     function member_search(title,url){
         x_admin_show(title,url);
     }
+
     /*用户-查看*/
     function member_show(title,url,id,w,h){
         x_admin_show(title,url,w,h);
@@ -377,7 +384,7 @@
     function member_del(obj,id){
         layer.confirm('确认要删除吗？',function(index){
             //发异步删除数据
-            $.post("/DeleteAccident",{accid:id},function (data) {
+            $.post("/DeleteFee",{feeid:id},function (data) {
                 if(data == "1"){
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!',{icon:1,time:1000});
@@ -389,8 +396,8 @@
         });
     }
 
-    function selectAllAccident(){
-        $("input[name = 'accidentItem']:checkbox").prop("checked",$("input[name = 'selectAllAccident']:checkbox").prop("checked"));
+    function selectAllFee(){
+        $("input[name = 'feeItem']:checkbox").prop("checked",$("input[name = 'selectAllFee']:checkbox").prop("checked"));
     }
 </script>
 <script>

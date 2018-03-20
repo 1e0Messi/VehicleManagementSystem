@@ -48,50 +48,53 @@
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
-                    <a href="/Administrator">
+                    <a href="./index.html">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        车辆信息管理
+                        会员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="/Enter">
+                        <li class="current">
+                            <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
-                                车辆信息列表
+                                会员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员删除
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                等级管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                浏览记录
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
-                        <i class="iconfont">&#xe70b;</i>
-                        收入管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/GetAllIncomeItem">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
                                 事故/违章列表
@@ -100,13 +103,13 @@
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
                                 相关费用列表
@@ -114,7 +117,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -123,26 +125,48 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form xbs" action="/findAccidentById" >
+            <form class="layui-form xbs" action="/findAccident" >
                 <div class="layui-form-pane" style="text-align: center;">
                     <div class="layui-form-item" style="display: inline-block;">
-                        <label class="layui-form-label">搜索框</label>
+                        <label class="layui-form-label">搜索列表</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="accid"  placeholder="请输入要查询的事故/违章编号" autocomplete="off" class="layui-input">
+                            <input type="text" name="accid"  placeholder="请输入要查询的事故/违章id" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="carid"  placeholder="请输入要查询的车辆id" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="type"  placeholder="请输入要查询的类型" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="listid"  placeholder="请输入要查询的执法单id" autocomplete="off" class="layui-input">
+                        </div>
+                        </br>
+                        <div class="layui-input-inline">
+                            <input type="text" name="personid"  placeholder="请输入要查询的车主id" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="addr"  placeholder="请输入要查询的地点" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="date" name="beginTime"  placeholder="请输入要查询的起始时间" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="date" name="endTime"  placeholder="请输入要查询的截止时间" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-input-inline" style="width:80px">
-                            <button class="layui-btn"  lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn"   lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
                         </div>
                     </div>
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">数据查找成功</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${fabid.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox"  value="0">
+                        <input type="checkbox" onclick="selectAllAccident()" name="selectAllAccident">
                     </th>
                     <th>
                         事故/违章编号
@@ -174,46 +198,47 @@
                 </tr>
                 </thead>
                 <tbody>
-
+                <c:forEach var = "fabid" items = "${requestScope.fabid}">
                     <tr>
                         <td>
-                            <input type="checkbox" value="${requestScope.fabid.accid}">
+                            <input type="checkbox" value="${fabid.accid}" name="accidentItem">
                         </td>
                         <td>
-                                ${requestScope.fabid.accid}
+                                ${fabid.accid}
                         </td>
                         <td>
-                                ${requestScope.fabid.time}
+                                ${fabid.time}
                         </td>
                         <td >
-                                ${requestScope.fabid.carid}
+                                ${fabid.carid}
                         </td>
                         <td >
-                                ${requestScope.fabid.type}
+                                ${fabid.type}
                         </td>
                         <td >
-                                ${requestScope.fabid.listid}
+                                ${fabid.listid}
                         </td>
                         <td >
-                                ${requestScope.fabid.personid}
+                                ${fabid.personid}
                         </td>
                         <td>
-                                ${requestScope.fabid.addr}
+                                ${fabid.addr}
                         </td>
                         <td>
-                                ${requestScope.fabid.text}
+                                ${fabid.text}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${requestScope.fabid.accid}&time=${requestScope.fabid.time}&carid=${requestScope.fabid.carid}&type=${requestScope.fabid.type}&listid=${requestScope.fabid.listid}&personid=${requestScope.fabid.personid}&addr=${requestScope.fabid.addr}&text=${requestScope.fabid.text}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${fabid.accid}&time=${fabid.time}&carid=${fabid.carid}&type=${fabid.type}&listid=${fabid.listid}&personid=${fabid.personid}&addr=${fabid.addr}&text=${fabid.text}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'${requestScope.fabid.accid}')"
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'${fabid.accid}')"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
                         </td>
                     </tr>
+                </c:forEach>
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
@@ -224,7 +249,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ?2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
@@ -365,6 +390,10 @@
 
         });
     }
+
+    function selectAllAccident(){
+        $("input[name = 'accidentItem']:checkbox").prop("checked",$("input[name = 'selectAllAccident']:checkbox").prop("checked"));
+    }
 </script>
 <script>
     //百度统计可去掉
@@ -375,6 +404,30 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('beginTime').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
+
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('endTime').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
 </script>
 </body>
 </html>

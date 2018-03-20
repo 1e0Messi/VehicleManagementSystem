@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>车辆管理系统</title>
+    <title>后台登录-X-admin1.1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" / -->
     <link rel="stylesheet" href="../static/css/font.css">
@@ -38,7 +38,7 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list">
+                <li class="list" current>
                     <a href="/Administrator">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
@@ -60,13 +60,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list" current>
-                    <a href="javascript:;" name="switch" class="open">
+                <li class="list">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         收入管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
+                    <ul class="sub-menu">
                         <li>
                             <a href="/GetAllIncomeItem">
                                 <i class="iconfont">&#xe6a7;</i>
