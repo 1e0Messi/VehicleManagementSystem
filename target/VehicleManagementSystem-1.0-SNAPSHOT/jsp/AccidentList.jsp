@@ -48,50 +48,53 @@
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
-                    <a href="/Administrator">
+                    <a href="./index.html">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        车辆信息管理
+                        会员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="/Enter">
+                        <li class="current">
+                            <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
-                                车辆信息列表
+                                会员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                会员删除
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                等级管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe6a7;</i>
+                                浏览记录
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
-                        <i class="iconfont">&#xe70b;</i>
-                        收入管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/GetAllIncomeItem">
-                                <i class="iconfont">&#xe6a7;</i>
-                                收入列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
                                 事故/违章列表
@@ -100,13 +103,13 @@
                     </ul>
                 </li>
                 <li class="list">
-                    <a href="javascript:;" name="switch">
+                    <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
                         相关费用管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="current">
                             <a href="/AllFee">
                                 <i class="iconfont">&#xe6a7;</i>
                                 相关费用列表
@@ -114,7 +117,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -251,7 +253,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ?2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
