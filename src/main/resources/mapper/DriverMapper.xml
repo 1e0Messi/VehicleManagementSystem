@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.team4.dao.DriverMapper">
+
+    <insert id="insertDriverInfo" parameterType="com.team4.entity.Driver">
+        insert into driver values (#{staff_ID},#{staff_name},#{gender},#{nationality},#{birth},
+        #{political_party},#{family_place},#{ID_card},#{badgeID},#{home_phone},#{post_code},#{indate});
+    </insert>
+
+
+    <select id="searchalldriverinfo" resultType="com.team4.entity.Driver">
+        SELECT  * from driver;
+    </select>
+
+    <select id="selectdriverbystaffid" parameterType="String" resultType="com.team4.entity.Driver">
+        SELECT  * FROM driver WHERE staff_ID = #{staff_ID};
+    </select>
+
+    <update id="updatedriverbystaff_ID" parameterType="com.team4.entity.Driver">
+        UPDATE driver SET staff_name=#{staff_name},gender=#{gender},nationality=#{nationality},birth=#{birth},
+        political_party=#{political_party},family_place=#{family_place},ID_card=#{ID_card},badgeID=#{badgeID},
+        home_phone=#{home_phone},post_code=#{post_code},indate=#{indate} WHERE staff_ID=#{staff_ID};
+    </update>
+
+    <delete id="delalldriver" parameterType="String">
+        DELETE FROM driver WHERE staff_ID = #{ID};
+    </delete>
+
+    <delete id="deldriver" parameterType="String">
+        DELETE FROM driver WHERE staff_ID = #{staff_ID}
+    </delete>
+
+    <select id="selectdriverbyIDcard" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE ID_card = #{ID_card};
+    </select>
+
+    <select id="selectdriverbyIDcardandname" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE ID_card = #{ID_card} AND staff_name = #{staff_name};
+    </select>
+    
+    <select id="selectdriverbyIDcardandnameandID" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE ID_card = #{ID_card} AND staff_name = #{staff_name} AND staff_ID=#{staff_ID};
+    </select>
+    
+    <select id="selectdriverbyname" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE staff_name=#{staff_name};
+    </select>
+    
+    <select id="selectdriverbyID" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE staff_ID=#{staff_ID};
+    </select>
+    
+    <select id="selectdriverbyIDandIDcard" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE staff_ID=#{staff_ID} AND ID_card=#{ID_card};
+    </select>
+    
+    <select id="selectdriverbyIDandname" parameterType="com.team4.entity.Driver" resultType="com.team4.entity.Driver">
+        select * from driver WHERE staff_ID=#{staff_ID} AND staff_name=#{staff_name};
+    </select>
+</mapper>

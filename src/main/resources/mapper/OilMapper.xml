@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.team4.dao.OilMapper">
+
+<select id="viewalloilcard" resultType="com.team4.entity.Oilcard">
+    SELECT * FROM oilcard;
+</select>
+
+    <select id="findoilcardbycarid" parameterType="String" resultType="com.team4.entity.Oilcard">
+        SELECT * FROM oilcard WHERE carid = #{carid};
+    </select>
+
+    <select id="findoilcardbyoilcardid" parameterType="String" resultType="com.team4.entity.Oilcard">
+        SELECT * FROM oilcard WHERE oilcardid=#{oilcardid};
+    </select>
+
+    <delete id="delalloilcard" parameterType="String">
+        DELETE FROM oilcard where oilcardid = #{id};
+    </delete>
+
+    <update id="updateoilcardbyoilcardid" parameterType="com.team4.entity.Oilcard">
+        UPDATE oilcard SET balance = #{balance},hierarchy=#{hierarchy},carid=#{carid} WHERE oilcardid=#{oilcardid};
+    </update>
+
+    <delete id="deloilcard" parameterType="String">
+        DELETE FROM oilcard WHERE oilcardid = #{oilcardid};
+    </delete>
+
+    <insert id="addoilcard" parameterType="com.team4.entity.Oilcard">
+        insert into oilcard values (#{oilcardid},#{balance},#{hierarchy},#{carid});
+    </insert>
+
+    <select id="selectoilcardbyoilcardid" parameterType="String" resultType="com.team4.entity.Oilcard">
+        select * FROM oilcard where oilcardid=#{oilcardid};
+    </select>
+    <select id="selectoilcardbyoilcardidandcarid" parameterType="com.team4.entity.Oilcard" resultType="com.team4.entity.Oilcard">
+        select * FROM oilcard where oilcardid=#{oilcardid} AND carid = #{carid};
+    </select>
+
+    <delete id="delalldriver" parameterType="int">
+        DELETE FROM driver WHERE staff_ID=#{ID};
+    </delete>
+
+
+</mapper>
