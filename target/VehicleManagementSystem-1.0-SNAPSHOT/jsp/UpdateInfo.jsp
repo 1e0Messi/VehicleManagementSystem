@@ -29,7 +29,7 @@
                         <span class="x-red">*</span>编号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_carID" name="carID" required="" lay-verify="required"
+                        <input type="text" id="L_carID" name="carID" lay-verify="required"
                                autocomplete="off" class="layui-input" value="${requestScope.vehicle.carID}" readonly="readonly">
                     </div>
                 </div>
@@ -38,8 +38,8 @@
                         <span class="x-red">*</span>车名
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_carname" name="carname" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" id="L_carname" name="carname" lay-verify="required"
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.carname}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -47,8 +47,8 @@
                         <span class="x-red">*</span>车型
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_ctype" name="ctype" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" id="L_ctype" name="ctype" lay-verify="required"
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.ctype}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -56,8 +56,8 @@
                         <span class="x-red">*</span>车龄
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_age" name="age" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" id="L_age" name="age" lay-verify="required"
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.age}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -65,8 +65,8 @@
                         <span class="x-red">*</span>车牌号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_number" name="number" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" id="L_number" name="number" lay-verify="required"
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.number}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -75,7 +75,7 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_AIP" name="AIP" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.AIP}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -84,18 +84,17 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_state" name="state" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                               autocomplete="off" class="layui-input" value="${requestScope.vehicle.state}">
                     </div>
-                    <div class="layui-form-item">
-                        <label for="L_number" class="layui-form-label">
-                        </label>
-                        <div class="layui-btn" onclick="sub()">
-                            确定
-                        </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_number" class="layui-form-label">
+                    </label>
+                    <div class="layui-btn" onclick="sub()">
+                        确定
                     </div>
                 </div>
             </form>
-
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>

@@ -16,7 +16,7 @@
         update Accident set time=#{time},carid=#{carid},type=#{type},listid=#{listid},personid=#{personid},addr=#{addr},text=#{text} where accid=#{accid}
     </update>
 
-    <select id="findAccident" parameterType="string" resultType="com.team4.entity.Accident">
+    <select id="findAccident" parameterType="String" resultType="com.team4.entity.Accident">
         select * from Accident
         <where>
             <if test="accid != ''">

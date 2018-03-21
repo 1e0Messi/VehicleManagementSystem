@@ -1,5 +1,4 @@
 package com.team4.controller;
-import com.team4.entity.Vehicle;
 import org.json.JSONArray;
 import com.team4.entity.Refuel;
 import com.team4.service.RefuelService;
@@ -41,7 +40,6 @@ public class RefuelController {
     @RequestMapping("/batchDelete")
     @ResponseBody
     public String batchDelete(String TempItems) {
-
         JSONArray jsonArray = new JSONArray(TempItems);
         String[] TempItemsId = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -87,8 +85,13 @@ public String update(Model model,String id){
         return "success";
     }
     @RequestMapping("/AddRefuel")
-            public String AddRefuel(Model m){
-        String id =Integer.toString (Integer.valueOf( refuelService.FindAll().get(refuelService.FindAll().size()-1).getId())+1);
+    public String AddRefuel(Model m){
+        List<Refuel> refuels = refuelService.FindAll();
+        String id;
+        if(refuels.size() == 0)
+            id = "0";
+        else
+            id=Integer.toString (Integer.valueOf(refuels.get(refuels.size() - 1).getId())+1);
 
         m.addAttribute("id",id);
         return "addRefuel";

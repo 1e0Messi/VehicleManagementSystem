@@ -23,8 +23,7 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     public Vehicle findById(String id) {
-        Vehicle vehicle=vehicleMapper.findById(id);
-        return vehicle;
+        return vehicleMapper.findById(id);
     }
     public List<Vehicle> findByName(String name) {
         List<Vehicle> vehicle=vehicleMapper.findByName(name);

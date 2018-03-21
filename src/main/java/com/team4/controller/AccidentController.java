@@ -22,10 +22,10 @@ public class AccidentController {
     @Autowired
     private AccidentService accidentService;
 
-    @RequestMapping("/testSpringMVC")
+    /*@RequestMapping("/testSpringMVC")
     public String testSpringMVC(){
         return "testSpringMVC";
-    }
+    }*/
 
 
     @RequestMapping("/AllAccident")
@@ -101,11 +101,7 @@ public class AccidentController {
         mav.setViewName("findAccident");
         return mav;
     }
-
-/*
-此处代码的用途
- */
-    @RequestMapping("/findAllAccident")
+    /*@RequestMapping("/findAllAccident")
     public ModelAndView findAllAccident() {
 
         ModelAndView mav = new ModelAndView();
@@ -113,7 +109,7 @@ public class AccidentController {
         mav.addObject("fa", fa);
         mav.setViewName("findAllAccident");
         return mav;
-    }
+    }*/
 
 
 }

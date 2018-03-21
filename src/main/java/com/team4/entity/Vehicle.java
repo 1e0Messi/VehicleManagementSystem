@@ -1,5 +1,4 @@
 package com.team4.entity;
-import java.util.Date;
 
 public class Vehicle{
     private String carID;

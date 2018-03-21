@@ -1,22 +1,16 @@
 package com.team4.controller;
 
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import com.team4.entity.Vehicle;
 import com.team4.service.VehicleService;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
-
-import static javafx.scene.input.KeyCode.J;
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * Created by 缑元彪 on 2018/3/10.
@@ -46,11 +40,11 @@ public class VehicleController {
         return "Vehicle";
     }
 
-    @RequestMapping("/AddVehicle")
+  /*  @RequestMapping("/AddVehicle")
     public String AddVehicle(){
         //VehicleService.save(vehicle);
         return "addCar";
-    }
+    }*/
 //    @RequestMapping("/UpdateInfo")
 //    public String UpdateInfo(Model model){
 //        List<Vehicle> vehicle=vehicleService.FindAll();
@@ -59,14 +53,15 @@ public class VehicleController {
 //    }
     @RequestMapping("/Update")
     public String update(Model model,String id){
-//        System.out.println(""+id);
+        //System.out.println("id:"+id);
         model.addAttribute("vehicle",vehicleService.findById(id));
         return "UpdateInfo";
     }
     @RequestMapping("/UpdateResult")
+    @ResponseBody
     public String Update(Vehicle vehicle){
        vehicleService.update(vehicle);
-       return "Vehicle";
+       return "";
     }
     @RequestMapping("/findById")
     public String findById(String id,String name,Model model){
@@ -86,6 +81,7 @@ public class VehicleController {
         model.addAttribute("vehicle",vehicle);
         return "Search";
     }
+
 //    @RequestMapping("/findByName")
 //    public String findByNmae(String name, Model model){
 ////        System.out.println(id);
@@ -93,6 +89,7 @@ public class VehicleController {
 //        model.addAttribute("vehicle",vehicleService.findByName(name));
 //        return "Search";
 //    }
+
     @RequestMapping("/Delete")
     public String Delete(String id,Model model) {
 //        System.out.println("id:" + id);
@@ -119,6 +116,8 @@ public class VehicleController {
     public String back(){
         return "Vehicle";
     }
+
+
 //    @RequestMapping("DeleteData")
 //    public String DeleteData(int id) {
 //        if (vehicleService.delete(id)) {

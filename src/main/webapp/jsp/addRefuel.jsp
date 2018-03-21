@@ -68,21 +68,34 @@
                         <span class="x-red">*</span>时间
                     </label>
                     <div class="layui-input-inline">
-                        <input type="date" id="L_time" name="time" required="" lay-verify="required"
+                        <input type="text" id="L_time" name="time" required="" lay-verify="required"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                        <div class="layui-btn" onclick="sub()">
-                            确定
-                        </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                    </label>
+                    <div class="layui-btn" onclick="sub()">
+                        确定
+                    </div>
+                </div>
             </form>
-
-            <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
     <!-- 右侧主体结束 -->
 </div>
 <script>
+    layui.use(['laydate'], function(){
+        laydate = layui.laydate;//日期插件
+        var options = {
+            min: '2000-01-01 00:00:00'
+            ,max: '2099-12-31 23:59:59'
+        };
+        document.getElementById('time').onclick = function(){
+            options.elem = this;
+            laydate(options);
+        }
+    });
     function sub(){
         $.ajax({
             method:"POST",

@@ -117,8 +117,8 @@ public class IncomeController {
         return "editIncomeItem";
     }
 
-    @RequestMapping("/jumpTest")
+    /*@RequestMapping("/jumpTest")
     public String jumpTest(){
-        return "/member-list";
-    }
+        return "member-list";
+    }*/
 }

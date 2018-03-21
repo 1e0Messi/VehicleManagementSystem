@@ -87,7 +87,7 @@ public class FeeController {
     }
 
 
-    @RequestMapping("/findAllFee")
+    /*@RequestMapping("/findAllFee")
     public ModelAndView findAllFee() {
 
         ModelAndView mav = new ModelAndView();
@@ -95,7 +95,5 @@ public class FeeController {
         mav.addObject("ff", ff);
         mav.setViewName("findAllFee");
         return mav;
-    }
-
-
+    }*/
 }

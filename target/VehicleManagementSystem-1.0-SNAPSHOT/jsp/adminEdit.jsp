@@ -71,6 +71,8 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label class="layui-form-label">
+                    </label>
                     <div class="layui-btn" onclick="subAdminEdit()">
                         保存
                     </div>

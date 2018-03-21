@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','500','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicles.size()}条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','550','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicles.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -158,9 +158,6 @@
                         年检期限
                     </th>
                     <td>
-                        状态
-                    </td>
-                    <td>
                         操作
                     </td>
                 </tr>
@@ -190,18 +187,15 @@
                                 ${Temp.age}
                         </td>
                         <td >
-                                ${Temp.state}
+                            <span class="layui-btn layui-btn-normal layui-btn-mini">
+                                    ${Temp.state}
+                            </span>
                         </td>
                         <td>
                                 ${Temp.AIP}
                         </td>
-                        <td class="td-status">
-                            <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                已启用
-                            </span>
-                        </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','500','520')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=${Temp.carID}','4','500','520')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
@@ -274,38 +268,10 @@
     function member_add(carID,carname,number,ctype,age,state,AIP){
         x_admin_show(carID,carname,number,ctype,age,state,AIP);
     }
-    /*用户-查看*/
-    function member_show(title,url,id,w,h){
-        x_admin_show(title,url,w,h);
-    }
 
-    /*用户-停用*/
-    function member_stop(obj,id){
-        layer.confirm('确认要停用吗？',function(index){
-            //发异步把用户状态进行更改
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="layui-icon">&#xe62f;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-disabled layui-btn-mini">已停用</span>');
-            $(obj).remove();
-            layer.msg('已停用!',{icon: 5,time:1000});
-        });
-    }
 
-    /*用户-启用*/
-    function member_start(obj,id){
-        layer.confirm('确认要启用吗？',function(index){
-            //发异步把用户状态进行更改
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
-            $(obj).remove();
-            layer.msg('已启用!',{icon: 6,time:1000});
-        });
-    }
     // 用户-编辑
     function member_edit (title,url,id,w,h) {
-        x_admin_show(title,url,w,h);
-    }
-    /*密码-修改*/
-    function member_password(title,url,id,w,h){
         x_admin_show(title,url,w,h);
     }
     // function member_search() {
