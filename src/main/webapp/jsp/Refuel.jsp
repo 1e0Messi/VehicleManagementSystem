@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>车辆管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="../static/css/font.css">
 <link rel="stylesheet" href="../static/css/xadmin.css">
 <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -200,12 +200,12 @@
                             <input type="text" name="oilcardid" placeholder="请输入油卡号" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-input-inline" style="width:80px">
-                            <input class="layui-btn" type="submit"></input>
+                            <input class="layui-btn" type="submit"/>
                         </div>
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/AddRefuel','480','430')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.refuels.size()}条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/AddRefuel','','530','450')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.refuels.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>

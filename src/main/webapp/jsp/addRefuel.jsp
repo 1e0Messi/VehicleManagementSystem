@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -91,7 +91,7 @@
             min: '2000-01-01 00:00:00'
             ,max: '2099-12-31 23:59:59'
         };
-        document.getElementById('time').onclick = function(){
+        document.getElementById('L_time').onclick = function(){
             options.elem = this;
             laydate(options);
         }

@@ -15,12 +15,10 @@
             <mvc:mapping path="/*"/>
             <mvc:exclude-mapping path="/index.html"/>
             <mvc:exclude-mapping path="/loginVerification"/>
+            <mvc:exclude-mapping path="/favicon.ico"/>
             <bean class="com.team4.controller.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
-    <mvc:resources mapping="favicon.ico" location="favicon.ico"/>
-
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/jsp/"/>
         <property name="suffix" value=".jsp"/>
