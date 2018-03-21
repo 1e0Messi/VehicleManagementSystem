@@ -35,7 +35,7 @@
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -240,7 +240,7 @@
                 </div>
             </form>
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加驾驶员','/jsp/adddriver.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px" id="recording">共有记录：${requestScope.driver.size()}条</span></xblock>
+                <button class="layui-btn" onclick="member_add('添加驾驶员','/jsp/adddriver.jsp','500','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px" id="recording">共有记录：${requestScope.driver.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -331,7 +331,7 @@
                                 ${T.indate}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/updatedriver?staff_ID=${T.staff_ID}','4','','510')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/updatedriver?staff_ID=${T.staff_ID}','4','500','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>

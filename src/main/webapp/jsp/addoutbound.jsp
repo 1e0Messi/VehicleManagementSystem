@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="GB18030"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>≥µ¡æπ‹¿ÌœµÕ≥</title>
+    <title>ËΩ¶ËæÜÁÆ°ÁêÜÁ≥ªÁªü</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
@@ -16,16 +16,16 @@
 
 </head>
 <body>
-<!-- ÷–≤øø™ º -->
+<!-- ‰∏≠ÈÉ®ÂºÄÂßã -->
 <div class="wrapper">
-    <!-- ”“≤‡÷˜ÃÂø™ º -->
+    <!-- Âè≥‰æß‰∏ª‰ΩìÂºÄÂßã -->
     <div class="page-content">
         <div class="content">
-            <!-- ”“≤‡ƒ⁄»›øÚº‹£¨∏¸∏ƒ¥”’‚¿Ôø™ º -->
+            <!-- Âè≥‰æßÂÜÖÂÆπÊ°ÜÊû∂ÔºåÊõ¥Êîπ‰ªéËøôÈáåÂºÄÂßã -->
             <form class="layui-form" action="" method="post" id="outbound">
                 <div class="layui-form-item">
                     <label for="L_time" class="layui-form-label">
-                        <span class="x-red">*</span>»’∆⁄
+                        <span class="x-red">*</span>Êó•Êúü
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_time" name="time" required="" lay-verify="required"
@@ -34,7 +34,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_staff_ID" class="layui-form-label">
-                        <span class="x-red">*</span>º› ª‘±ID
+                        <span class="x-red">*</span>È©æÈ©∂ÂëòID
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_staff_ID" name="staff_ID" required="" lay-verify="required"
@@ -43,7 +43,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_state" class="layui-form-label">
-                        <span class="x-red">*</span>◊¥Ã¨
+                        <span class="x-red">*</span>Áä∂ÊÄÅ
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_state" name="state" required="" lay-verify="required"
@@ -52,7 +52,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_carid" class="layui-form-label">
-                        <span class="x-red">*</span>≥µ¡æID
+                        <span class="x-red">*</span>ËΩ¶ËæÜID
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_carid" name="carid" required="" lay-verify="required"
@@ -61,7 +61,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_outboundkmiles" class="layui-form-label">
-                        <span class="x-red">*</span>≥ˆ≥µ ±¿Ô≥Ã
+                        <span class="x-red">*</span>Âá∫ËΩ¶Êó∂ÈáåÁ®ã
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_outboundkmiles" name="outboundkmiles" required="" lay-verify="required"
@@ -70,7 +70,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_inboundkmiles" class="layui-form-label">
-                        <span class="x-red">*</span>ªÿ≥µ ±¿Ô≥Ã
+                        <span class="x-red">*</span>ÂõûËΩ¶Êó∂ÈáåÁ®ã
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="L_inboundkmiles" name="inboundkmiles" required="" lay-verify="required"
@@ -78,19 +78,19 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-
-
+                    <label class="layui-form-label">
+                    </label>
                     <div  class="layui-btn" onclick="sub()">
-                        »∑»œ≤¢ÃÌº”
+                        Á°ÆËÆ§Âπ∂Ê∑ªÂä†
                     </div>
                 </div>
             </form>
-            <!-- ”“≤‡ƒ⁄»›øÚº‹£¨∏¸∏ƒ¥”’‚¿ÔΩ· ¯ -->
+            <!-- Âè≥‰æßÂÜÖÂÆπÊ°ÜÊû∂ÔºåÊõ¥Êîπ‰ªéËøôÈáåÁªìÊùü -->
         </div>
     </div>
-    <!-- ”“≤‡÷˜ÃÂΩ· ¯ -->
+    <!-- Âè≥‰æß‰∏ª‰ΩìÁªìÊùü -->
 </div>
-<!-- ÷–≤øΩ· ¯ -->
+<!-- ‰∏≠ÈÉ®ÁªìÊùü -->
 <script>
     function sub(){
         $.ajax({
@@ -98,11 +98,11 @@
             url:"/addoutbound",
             data:$("#outbound").serializeArray(),
             success:function(){
-                layer.msg('ÃÌº”≥…π¶!',{icon:1,time:1000});
+                layer.msg('Ê∑ªÂä†ÊàêÂäü!',{icon:1,time:1000});
                 setTimeout("closePage()",1500);
             },
             error:function(){
-                layer.msg('ÃÌº” ß∞‹!',{icon:1,time:1000});
+                layer.msg('Ê∑ªÂä†Â§±Ë¥•!',{icon:1,time:1000});
             }
         });
     }
@@ -112,7 +112,7 @@
     }
 
     layui.use(['laydate'], function(){
-        laydate = layui.laydate;//»’∆⁄≤Âº˛
+        laydate = layui.laydate;//Êó•ÊúüÊèí‰ª∂
         var options = {
             min: '2000-01-01 00:00:00'
             ,max: '2099-12-31 23:59:59'

@@ -235,7 +235,7 @@
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','450','650')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.accident.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','450','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.accident.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -303,7 +303,7 @@
                                 ${accident.text}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${accident.accid}&time=${accident.time}&carid=${accident.carid}&type=${accident.type}&listid=${accident.listid}&personid=${accident.personid}&addr=${accident.addr}&text=${accident.text}','4','450','650')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${accident.accid}&time=${accident.time}&carid=${accident.carid}&type=${accident.type}&listid=${accident.listid}&personid=${accident.personid}&addr=${accident.addr}&text=${accident.text}','4','450','600')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>

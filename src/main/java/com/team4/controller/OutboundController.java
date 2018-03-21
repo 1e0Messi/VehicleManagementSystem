@@ -87,11 +87,11 @@ public class OutboundController {
     @RequestMapping("/viewalloutbound")
     public ModelAndView viewalloutbound(ModelAndView mv){
 
-        List<Outbound> outbound = outboundService.searchalloutboundinfo();
+        List<Outbound> outbounds = outboundService.searchalloutboundinfo();
+        JSONArray jsonArray = new JSONArray(outbounds);
 
-        mv.addObject("alloutbound",outbound);
+        mv.addObject("alloutbound",jsonArray);
         mv.setViewName("alloutbound");
-        //System.out.println(mv);
         return mv;
     }
 

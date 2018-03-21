@@ -67,6 +67,8 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label class="layui-form-label">
+                    </label>
                     <div  class="layui-btn" onclick="sub()">
                         确认并添加
                     </div>
