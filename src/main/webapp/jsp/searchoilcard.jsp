@@ -67,8 +67,8 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list" current>
-                    <a href="#">
+                <li class="list">
+                    <a href="/Administrator">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
@@ -134,6 +134,21 @@
                         </li>
                     </ul>
                 </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        加油管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Refuel">
+                                <i class="iconfont">&#xe6a7;</i>
+                                加油列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="list" current>
                     <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe70b;</i>
@@ -155,7 +170,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list" >
+                <li class="list">
                     <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe6a3;</i>
                         驾驶员管理
@@ -182,7 +197,7 @@
                         出车管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu" style="display:none">
+                    <ul class="sub-menu">
                         <li>
                             <a href="./viewalloutbound">
                                 <i class="iconfont">&#xe6a7;</i>

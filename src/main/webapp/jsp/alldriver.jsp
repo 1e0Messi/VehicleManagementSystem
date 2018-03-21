@@ -1,19 +1,41 @@
 <%--
   Created by IntelliJ IDEA.
-  User: cjy
-  Date: 2018/3/16
-  Time: 14:08
+  User: Administrator
+  Date: 2018/3/14 0014
+  Time: 20:06
   To change this template use File | Settings | File Templates.
 --%>
+<%--
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <title>按编号查找驾驶员</title>
+</head>
+<body>
 
-<!doctype html> <html lang="en">
+<table>
+<c:forEach   items="${requestScope.alloilcard}" var="T">
+    <tr>
+        <td>${T.oilcardid}</td>
+        <td>${T.carid}</td>
+        <td>${T.hierarchy}</td>
+        <td>${T.balance}</td>
+    </tr>
+</c:forEach>
+</table>
+</body>
+</html>
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -82,13 +104,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list" current>
-                    <a href="javascript:;" name="switch" class="open">
+                <li class="list">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         事故/违章管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
+                    <ul class="sub-menu">
                         <li>
                             <a href="/AllAccident">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -148,13 +170,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe6a3;</i>
                         驾驶员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu opened">
                         <li>
                             <a href="/viewalldriver">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -175,7 +197,7 @@
                         出车管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu" style="display:none">
                         <li>
                             <a href="./viewalloutbound">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -198,73 +220,49 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form xbs" action="/findAccident" >
-                <div class="layui-form-pane" style="text-align: center;">
-                    <div class="layui-form-item" style="display: inline-block;">
-                        <label class="layui-form-label">搜索列表</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="accid"  placeholder="请输入要查询的事故/违章id" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="carid"  placeholder="请输入要查询的车辆id" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="type"  placeholder="请输入要查询的类型" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="listid"  placeholder="请输入要查询的执法单id" autocomplete="off" class="layui-input">
-                        </div>
-                        </br>
-                        <div class="layui-input-inline">
-                            <input type="text" name="personid"  placeholder="请输入要查询的车主id" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="addr"  placeholder="请输入要查询的地点" autocomplete="off" class="layui-input">
-                        </div>
-                        <label class="layui-form-label">起止日期</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="beginTime" id="beginTime"  placeholder="请输入要查询的起始时间" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="endTime" id="endTime" placeholder="请输入要查询的截止时间" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline" style="width:80px">
-                            <button class="layui-btn"   lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/AddAccident','450','650')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.accident.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
+                <button class="layui-btn" onclick="member_add('添加驾驶员','/jsp/adddriver.jsp','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.driver.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" onclick="selectAllAccident()" name="selectAllAccident">
+                        <input type="checkbox" name="selectallbutton" value="selectallbuton" onclick="selectAllbutton()">
                     </th>
                     <th>
-                        事故/违章编号
+                        驾驶员ID
                     </th>
                     <th>
-                        时间
+                        姓名
                     </th>
                     <th>
-                        车辆编号
+                        性别
                     </th>
                     <th>
-                        类型
+                        籍贯
                     </th>
                     <th>
-                        执法单编号
+                        出生日期
                     </th>
                     <th>
-                        车主编号
+                        政治面貌
                     </th>
                     <th>
-                        地点
+                        住址
                     </th>
                     <th>
-                        备注
+                        身份证
+                    </th>
+                    <th>
+                        驾照类型
+                    </th>
+                    <th>
+                        联系电话
+                    </th>
+                    <th>
+                        e-mail
+                    </th>
+                    <th>
+                        工龄
                     </th>
                     <th>
                         操作
@@ -272,48 +270,60 @@
                 </tr>
                 </thead>
                 <tbody>
-
-                <c:forEach var = "accident" items = "${requestScope.accident}">
+                <c:forEach items="${requestScope.driver}" var="T">
                     <tr>
                         <td>
-                            <input type="checkbox" value="${accident.accid}" name="accidentItem">
+                            <input type="checkbox" value="${T.staff_ID}" name="simplebutton">
                         </td>
                         <td>
-                                ${accident.accid}
+                                ${T.staff_ID}
                         </td>
                         <td>
-                                ${accident.time}
-                        </td>
-                        <td >
-                                ${accident.carid}
-                        </td>
-                        <td >
-                                ${accident.type}
-                        </td>
-                        <td >
-                                ${accident.listid}
-                        </td>
-                        <td >
-                                ${accident.personid}
+                                ${T.staff_name}
                         </td>
                         <td>
-                                ${accident.addr}
+                                ${T.gender}
                         </td>
                         <td>
-                                ${accident.text}
+                                ${T.nationality}
+                        </td>
+                        <td >
+                                ${T.birth}
+                        </td>
+                        <td >
+                                ${T.political_party}
+                        </td>
+                        <td >
+                                ${T.family_place}
+                        </td>
+                        <td >
+                                ${T.ID_card}
+                        </td>
+                        <td >
+                                ${T.badgeID}
+                        </td>
+                        <td >
+                                ${T.home_phone}
+                        </td>
+                        <td >
+                                ${T.post_code}
+                        </td>
+                        <td >
+                                ${T.indate}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateAccidentInput?accid=${accident.accid}&time=${accident.time}&carid=${accident.carid}&type=${accident.type}&listid=${accident.listid}&personid=${accident.personid}&addr=${accident.addr}&text=${accident.text}','4','450','650')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/updatedriver?staff_ID=${T.staff_ID}','4','','510')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'${accident.accid}')"
+                            <a title="删除" onclick="if(confirm('是否删除？')) {location.href='/deldriver?staff_ID=${T.staff_ID}'}"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
                         </td>
                     </tr>
                 </c:forEach>
+
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
@@ -324,7 +334,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ?2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
@@ -350,23 +360,27 @@
 </div>
 <!-- 背景切换结束 -->
 <!-- 页面动态效果 -->
+</body>
 <script>
+
+
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
-            var accidentItems = new Array();
-            $("input[name = 'accidentItem']:checkbox:checked").each(function (index,element) {
-                accidentItems[index] = $(element).val();
+            var simplebuttons = new Array();
+            $("input[name='simplebutton']:checkbox:checked").each(function (index,element){
+                simplebuttons[index] = $(element).val();
             });
-            $.post("/batchDelAccident",{accidentItems:JSON.stringify(accidentItems)},function (data) {
-                if(data.toString() == "success"){
-                    $("input[name = 'accidentItem']:checkbox:checked").each(function (index,element) {
+            $.post("/delalldriver",{simplebuttons:JSON.stringify(simplebuttons)},function(data){
+                if (data.toString()=="success"){
+                    $("input[name='simplebutton']:checkbox:checked").each(function(index,element){
                         $(element).parents("tr").remove();
                     });
-                    layer.msg("已删除!");
+                    layer.msg("已删除");
                 }else
-                    layer.msg("删除失败!");
-            });
+                    layer.msg("删除失败");
+            })
+
         });
     }
     /*用户-添加*/
@@ -374,61 +388,26 @@
         x_admin_show(title,url,w,h);
     }
 
-
     // 用户-编辑
     function member_edit (title,url,id,w,h) {
         x_admin_show(title,url,w,h);
     }
     /*用户-删除*/
-    function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
-            //发异步删除数据
-            $.post("/DeleteAccident",{accid:id},function (data) {
-                if(data == "1"){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!',{icon:1,time:1000});
-                }else {
-                    layer.msg('删除失败!',{icon:1,time:1000});
-                }
-            });
-
-        });
-    }
-    function selectAllAccident(){
-        $("input[name = 'accidentItem']:checkbox").prop("checked",$("input[name = 'selectAllAccident']:checkbox").prop("checked"));
-    }
+    //    function member_del(obj,id){
+    //        layer.confirm('确认要删除吗？',function(index){
+    //            //发异步删除数据
+    //            $(obj).parents("tr").remove();
+    //            layer.msg('已删除!',{icon:1,time:1000});
+    //        });
+    //    }
 </script>
 <script>
-    layui.use(['laydate'], function(){
-        laydate = layui.laydate;//日期插件
 
-        var start = {
-            min: '2000-01-01 00:00:00'
-            ,max: '2099-12-31 23:59:59'
-            ,istoday: false
-            ,choose: function(datas){
-                end.min = datas; //开始日选好后，重置结束日的最小日期
-            }
-        };
-        var end = {
-            min: '2000-01-01 00:00:00'
-            ,max: '2099-12-31 23:59:59'
-            ,istoday: false
-            ,choose: function(datas){
-                start.max = datas; //结束日选好后，重置开始日的最大日期
-            }
-        };
+    function selectAllbutton(){
+        $("input[name = 'simplebutton']:checkbox").prop("checked",$("input[name = 'selectallbutton']:checkbox").prop("checked"));
+    }
 
-        document.getElementById('beginTime').onclick = function(){
-            start.elem = this;
-            laydate(start);
-        }
-        document.getElementById('endTime').onclick = function(){
-            end.elem = this
-            laydate(end);
-        }
 
-    });
 </script>
-</body>
+
 </html>

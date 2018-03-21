@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>后台登录-X-admin1.1</title>
+    <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
@@ -67,8 +67,6 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-
-
                     <div  class="layui-btn" onclick="sub()">
                         确认并添加
                     </div>

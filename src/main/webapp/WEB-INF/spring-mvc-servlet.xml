@@ -19,6 +19,8 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+    <mvc:resources mapping="favicon.ico" location="favicon.ico"/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/jsp/"/>
         <property name="suffix" value=".jsp"/>

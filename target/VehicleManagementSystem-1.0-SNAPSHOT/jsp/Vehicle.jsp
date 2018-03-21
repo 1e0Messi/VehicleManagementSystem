@@ -102,7 +102,84 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        加油管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Refuel">
+                                <i class="iconfont">&#xe6a7;</i>
+                                加油列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        油卡管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/viewalloilcard">
+                                <i class="iconfont">&#xe6a7;</i>
+                                油卡列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/searchoilcard">
+                                <i class="iconfont">&#xe6a7;</i>
+                                查找油卡
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        驾驶员管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/viewalldriver">
+                                <i class="iconfont">&#xe6a7;</i>
+                                驾驶员列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/searchdriver">
+                                <i class="iconfont">&#xe6a7;</i>
+                                查找驾驶员
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        出车管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="./viewalloutbound">
+                                <i class="iconfont">&#xe6a7;</i>
+                                出车记录
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./searchoutbound">
+                                <i class="iconfont">&#xe6a7;</i>
+                                检索记录
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -264,9 +341,9 @@
             });
         });
     }
-    /*用户-添加*/
-    function member_add(carID,carname,number,ctype,age,state,AIP){
-        x_admin_show(carID,carname,number,ctype,age,state,AIP);
+
+    function member_add(title,url,id,w,h){
+        x_admin_show(title,url,w,h);
     }
 
 

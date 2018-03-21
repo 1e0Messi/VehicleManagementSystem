@@ -9,11 +9,11 @@
     </update>
 
     <delete id="delete" parameterType="String">
-        DELETE FROM vehicleinformation WHERE carID=#{carID}
+        DELETE FROM vehicleinformation WHERE carID=#{id}
     </delete>
 
     <select id="findById" parameterType="String" resultType="com.team4.entity.Vehicle">
-        SELECT carID,carname,ctype,AIP,age,state,number FROM vehicleinformation WHERE carID=#{id}
+        SELECT * FROM vehicleinformation WHERE carID=#{id}
     </select>
 
     <insert id="save" parameterType="com.team4.entity.Vehicle">

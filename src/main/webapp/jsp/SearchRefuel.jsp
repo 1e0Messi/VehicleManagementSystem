@@ -16,18 +16,16 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="./index.html">X-ADMIN V1.1</a></div>
+    <div class="logo"><a href="./index.html">车辆管理系统 V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;"><%= session.getAttribute("name")%></a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="">个人信息</a></dd>
-                <dd><a href="">切换帐号</a></dd>
-                <dd><a href="./login.html">退出</a></dd>
+                <dd><a href="/logout">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="/">前台首页</a></li>
     </ul>
 </div>
 <!-- 顶部结束 -->
@@ -37,42 +35,147 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list" current>
-                    <a href="./index.html">
+                <li class="list">
+                    <a href="/Administrator">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
-                    <a href="javascript:;">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        车辆信息管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Enter">
+                                <i class="iconfont">&#xe6a7;</i>
+                                车辆信息列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        收入管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/GetAllIncomeItem">
+                                <i class="iconfont">&#xe6a7;</i>
+                                收入列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        事故/违章管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/AllAccident">
+                                <i class="iconfont">&#xe6a7;</i>
+                                事故/违章列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        相关费用管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/AllFee">
+                                <i class="iconfont">&#xe6a7;</i>
+                                相关费用列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe70b;</i>
                         加油管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu opened">
-                        <li class="current">
-                            <a href="/AddVehicle">
+                        <li>
+                            <a href="/Refuel">
                                 <i class="iconfont">&#xe6a7;</i>
-                                添加车辆信息
+                                加油列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        油卡管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/viewalloilcard">
+                                <i class="iconfont">&#xe6a7;</i>
+                                油卡列表
                             </a>
                         </li>
                         <li>
-                            <a href="/Delete">
+                            <a href="/searchoilcard">
                                 <i class="iconfont">&#xe6a7;</i>
-                                删除车辆信息
+                                查找油卡
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        驾驶员管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/viewalldriver">
+                                <i class="iconfont">&#xe6a7;</i>
+                                驾驶员列表
                             </a>
                         </li>
                         <li>
-                            <a href="/Search">
+                            <a href="/searchdriver">
                                 <i class="iconfont">&#xe6a7;</i>
-                                搜索车辆信息
+                                查找驾驶员
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list" >
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        出车管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="./viewalloutbound">
+                                <i class="iconfont">&#xe6a7;</i>
+                                出车记录
                             </a>
                         </li>
                         <li>
-                            <a href="/UpdateInfo">
+                            <a href="./searchoutbound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                更新车辆信息
+                                检索记录
                             </a>
                         </li>
                     </ul>

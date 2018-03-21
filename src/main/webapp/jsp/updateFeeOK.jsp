@@ -7,12 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!doctype html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">

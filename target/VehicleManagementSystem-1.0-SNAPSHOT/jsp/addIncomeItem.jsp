@@ -1,13 +1,13 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>后台登录-X-admin1.1</title>
+	<title>车辆管理系统</title>
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
@@ -93,19 +93,6 @@
     </div>
     <!-- 中部结束 -->
     <script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-
-
-    <script>
-
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件
         var options = {
