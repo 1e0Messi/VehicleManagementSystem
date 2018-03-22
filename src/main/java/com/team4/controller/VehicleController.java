@@ -125,5 +125,8 @@ public class VehicleController {
 //        } else {
 //            return "Errors";
 //        }
-
+@RequestMapping("/addVehicles")
+    public String addVehicles(){
+        return "addVehicle";
+}
 }

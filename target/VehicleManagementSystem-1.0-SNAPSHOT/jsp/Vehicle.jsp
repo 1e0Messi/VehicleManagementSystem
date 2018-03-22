@@ -203,7 +203,7 @@
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','550','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicles.size()}条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','addVehicles','','500','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicles.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -292,10 +292,9 @@
 </div>
 <!-- 中部结束 -->
 <!-- 底部开始 -->
-
-<%--<div class="footer" >--%>
-    <%--<div class="copyright">Copyright ©2018 第四小组 v2.3 All Rights Reserved. 本后台系统由第四小组前端框架提供前端技术支持</div>--%>
-<%--</div>--%>
+<div class="footer">
+    <div class="copyright">Copyright ©2018 车辆管理系统. 本后台系统由TEAM4提供技术支持</div>
+</div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">
@@ -324,7 +323,6 @@
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
-            //捉到所有被选中的，发异步进行删除
             var TempItems=new Array();
             $("input[name='TempItem']:checkbox:checked").each(function (index,element) {
                 TempItems[index]=$(element).val();
