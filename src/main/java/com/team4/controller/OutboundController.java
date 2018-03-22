@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jws.soap.SOAPMessageHandlers;
 import java.util.List;
 
 
@@ -113,6 +114,11 @@ public class OutboundController {
     public String deloutbound(String id){
         outboundService.deloutbound(id);
         return "redirect:/viewalloutbound";
+    }
+
+    @RequestMapping("/addoutboundjsp")
+    public String addoutboundjsp(){
+        return "addoutbound";
     }
 
 
