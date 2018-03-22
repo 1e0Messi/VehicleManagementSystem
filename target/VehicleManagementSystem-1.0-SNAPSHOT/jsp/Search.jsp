@@ -235,9 +235,6 @@
                         年检期限
                     </th>
                     <td>
-                        状态
-                    </td>
-                    <td>
                         操作
                     </td>
                 </tr>
@@ -266,16 +263,13 @@
                         <td >
                                 ${Temp.age}
                         </td>
-                        <td >
-                                ${Temp.state}
+                        <td class="td-status">
+                            <span class="layui-btn layui-btn-normal layui-btn-mini">
+                                    ${Temp.state}
+                            </span>
                         </td>
                         <td>
                                 ${Temp.AIP}
-                        </td>
-                        <td class="td-status">
-                            <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                已启用
-                            </span>
                         </td>
                         <td class="td-manage">
                             <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','500','520')"
