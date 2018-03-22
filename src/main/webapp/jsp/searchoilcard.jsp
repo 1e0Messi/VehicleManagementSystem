@@ -236,7 +236,7 @@
                 </div>
             </form>
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加油卡','/jsp/addoilcard.jsp','500','400')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px" id="recording">共有记录：${requestScope.oilcard.size()}条</span></xblock>
+                <button class="layui-btn" onclick="member_add('添加油卡','/addoilcardjsp','500','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px" id="recording">共有记录：${requestScope.oilcard.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>

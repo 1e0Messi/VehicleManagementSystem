@@ -93,6 +93,11 @@ public class OilController {
         return "updateoilcard";
     }
 
+    @RequestMapping("/addoilcardjsp")
+    public  String addoilcardjsp(){
+        return "addoilcard";
+    }
+
     @RequestMapping("/addoilcard")
     @ResponseBody
     public String addoilcard(Oilcard oilcard){

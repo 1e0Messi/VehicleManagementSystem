@@ -1,5 +1,6 @@
 package com.team4.controller;
 
+
 import com.team4.entity.Admin;
 import com.team4.service.AdminService;
 import org.json.JSONArray;
@@ -195,5 +196,6 @@ public class AdminController {
     public List<Admin> adminQueryByDate(String startTime,String endTime){
         return adminService.getAdminByDate(startTime,endTime);
     }
+
 
 }

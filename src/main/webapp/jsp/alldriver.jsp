@@ -200,7 +200,7 @@
                     <ul class="sub-menu" style="display:none">
                         <li>
                             <a href="./viewalloutbound">
-                                <i class="iconfont">&#xe6a7;</i>
+                                <i class="current">&#xe6a7;</i>
                                 出车记录
                             </a>
                         </li>
@@ -221,7 +221,7 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加驾驶员','/jsp/adddriver.jsp','500','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.driver.size()} 条</span></xblock>
+                <button class="layui-btn" onclick="member_add('添加驾驶员','/adddriverjsp','590','650')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.driver.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>

@@ -1,5 +1,6 @@
 package com.team4.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team4.entity.Accident;
 import com.team4.service.AccidentService;
 import org.json.JSONArray;
@@ -110,6 +111,14 @@ public class AccidentController {
         mav.setViewName("findAllAccident");
         return mav;
     }*/
+
+    @RequestMapping("/countaccident")
+    public String countaccident(ModelMap mm) throws Exception{
+        List<Accident> accidents = accidentService.findAllAccident();
+        mm.addAttribute("accident", new ObjectMapper().writeValueAsString(accidents));
+        //System.out.println(mm);
+        return "countaccident";
+    }
 
 
 }

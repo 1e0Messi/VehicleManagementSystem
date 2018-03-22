@@ -204,4 +204,9 @@ public class DriverController {
         driverService.deldriver(staff_ID);
         return "";
     }
+
+    @RequestMapping("/adddriverjsp")
+    public String adddriverjsp(){
+        return "adddriver";
+    }
 }

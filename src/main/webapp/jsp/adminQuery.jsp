@@ -72,6 +72,21 @@
                         </li>
                     </ul>
                 </li>
+                <li class="list" >
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        系统统计
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/countaccident">
+                                <i class="iconfont">&#xe6a7;</i>
+                                违章事故统计
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
