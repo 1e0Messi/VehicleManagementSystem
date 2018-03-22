@@ -298,10 +298,9 @@
 </div>
 <!-- 中部结束 -->
 <!-- 底部开始 -->
-
-<%--<div class="footer" >--%>
-    <%--<div class="copyright">Copyright ©2018 第四小组 v2.3 All Rights Reserved. 本后台系统由第四小组前端框架提供前端技术支持</div>--%>
-<%--</div>--%>
+<div class="footer">
+    <div class="copyright">Copyright ©2018 车辆管理系统. 本后台系统由TEAM4提供技术支持</div>
+</div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">

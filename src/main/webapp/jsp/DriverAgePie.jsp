@@ -1,18 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ç¼‘å…ƒå½ª
-  Date: 2018/3/11
-  Time: 21:02
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=GB18030" pageEncoding="GB18030"%>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>è½¦è¾†ç®¡ç†ç³»ç»Ÿ</title>
+    <title>ºóÌ¨µÇÂ¼-X-admin1.1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -23,149 +16,114 @@
 
 </head>
 <body>
-<!-- é¡¶éƒ¨å¼€å§‹ -->
 <div class="container">
-    <div class="logo"><a href="#">è½¦è¾†ç®¡ç†ç³»ç»Ÿ V1.1</a></div>
+    <div class="logo"><a href="#">³µÁ¾¹ÜÀíÏµÍ³ V1.1</a></div>
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;"><%= session.getAttribute("name")%></a>
-            <dl class="layui-nav-child"> <!-- äºŒçº§èœå• -->
-                <dd><a href="/logout">åˆ‡æ¢å¸å·</a></dd>
-                <dd><a href="/logout">é€€å‡º</a></dd>
+            <dl class="layui-nav-child"> <!-- ¶ş¼¶²Ëµ¥ -->
+                <dd><a href="/logout">ÇĞ»»ÕÊºÅ</a></dd>
+                <dd><a href="/logout">ÍË³ö</a></dd>
             </dl>
         </li>
     </ul>
 </div>
-<!-- é¡¶éƒ¨ç»“æŸ -->
-<!-- ä¸­éƒ¨å¼€å§‹ -->
+<!-- ¶¥²¿½áÊø -->
+<!-- ÖĞ²¿¿ªÊ¼ -->
 <div class="wrapper">
-    <!-- å·¦ä¾§èœå•å¼€å§‹ -->
+    <!-- ×ó²à²Ëµ¥¿ªÊ¼ -->
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
                     <a href="/superAdministrator">
                         <i class="iconfont">&#xe761;</i>
-                        æ¬¢è¿é¡µé¢
+                        »¶Ó­Ò³Ãæ
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
                 <li class="list">
                     <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
-                        äººå‘˜ç®¡ç†
+                        ÈËÔ±¹ÜÀí
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
                         <li>
                             <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
-                                äººå‘˜åˆ—è¡¨
+                                ÈËÔ±ÁĞ±í
                             </a>
                         </li>
                         <li>
                             <a href="/adminQuery">
                                 <i class="iconfont">&#xe6a7;</i>
-                                äººå‘˜æŸ¥è¯¢
+                                ÈËÔ±²éÑ¯
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="list" >
-                    <a href="javascript:;" name="switch">
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe6a3;</i>
-                        ç³»ç»Ÿç»Ÿè®¡
+                        ÏµÍ³Í³¼Æ
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu opened">
                         <li>
                             <a href="/countaccident">
                                 <i class="iconfont">&#xe6a7;</i>
-                                è¿ç« äº‹æ•…ç»Ÿè®¡
+                                Î¥ÕÂÊÂ¹ÊÍ³¼Æ
                             </a>
                         </li>
                         <li>
                             <a href="./outBound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                å‡ºè½¦çŠ¶æ€ç»Ÿè®¡
+                                ³ö³µ×´Ì¬Í³¼Æ
                             </a>
                         </li>
                         <li>
                             <a href="/DriverAge">
                                 <i class="iconfont">&#xe6a7;</i>
-                                é©¾é©¶å‘˜å¹´é¾„ç»Ÿè®¡
+                                ¼İÊ»Ô±ÄêÁäÍ³¼Æ
                             </a>
                         </li>
                         <li>
                             <a href="/feeCount">
                                 <i class="iconfont">&#xe6a7;</i>
-                                è½¦è¾†è´¹ç”¨ç»Ÿè®¡
+                                ³µÁ¾·ÑÓÃÍ³¼Æ
                             </a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
-    </div>
-    <!-- å·¦ä¾§èœå•ç»“æŸ -->
-    <!-- å³ä¾§ä¸»ä½“å¼€å§‹ -->
+    </div>   <!-- ×ó²à²Ëµ¥½áÊø -->
+    <!-- ÓÒ²àÖ÷Ìå¿ªÊ¼ -->
     <div class="page-content">
         <div class="content">
-            <!-- å³ä¾§å†…å®¹æ¡†æ¶ï¼Œæ›´æ”¹ä»è¿™é‡Œå¼€å§‹ -->
-            <blockquote class="layui-elem-quote" style="text-align:center;vertical-align:middle">
-                <%= session.getAttribute("name")%>,æ¬¢è¿ä½¿ç”¨è½¦è¾†ç®¡ç†ç³»ç»Ÿ<span class="f-14">v1.0</span>
+            <!-- ÓÒ²àÄÚÈİ¿ò¼Ü£¬¸ü¸Ä´ÓÕâÀï¿ªÊ¼ -->
+            <blockquote class="layui-elem-quote">
+                ÌØ±ğÉùÃ÷£ºECharts£¬Ò»¸ö´¿ Javascript µÄÍ¼±í¿â£¬¿ÉÒÔÁ÷³©µÄÔËĞĞÔÚ PC ºÍÒÆ¶¯Éè±¸ÉÏ£¬¼æÈİµ±Ç°¾ø´ó²¿·Öä¯ÀÀÆ÷£¨IE8/9/10/11£¬Chrome£¬Firefox£¬SafariµÈ£©£¬µ×²ãÒÀÀµÇáÁ¿¼¶µÄ Canvas Àà¿â ZRender£¬Ìá¹©Ö±¹Û£¬Éú¶¯£¬¿É½»»¥£¬¿É¸ß¶È¸öĞÔ»¯¶¨ÖÆµÄÊı¾İ¿ÉÊÓ»¯Í¼±í¡£ÈçĞèÊ¹ÓÃ£¬ÏêÏ¸ÁË½â¿ÉÒÔ·ÃÎÊ¹ÙÍø <a href="http://echarts.baidu.com/" style="color:red">ECharts</a>¡£ x-admin²»³Ğµ£ÈÎºÎ°æÈ¨ÎÊÌâ¡£
             </blockquote>
-            <fieldset class="layui-elem-field layui-field-title site-title">
-                <legend><a name="default">ä¿¡æ¯ç»Ÿè®¡</a></legend>
-            </fieldset>
-            <table class="layui-table">
-                <thead>
-                <tr>
-                    <th>ç»Ÿè®¡</th>
-                    <th>ç®¡ç†å‘˜</th>
-                    <th>é©¾é©¶å‘˜</th>
-                    <th>è½¦è¾†æ•°</th>
-                    <th>æ€»æ”¶å…¥</th>
-                    <th>æ€»æ”¯å‡º</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>æ€»æ•°</td>
-                    <td>92</td>
-                    <td>9</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>20</td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="layui-table">
-                <thead>
-                <tr>
-                    <th colspan="2" scope="col">æé†’</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th width="30%">æœåŠ¡å™¨è®¡ç®—æœºå</th>
-                    <td><span id="lbServerName">http://127.0.0.1/</span></td>
-                </tr>
-                </tbody>
-            </table>
-            <!-- å³ä¾§å†…å®¹æ¡†æ¶ï¼Œæ›´æ”¹ä»è¿™é‡Œç»“æŸ -->
+            <!-- Îª ECharts ×¼±¸Ò»¸ö¾ß±¸´óĞ¡£¨¿í¸ß£©µÄ DOM -->
+            <div id="main" style="width: 100%;height:400px;"></div>
+            <blockquote class="layui-elem-quote">
+                ×¢Òâ£º±¾°¸ÀıµÄEchartsÍ¼±í¿âÓÉcdnÒıÈë£¬ĞèÒªÔÚÏß²ÅÄÜÕı³£Ê¹ÓÃ£¬ÈçÏëÀëÏë£¬ÇëÖÁEcharts¹ÙÍøÏÂÔØ¡£
+            </blockquote>
+            <!-- ÓÒ²àÄÚÈİ¿ò¼Ü£¬¸ü¸Ä´ÓÕâÀï½áÊø -->
         </div>
     </div>
-    <!-- å³ä¾§ä¸»ä½“ç»“æŸ -->
+    <!-- ÓÒ²àÖ÷Ìå½áÊø -->
 </div>
-<!-- ä¸­éƒ¨ç»“æŸ -->
-<!-- åº•éƒ¨å¼€å§‹ -->
+<!-- ÖĞ²¿½áÊø -->
+<!-- µ×²¿¿ªÊ¼ -->
 <div class="footer">
-    <div class="copyright">Copyright Â©2018 è½¦è¾†ç®¡ç†ç³»ç»Ÿ. æœ¬åå°ç³»ç»Ÿç”±TEAM4æä¾›æŠ€æœ¯æ”¯æŒ</div>
+    <div class="copyright">Copyright 0„82018 ³µÁ¾¹ÜÀíÏµÍ³. ±¾ºóÌ¨ÏµÍ³ÓÉTEAM4Ìá¹©¼¼ÊõÖ§³Ö</div>
 </div>
-<!-- åº•éƒ¨ç»“æŸ -->
-<!-- èƒŒæ™¯åˆ‡æ¢å¼€å§‹ -->
+<!-- µ×²¿½áÊø -->
+<!-- ±³¾°ÇĞ»»¿ªÊ¼ -->
 <div class="bg-changer">
     <div class="swiper-container changer-list">
         <div class="swiper-wrapper">
@@ -180,11 +138,90 @@
             <div class="swiper-slide"><img class="item" src="../static/images/i.jpg" alt=""></div>
             <div class="swiper-slide"><img class="item" src="../static/images/j.jpg" alt=""></div>
             <div class="swiper-slide"><img class="item" src="../static/images/k.jpg" alt=""></div>
-            <div class="swiper-slide"><span class="reset">åˆå§‹åŒ–</span></div>
+            <div class="swiper-slide"><span class="reset">³õÊ¼»¯</span></div>
         </div>
     </div>
     <div class="bg-out"></div>
     <div id="changer-set"><i class="iconfont">&#xe696;</i></div>
 </div>
+<!-- ±³¾°ÇĞ»»½áÊø -->
+
+<script type="text/javascript" src="../static/js/echarts.common.min.js"></script>
+<script type="text/javascript" src="../static/js/echarts-for-x-admin.js"></script>
+
+<script type="text/javascript">
+    // »ùÓÚ×¼±¸ºÃµÄdom£¬³õÊ¼»¯echartsÊµÀı
+    var myChart = echarts.init(document.getElementById('main'),'echarts-for-x-admin');
+    // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
+    // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
+    option = {
+        backgroundColor: '#2c343c',
+
+        title: {
+            text: '¼İÊ»Ô±ÄêÁä',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#ccc'
+            }
+        },
+
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+            }
+        },
+        series : [
+            {
+                name:'·ÃÎÊÀ´Ô´',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '50%'],
+                data:[
+                    {value:${requestScope.jsonArray.get(0)}, name:'20-30Ëê'},
+                    {value:${requestScope.jsonArray.get(1)}, name:'30-40Ëê'},
+                    {value:${requestScope.jsonArray.get(2)}, name:'40-50Ëê'},
+                    {value:${requestScope.jsonArray.get(3)}, name:'50-60Ëê'}
+                ].sort(function (a, b) { return a.value - b.value}),
+                roseType: 'angle',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#c21e2c',
+                        shadowBlur: 200,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    // Ê¹ÓÃ¸ÕÖ¸¶¨µÄÅäÖÃÏîºÍÊı¾İÏÔÊ¾Í¼±í¡£
+    myChart.setOption(option);
+</script>
+
 </body>
 </html>

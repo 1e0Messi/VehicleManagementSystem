@@ -209,4 +209,44 @@ public class DriverController {
     public String adddriverjsp(){
         return "adddriver";
     }
+    @RequestMapping("/DriverAge")
+    public String Driver(Model model,String year){
+        Integer temp;
+        String temp2;
+        String[] temp1;
+        Integer f=2018;
+        Integer b=0;
+        Integer c=0;
+        Integer d=0;
+        Integer e=0;
+        JSONArray jsonArray=new JSONArray();
+        List<Driver> drivers=driverService.searchalldriverinfo();
+        for(int i=0;i<drivers.size();i++)
+        {
+            year=drivers.get(i).getBirth();
+            temp1=year.split("-");
+            temp2=temp1[0];
+            temp=f-Integer.parseInt(temp2);
+            if(temp>=20&&temp<30){
+                b++;
+            }
+            if(temp>=30&&temp<40){
+                c++;
+            }
+            if(temp>=40&&temp<50){
+                d++;
+            }
+            if(temp>=50&&temp<60){
+                e++;
+            }
+        }
+//        System.out.println(c);
+        jsonArray.put(b);
+        jsonArray.put(c);
+        jsonArray.put(d);
+        jsonArray.put(e);
+        model.addAttribute("jsonArray",jsonArray);
+//        System.out.println(jsonArray);
+        return "DriverAgePie";
+    }
 }
