@@ -33,13 +33,35 @@ public class FeeController {
 
 
     @RequestMapping("/AddFee")
-    public String AddFee() {
+    public String AddFee(Model m) {
+        List<Fee> fees = feeService.findAllFee();
+        int maxfee=0;
+        if (fees.size()==0)
+            maxfee=1;
+        else{
+            for (int i=0;i<fees.size();i++)
+                if (maxfee<Integer.parseInt(fees.get(i).getfeeid()))
+                    maxfee=Integer.parseInt(fees.get(i).getfeeid());
+        }
+        maxfee++;
+        m.addAttribute("feeid",String.valueOf(maxfee));
         return "addFee";
     }
 
     @RequestMapping("/insertFee")
-    public String insertFee(Fee fee) {
+    public String insertFee(Model m,Fee fee) {
         feeService.saveFee(fee);
+        List<Fee> fees = feeService.findAllFee();
+        int maxfee=0;
+        if (fees.size()==0)
+            maxfee=1;
+        else{
+            for (int i=0;i<fees.size();i++)
+                if (maxfee<Integer.parseInt(fees.get(i).getfeeid()))
+                    maxfee=Integer.parseInt(fees.get(i).getfeeid());
+        }
+        maxfee++;
+        m.addAttribute("feeid",String.valueOf(maxfee));
         return "/addFeeOK";
     }
 
