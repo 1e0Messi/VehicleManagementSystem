@@ -85,6 +85,24 @@
                                 违章事故统计
                             </a>
                         </li>
+                        <li>
+                            <a href="./outBound">
+                                <i class="iconfont">&#xe6a7;</i>
+                                出车状态统计
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/DriverAge">
+                                <i class="iconfont">&#xe6a7;</i>
+                                驾驶员年龄统计
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/feeCount">
+                                <i class="iconfont">&#xe6a7;</i>
+                                车辆费用统计
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

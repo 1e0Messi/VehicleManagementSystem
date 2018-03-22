@@ -176,5 +176,61 @@ public class OutboundController {
         outboundService.deloutbound(id);
         return "";
     }
+    @RequestMapping("/outBound")
+    public String outBound(Model model,String date){
+        String[] date2;
+        Integer a=0;
+        Integer b=0;
+        Integer c=0;
+        Integer d=0;
+        Integer e=0;
+        Integer f=0;
+        String time;
+
+        List<Outbound> outbounds=outboundService.searchalloutboundinfo();
+        JSONArray jsonArray=new JSONArray();
+        for (int i=0;i<outbounds.size();i++) {
+            date=outbounds.get(i).getTime();
+            date2=date.split(" ");
+            time=date2[1];
+            if((time.compareTo("00:00:00"))>0&&(time.compareTo("04:00:00"))<0){
+                a++;
+            }
+            if((time.compareTo("04:00:00"))>0&&(time.compareTo("08:00:00"))<0){
+                b++;
+            }
+            if((time.compareTo("08:00:00"))>0&&(time.compareTo("12:00:00"))<0){
+                c++;
+            }
+            if((time.compareTo("12:00:00"))>0&&(time.compareTo("16:00:00"))<0){
+                d++;
+            }
+            if((time.compareTo("16:00:00"))>0&&(time.compareTo("20:00:00"))<0){
+                e++;
+            }
+            if((time.compareTo("20:00:00"))>0&&(time.compareTo("24:00:00"))<0){
+                f++;
+            }
+        }
+        jsonArray.put(a);
+        jsonArray.put(b);
+        jsonArray.put(c);
+        jsonArray.put(d);
+        jsonArray.put(e);
+        jsonArray.put(f);
+        model.addAttribute("jsonArray",jsonArray);
+
+
+//        for(int j=0;j<jsonArray.length();j++){
+//            date=(String)jsonArray.get(j);
+//            date2=date.split(" ");
+//            time=date2[1];
+//            switch (time){
+//                case()
+//            }if(00:00:00< 03:00:00 >04:00:00)
+//        System.out.println(jsonArray);
+//        model.addAttribute("jsonArray",jsonArray);
+        return "outboundPie";
+    }
 
 }
