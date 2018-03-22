@@ -72,6 +72,21 @@
                         </li>
                     </ul>
                 </li>
+                <li class="list" >
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe6a3;</i>
+                        系统统计
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/countaccident">
+                                <i class="iconfont">&#xe6a7;</i>
+                                违章事故统计
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -149,7 +164,9 @@
 </div>
 <!-- 中部结束 -->
 <!-- 底部开始 -->
-
+<div class="footer">
+    <div class="copyright">Copyright ©2018 车辆管理系统. 本后台系统由TEAM4提供技术支持</div>
+</div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">

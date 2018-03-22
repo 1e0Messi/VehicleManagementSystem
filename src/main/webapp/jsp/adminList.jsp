@@ -148,7 +148,9 @@
 </div>
 <!-- 中部结束 -->
 <!-- 底部开始 -->
-
+<div class="footer">
+    <div class="copyright">Copyright ©2018 车辆管理系统. 本后台系统由TEAM4提供技术支持</div>
+</div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">
