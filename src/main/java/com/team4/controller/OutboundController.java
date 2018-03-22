@@ -89,9 +89,7 @@ public class OutboundController {
     public ModelAndView viewalloutbound(ModelAndView mv){
 
         List<Outbound> outbounds = outboundService.searchalloutboundinfo();
-        JSONArray jsonArray = new JSONArray(outbounds);
-
-        mv.addObject("alloutbound",jsonArray);
+        mv.addObject("alloutbound",outbounds);
         mv.setViewName("alloutbound");
         return mv;
     }

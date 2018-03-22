@@ -1,46 +1,54 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50720
-Source Host           : localhost:3306
-Source Database       : vms
+ Source Server         : lgy
+ Source Server Type    : MySQL
+ Source Server Version : 50721
+ Source Host           : localhost:3306
+ Source Schema         : demo
 
-Target Server Type    : MYSQL
-Target Server Version : 50720
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50721
+ File Encoding         : 65001
 
-Date: 2018-03-22 09:45:04
+ Date: 22/03/2018 15:43:28
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for outbound
 -- ----------------------------
 DROP TABLE IF EXISTS `outbound`;
-CREATE TABLE `outbound` (
-  `id` varchar(10) NOT NULL,
-  `time` varchar(20) NOT NULL,
-  `staff_ID` varchar(10) NOT NULL,
-  `state` varchar(20) NOT NULL,
-  `carid` varchar(10) NOT NULL,
+CREATE TABLE `outbound`  (
+  `id` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `time` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `staff_ID` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `state` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `carid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `outboundkmiles` int(11) NOT NULL,
   `inboundkmiles` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of outbound
 -- ----------------------------
-INSERT INTO `outbound` VALUES ('1', '2018-03-16', '1', '已回车', '川A：4321', '1800', '1810');
-INSERT INTO `outbound` VALUES ('10', '2018-03-05', '3', '已回车', '川A：4444', '4444', '4445');
-INSERT INTO `outbound` VALUES ('11', '2018-03-06', '4', '已回车', '川A：5555', '5555', '5556');
-INSERT INTO `outbound` VALUES ('2', '2018-03-20', '1', '已回车', '川A：1472', '1810', '1820');
-INSERT INTO `outbound` VALUES ('3', '2018-03-01', '1', '已回车', '川A：1234', '1700', '1710');
-INSERT INTO `outbound` VALUES ('4', '2018-03-01', '2', '未回车', '川A：1472', '1500', '1510');
-INSERT INTO `outbound` VALUES ('5', '2018-03-02', '3', '已回车', '川A：1234', '1600', '1610');
-INSERT INTO `outbound` VALUES ('6', '2018-03-03', '2', '已回车', '川A：4321', '1900', '1910');
-INSERT INTO `outbound` VALUES ('7', '2018-03-03', '3', '已回车 ', '川A：2222', '1620', '1621');
-INSERT INTO `outbound` VALUES ('8', '2018-03-03', '4', '未回车', '川A：1234', '6666', '6668');
-INSERT INTO `outbound` VALUES ('9', '2018-03-04', '2', '未回车', '川A：2589', '3654', '3655');
+INSERT INTO `outbound` VALUES ('1', '2018-03-28 03:00:00', '1', '已回车', '1', 1800, 1810);
+INSERT INTO `outbound` VALUES ('10', '2018-02-02 16:45:32', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('11', '2018-01-10 18:23:23', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('12', '2018-12-21 20:21:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('13', '2018-12-10 22:21:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('14', '2018-05-20 23:01:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('15', '2018-12-21 10:21:12', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('16', '2017-11-10 07:10:21', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('2', '2018-03-28 01:50:00', '1', '已回车', '1', 1810, 1820);
+INSERT INTO `outbound` VALUES ('3', '2018-03-28 04:05:00', '1', '1', '1', 1, 111);
+INSERT INTO `outbound` VALUES ('4', '2018-03-28 06:52:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('6', '2018-03-28 08:52:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('7', '2018-03-28 10:54:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('8', '2018-03-28 12:54:00', '1', '1', '1', 1, 1);
+INSERT INTO `outbound` VALUES ('9', '2018-03-28 14:25:00', '1', '1', '1', 1, 1);
+
+SET FOREIGN_KEY_CHECKS = 1;

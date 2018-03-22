@@ -116,13 +116,8 @@
             <blockquote class="layui-elem-quote">
                 .........................................下列第一张表是统计本公司今年各月车辆违章和事故数，第二张表是统计过去5年每年发生违章和事故数量.........................................................
             </blockquote>
-            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-
-            <div id="main1" style="width: 500px;height:500px;"></div>
-            <div id="main2" style="width: 500px;height:500px;"></div>
-            <blockquote class="layui-elem-quote">
-                .........................................鼠标浮在统计图上可查看具体数据.........................................................................................................................
-            </blockquote>
+            <div id="main1" style="float: left;width: 45%;height:500px;"></div>
+            <div id="main2" style="float: right;width: 45%;height:500px;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -206,7 +201,7 @@
     option1 = {
         title: {
             text: '今年违章事故数',
-            subtext: '数据来自事故表'
+            /*subtext: '数据来自事故表'*/
         },
         tooltip: {
             trigger: 'axis',
@@ -250,7 +245,7 @@
     option2 = {
         title: {
             text: '过去5年违章事故数',
-            subtext: '数据来自事故表'
+            /*subtext: '数据来自事故表'*/
         },
         tooltip: {
             trigger: 'axis',

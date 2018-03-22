@@ -290,10 +290,10 @@ public class FeeController {
         model.addAttribute("jsonArray1",jsonArray1);
         model.addAttribute("jsonArray2",jsonArray2);
         model.addAttribute("jsonArray3",jsonArray3);
-        System.out.println(jsonArray);
+        /*System.out.println(jsonArray);
         System.out.println(jsonArray1);
         System.out.println(jsonArray2);
-        System.out.println(jsonArray3);
+        System.out.println(jsonArray3);*/
         return "feeCount";
     }
 

@@ -221,7 +221,7 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加驾驶员','/adddriverjsp','590','650')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.driver.size()} 条</span></xblock>
+                <button class="layui-btn" onclick="member_add('添加驾驶员','/adddriverjsp','590','650')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.driver.length()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -269,63 +269,11 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody>
-                <c:forEach items="${requestScope.driver}" var="T">
-                    <tr>
-                        <td>
-                            <input type="checkbox" value="${T.staff_ID}" name="simplebutton">
-                        </td>
-                        <td>
-                                ${T.staff_ID}
-                        </td>
-                        <td>
-                                ${T.staff_name}
-                        </td>
-                        <td>
-                                ${T.gender}
-                        </td>
-                        <td>
-                                ${T.nationality}
-                        </td>
-                        <td >
-                                ${T.birth}
-                        </td>
-                        <td >
-                                ${T.political_party}
-                        </td>
-                        <td >
-                                ${T.family_place}
-                        </td>
-                        <td >
-                                ${T.ID_card}
-                        </td>
-                        <td >
-                                ${T.badgeID}
-                        </td>
-                        <td >
-                                ${T.home_phone}
-                        </td>
-                        <td >
-                                ${T.post_code}
-                        </td>
-                        <td >
-                                ${T.indate}
-                        </td>
-                        <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/updatedriver?staff_ID=${T.staff_ID}','4','500','510')"
-                               class="ml-5" style="text-decoration:none">
-                                <i class="layui-icon">&#xe642;</i>
-                            </a>
-                            <a title="删除" onclick="if(confirm('是否删除？')) {location.href='/deldriver?staff_ID=${T.staff_ID}'}"
-                               style="text-decoration:none">
-                                <i class="layui-icon">&#xe640;</i>
-                            </a>
-                        </td>
-                    </tr>
-                </c:forEach>
+                <tbody id="tbody">
 
                 </tbody>
             </table>
+            <div id = "pageNum" align="right" style="bottom:5%;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -362,6 +310,88 @@
 <!-- 页面动态效果 -->
 </body>
 <script>
+    layui.use(['laypage'],function () {
+        laypage = layui.laypage;
+
+        var drivers = ${requestScope.driver};
+        var length = drivers.length;
+
+        var size = 10;
+        var pageNum =  length/size;
+
+        var render = function (curr) {
+            var str = "";
+            var last = curr * size - 1;
+            last = last >= length ? (length-1) : last;
+            for(var i = (curr - 1) * size;i <= last;i++){
+                str += tbody(drivers[i]);
+            }
+            return str;
+        };
+        laypage({
+            cont:$("#pageNum"),
+            pages:Math.ceil(pageNum),
+            skin: '#1E9FFF',
+            jump:function (obj,first) {
+                $("#tbody").html(render(obj.curr));
+            }
+        });
+    });
+
+    function tbody(T) {
+        var str="<tr>\n" +
+            "<td>\n" +
+            "<input type=\"checkbox\" value=\""+T.staff_ID+"\" name=\"simplebutton\">\n" +
+            "</td>\n" +
+            "<td>\n" +
+            T.staff_ID+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            T.staff_name+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            T.gender+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            T.nationality+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.birth+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.political_party+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.family_place+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.ID_card+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.badgeID+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.home_phone+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.post_code+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            T.indate+"\n" +
+            "</td>\n" +
+            "<td class=\"td-manage\">\n" +
+            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/updatedriver?staff_ID="+T.staff_ID+"','4','500','510')\"\n" +
+            "class=\"ml-5\" style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe642;</i>\n" +
+            "</a>\n" +
+            "<a title=\"删除\" onclick=\"layer.confirm('是否删除？',function(){location.href='/deldriver?staff_ID="+T.staff_ID+"'});\"\n" +
+            "style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe640;</i>\n" +
+            "</a>\n" +
+            "</td>\n" +
+            "</tr>";
+        return str;
+    }
 
 
     //批量删除提交
@@ -400,6 +430,9 @@
     //            layer.msg('已删除!',{icon:1,time:1000});
     //        });
     //    }
+
+
+
 </script>
 <script>
 

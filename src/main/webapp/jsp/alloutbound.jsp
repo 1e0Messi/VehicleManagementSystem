@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -220,7 +221,7 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>
-                <button class="layui-btn" onclick="member_add('添加出车记录','/addoutboundjsp','515','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.alloutbound.length()} 条</span></xblock>
+                <button class="layui-btn" onclick="member_add('添加出车记录','/addoutboundjsp','510','520')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.alloutbound.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -253,13 +254,51 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody id = "tbody">
-
+                <tbody>
+                    <c:forEach items="${requestScope.alloutbound}" var="T">
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="${T.id}" name="simplebutton">
+                            </td>
+                            <td>
+                                ${T.id}
+                            </td>
+                            <td>
+                                ${T.time}
+                            </td>
+                            <td>
+                                ${T.staff_ID}
+                            </td>
+                            <td>
+                                ${T.state}
+                            </td>
+                            <td>
+                                ${T.carid}
+                            </td>
+                            <td >
+                                ${T.outboundkmiles}
+                            </td>
+                            <td >
+                                ${T.inboundkmiles}
+                            </td>
+                            <td class="td-manage">
+                                <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/updateoutbound?id=${T.id}','4','510','520')"
+                                   class="ml-5" style="text-decoration:none">
+                                    <i class="layui-icon">&#xe642;</i>
+                                </a>
+                                <a title="删除" onclick="layer.confirm('是否删除？',function() {
+                                        location.href='/deloutbound?id=${T.id}';
+                                })"
+                                   style="text-decoration:none">
+                                    <i class="layui-icon">&#xe640;</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
-        <div id = "pageNum" align="right" style="bottom:5%;"></div>
     </div>
     <!-- 右侧主体结束 -->
 </div>
@@ -294,75 +333,6 @@
 <!-- 页面动态效果 -->
 </body>
 <script>
-    layui.use(['laypage'],function () {
-        laypage = layui.laypage;
-
-        var alloutbounds = ${requestScope.alloutbound};
-        var length = alloutbounds.length;
-
-        var size = 10;
-        var pageNum =  length/size;
-
-        var render = function (curr) {
-            var str = "";
-            var last = curr * size - 1;
-            last = last >= length ? (length-1) : last;
-            for(var i = (curr - 1) * size;i <= last;i++){
-                str += tbody(alloutbounds[i]);
-            }
-            return str;
-        };
-        laypage({
-            cont:$("#pageNum"),
-            pages:Math.ceil(pageNum),
-            skin: '#1E9FFF',
-            jump:function (obj,first) {
-                $("#tbody").html(render(obj.curr));
-            }
-        });
-    });
-
-    function tbody(T) {
-
-        var str="<tr>\n" +
-            "<td>\n" +
-            "<input type=\"checkbox\" value=\""+T.id+"\" name=\"simplebutton\">\n" +
-            "</td>\n" +
-            "<td>\n" +
-            T.id+"\n"+
-            "</td>\n" +
-            "<td>\n" +
-            T.time+"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            T.staff_ID+"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            T.state+"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            T.carid+"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            T.outboundkmiles+"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            T.inboundkmiles+"\n" +
-            "</td>\n" +
-            "<td class=\"td-manage\">\n" +
-            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/updateoutbound?id="+T.id+"','4','450','560')\"\n" +
-            "class=\"ml-5\" style=\"text-decoration:none\">\n" +
-            "<i class=\"layui-icon\">&#xe642;</i>\n" +
-            "</a>\n" +
-            "<a title=\"删除\" onclick=\"if(confirm('是否删除？')) {location.href='/deloutbound?id="+T.id+"'}\"\n" +
-            " style=\"text-decoration:none\">\n" +
-            "<i class=\"layui-icon\">&#xe640;</i>\n" +
-            "</a>\n" +
-            "</td>\n" +
-            "</tr>";
-        return str;
-    }
-
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
