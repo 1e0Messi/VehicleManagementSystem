@@ -110,7 +110,6 @@ public class DriverController {
     public ModelAndView viewalldriver(ModelAndView mv){
         List<Driver> drivers = driverService.searchalldriverinfo();
         JSONArray jsonArray = new JSONArray(drivers);
-
         mv.addObject("driver",jsonArray);
         mv.setViewName("alldriver");
         return mv;
