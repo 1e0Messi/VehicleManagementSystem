@@ -109,7 +109,8 @@ public class DriverController {
     @RequestMapping("/viewalldriver")
     public ModelAndView viewalldriver(ModelAndView mv){
         List<Driver> drivers = driverService.searchalldriverinfo();
-        mv.addObject("driver",drivers);
+        JSONArray jsonArray = new JSONArray(drivers);
+        mv.addObject("driver",jsonArray);
         mv.setViewName("alldriver");
         return mv;
     }
@@ -193,7 +194,9 @@ public class DriverController {
         else if (staff_name=="") drivers=driverService.selectdriverbyIDandIDcard(driver);
         else if (ID_card=="") drivers=driverService.selectdriverbyIDandname(driver);
         else drivers=driverService.selectdriverbyIDcardandnameandID(driver);
-        mm.addAttribute("driver",drivers);
+
+        JSONArray jsonArray = new JSONArray(drivers);
+        mm.addAttribute("driver",jsonArray);
         //System.out.println(mm);
         return "searchdriver";
     }

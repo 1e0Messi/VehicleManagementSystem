@@ -21,7 +21,8 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
-    <script type="text/javascript" src="../static/js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.js" charset="UTF-8"></script>
+
 </head>
 <body>
 <div class="container">
@@ -88,7 +89,7 @@
                         <li>
                             <a href="./outBound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                出车状态统计
+                                出车时间统计
                             </a>
                         </li>
                         <li>
@@ -114,15 +115,10 @@
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
             <blockquote class="layui-elem-quote">
-                .........................................下列第一张表是统计本公司今年各月车辆违章和事故数，第二张表是统计过去5年每年发生违章和事故数量.........................................................
+                .....................................................下列第一张表是统计本公司今年各月车辆违章和事故数...........................................................................................................................................................................第二张表是统计过去5年每年发生违章和事故数量.....................................................................................................................
             </blockquote>
-            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-
-            <div id="main1" style="width: 500px;height:500px;"></div>
-            <div id="main2" style="width: 500px;height:500px;"></div>
-            <blockquote class="layui-elem-quote">
-                .........................................鼠标浮在统计图上可查看具体数据.........................................................................................................................
-            </blockquote>
+            <div id="main1" style="float: left;width: 45%;height:500px;"></div>
+            <div id="main2" style="float: right;width: 45%;height:500px;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -206,7 +202,6 @@
     option1 = {
         title: {
             text: '今年违章事故数',
-            subtext: '数据来自事故表'
         },
         tooltip: {
             trigger: 'axis',
@@ -222,6 +217,11 @@
             right: '4%',
             bottom: '3%',
             containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
         },
         xAxis: {
             type: 'value',
@@ -250,7 +250,7 @@
     option2 = {
         title: {
             text: '过去5年违章事故数',
-            subtext: '数据来自事故表'
+            /*subtext: '数据来自事故表'*/
         },
         tooltip: {
             trigger: 'axis',
@@ -266,6 +266,11 @@
             right: '4%',
             bottom: '3%',
             containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
         },
         xAxis: {
             type: 'value',

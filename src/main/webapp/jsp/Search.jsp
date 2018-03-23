@@ -203,7 +203,7 @@
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','/jsp/addVehicle.jsp','500','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicle.size()}条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加车辆信息','addVehicles','500','550')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.vehicle.size()}条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -235,9 +235,6 @@
                         年检期限
                     </th>
                     <td>
-                        状态
-                    </td>
-                    <td>
                         操作
                     </td>
                 </tr>
@@ -266,16 +263,13 @@
                         <td >
                                 ${Temp.age}
                         </td>
-                        <td >
-                                ${Temp.state}
+                        <td class="td-status">
+                            <span class="layui-btn layui-btn-normal layui-btn-mini">
+                                    ${Temp.state}
+                            </span>
                         </td>
                         <td>
                                 ${Temp.AIP}
-                        </td>
-                        <td class="td-status">
-                            <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                已启用
-                            </span>
                         </td>
                         <td class="td-manage">
                             <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','500','520')"

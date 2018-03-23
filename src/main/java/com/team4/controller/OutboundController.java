@@ -89,9 +89,7 @@ public class OutboundController {
     public ModelAndView viewalloutbound(ModelAndView mv){
 
         List<Outbound> outbounds = outboundService.searchalloutboundinfo();
-        JSONArray jsonArray = new JSONArray(outbounds);
-
-        mv.addObject("alloutbound",jsonArray);
+        mv.addObject("alloutbound",outbounds);
         mv.setViewName("alloutbound");
         return mv;
     }
@@ -127,9 +125,14 @@ public class OutboundController {
     public String addoutbound(Outbound outbound){
         List<Outbound> outbounds=outboundService.searchalloutboundinfo();
         int size = outbounds.size();
-        String id=String.valueOf(Integer.parseInt(outbounds.get(size-1).getId())+1);
-        outbound.setId(id);
-        System.out.println(id);
+        int maxid=0;
+        //String.valueOf(Integer.parseInt(outbounds.get(size-1).getId())+1);
+        if (outbounds.size()==0) maxid=1;
+        else {for (int i=0;i<outbounds.size();i++)
+            if (maxid<Integer.parseInt(outbounds.get(i).getId()))
+                maxid=Integer.parseInt(outbounds.get(i).getId());
+        }
+        outbound.setId(String.valueOf(maxid+1));
         outboundService.inputoutbound(outbound);
         return "";
     }

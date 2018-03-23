@@ -1,5 +1,7 @@
 package com.team4.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team4.entity.Fee;
 import com.team4.service.FeeService;
 import org.json.JSONArray;
@@ -24,22 +26,43 @@ public class FeeController {
     private FeeService feeService;
 
     @RequestMapping("/AllFee")
-    public String getAllFee(ModelMap modelMap){
+    public String getAllFee(ModelMap modelMap) throws Exception{
         List<Fee> fee = feeService.findAllFee();
-        modelMap.addAttribute("fee",fee);
+        modelMap.addAttribute("jsonArray",new ObjectMapper().writeValueAsString(fee));
+        modelMap.addAttribute("length",fee.size());
         return "FeeList";
     }
 
-
-
     @RequestMapping("/AddFee")
-    public String AddFee() {
+    public String AddFee(Model m) {
+        List<Fee> fees = feeService.findAllFee();
+        int maxfee=0;
+        if (fees.size()==0)
+            maxfee=1;
+        else{
+            for (int i=0;i<fees.size();i++)
+                if (maxfee<Integer.parseInt(fees.get(i).getfeeid()))
+                    maxfee=Integer.parseInt(fees.get(i).getfeeid());
+        }
+        maxfee++;
+        m.addAttribute("feeid",String.valueOf(maxfee));
         return "addFee";
     }
 
     @RequestMapping("/insertFee")
-    public String insertFee(Fee fee) {
+    public String insertFee(Model m,Fee fee) {
         feeService.saveFee(fee);
+        List<Fee> fees = feeService.findAllFee();
+        int maxfee=0;
+        if (fees.size()==0)
+            maxfee=1;
+        else{
+            for (int i=0;i<fees.size();i++)
+                if (maxfee<Integer.parseInt(fees.get(i).getfeeid()))
+                    maxfee=Integer.parseInt(fees.get(i).getfeeid());
+        }
+        maxfee++;
+        m.addAttribute("feeid",String.valueOf(maxfee));
         return "/addFeeOK";
     }
 
@@ -78,11 +101,11 @@ public class FeeController {
 
 
     @RequestMapping("/findFee")
-    public ModelAndView findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime) {
-
+    public ModelAndView findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime) throws JsonProcessingException {
         ModelAndView mav = new ModelAndView();
         List<Fee> ffbid = feeService.findFee(feeid,carid,type,cost,applicantid,approverid,beginTime,endTime);
-        mav.addObject("ffbid",ffbid);
+        mav.addObject("ffbid",new ObjectMapper().writeValueAsString(ffbid));
+        mav.addObject("length",ffbid.size());
         mav.setViewName("findFee");
         return mav;
     }
@@ -107,8 +130,8 @@ public class FeeController {
             date1=date.split("-");
             date2=date1[1];
             type=fees.get(i).gettype();
-            System.out.println(date2);
-            System.out.println(type);
+           /* System.out.println(date2);
+            System.out.println(type);*/
             if(date2.compareTo("01")==0){
                 if(type.equals("加油")){
                     a[0]=a[0]+Integer.parseInt(fees.get(i).getcost());
@@ -290,10 +313,10 @@ public class FeeController {
         model.addAttribute("jsonArray1",jsonArray1);
         model.addAttribute("jsonArray2",jsonArray2);
         model.addAttribute("jsonArray3",jsonArray3);
-        System.out.println(jsonArray);
+        /*System.out.println(jsonArray);
         System.out.println(jsonArray1);
         System.out.println(jsonArray2);
-        System.out.println(jsonArray3);
+        System.out.println(jsonArray3);*/
         return "feeCount";
     }
 

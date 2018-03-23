@@ -36,8 +36,8 @@
                         <span class="x-red">*</span>事故/违章编号
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="accid" name="accid" required="" lay-verify="required"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" id="accid" name="accid" required="" lay-verify="required" value="${requestScope.accid}"
+                               autocomplete="off" class="layui-input" readonly="readonly">
                     </div>
                 </div>
                 <div class="layui-form-item">

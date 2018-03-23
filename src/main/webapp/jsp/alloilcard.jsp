@@ -269,7 +269,9 @@
                            class="ml-5" style="text-decoration:none">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
-                        <a title="删除" onclick="if(confirm('是否删除？')) {location.href='/deloilcard?oilcardid=${T.oilcardid}'}"
+                        <a title="删除" onclick="layer.confirm('是否删除？',function() {
+                                location.href='/deloilcard?oilcardid=${T.oilcardid}';
+                        })"
                            style="text-decoration:none">
                             <i class="layui-icon">&#xe640;</i>
                         </a>

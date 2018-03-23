@@ -1,12 +1,14 @@
 package com.team4.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.team4.entity.Accident;
 import com.team4.service.AccidentService;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,14 +39,34 @@ public class AccidentController {
     }
 
     @RequestMapping("/AddAccident")
-    public String AddAccident() {
+    public String AddAccident(Model m) {
+        List<Accident> accidents = accidentService.findAllAccident();
+        int maxaccid=0;
+        if (accidents.size()==0) maxaccid=1;
+        else {
+            for (int i=0;i<accidents.size();i++)
+                if (maxaccid<Integer.parseInt(accidents.get(i).getaccid()))
+                    maxaccid=Integer.parseInt(accidents.get(i).getaccid());
+        }
+        maxaccid++;
+        m.addAttribute("accid",String.valueOf(maxaccid));
         return "addAccident";
     }
 
     @RequestMapping("/insertAccident")
-    public String insertAccident(Accident accident) {
+    public String insertAccident(Model m,Accident accident) {
         accidentService.saveAccident(accident);
-        return "/addAccidentOK";
+        List<Accident> accidents = accidentService.findAllAccident();
+        int maxaccid=0;
+        if (accidents.size()==0) maxaccid=1;
+        else {
+            for (int i=0;i<accidents.size();i++)
+                if (maxaccid<Integer.parseInt(accidents.get(i).getaccid()))
+                    maxaccid=Integer.parseInt(accidents.get(i).getaccid());
+        }
+        maxaccid++;
+        m.addAttribute("accid",String.valueOf(maxaccid));
+        return "addAccidentOK";
     }
 
 
