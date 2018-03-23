@@ -133,7 +133,6 @@ public class OutboundController {
                 maxid=Integer.parseInt(outbounds.get(i).getId());
         }
         outbound.setId(String.valueOf(maxid+1));
-        System.out.println(maxid);
         outboundService.inputoutbound(outbound);
         return "";
     }

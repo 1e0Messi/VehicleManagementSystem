@@ -21,7 +21,8 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
-    <script type="text/javascript" src="../static/js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.js" charset="UTF-8"></script>
+
 </head>
 <body>
 <div class="container">
@@ -88,7 +89,7 @@
                         <li>
                             <a href="./outBound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                出车状态统计
+                                出车时间统计
                             </a>
                         </li>
                         <li>
@@ -201,7 +202,6 @@
     option1 = {
         title: {
             text: '今年违章事故数',
-            /*subtext: '数据来自事故表'*/
         },
         tooltip: {
             trigger: 'axis',
@@ -217,6 +217,11 @@
             right: '4%',
             bottom: '3%',
             containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
         },
         xAxis: {
             type: 'value',
@@ -261,6 +266,11 @@
             right: '4%',
             bottom: '3%',
             containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
         },
         xAxis: {
             type: 'value',

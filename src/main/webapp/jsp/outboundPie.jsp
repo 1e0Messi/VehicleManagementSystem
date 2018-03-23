@@ -13,6 +13,8 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.common.min.js" charset="UTF-8"></script>
+
 
 </head>
 <body>
@@ -81,7 +83,7 @@
                         <li>
                             <a href="./outBound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                出车状态统计
+                                出车时间统计
                             </a>
                         </li>
                         <li>
@@ -111,7 +113,7 @@
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
             <div id="main" style="width: 100%;height:400px;"></div>
             <blockquote class="layui-elem-quote">
-                ..........................................................鼠标浮在图上可查看具体的数字.............................................................................................................................
+                ..........................................................鼠标浮在图上可查看具体的数字.....................................................................................................................................
             </blockquote>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
@@ -147,8 +149,6 @@
 </div>
 <!-- 背景切换结束 -->
 
-<script type="text/javascript" src="../static/js/echarts.common.min.js"></script>
-<script type="text/javascript" src="../static/js/echarts-for-x-admin.js"></script>
 
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
@@ -171,7 +171,6 @@
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
-
         visualMap: {
             show: false,
             min: 80,

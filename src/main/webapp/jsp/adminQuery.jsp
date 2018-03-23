@@ -88,7 +88,7 @@
                         <li>
                             <a href="./outBound">
                                 <i class="iconfont">&#xe6a7;</i>
-                                出车状态统计
+                                出车时间统计
                             </a>
                         </li>
                         <li>
