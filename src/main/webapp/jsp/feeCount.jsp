@@ -108,10 +108,7 @@
                 特别声明：ECharts，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。如需使用，详细了解可以访问官网 <a href="http://echarts.baidu.com/" style="color:red">ECharts</a>。 x-admin不承担任何版权问题。
             </blockquote>
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-            <div id="main" style="width: 100%;height:400px;"></div>
-            <blockquote class="layui-elem-quote">
-                注意：本案例的Echarts图表库由cdn引入，需要在线才能正常使用，如想离想，请至Echarts官网下载。
-            </blockquote>
+            <div id="main" style="width: 100%;height:650px;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -167,7 +164,7 @@
         grid: {
             left: '3%',
             right: '4%',
-            bottom: '3%',
+            top: '45%',
             containLabel: true
         },
         toolbox: {
@@ -208,13 +205,34 @@
                 stack: '总量',
                 data:[${requestScope.jsonArray.get(0)},${requestScope.jsonArray.get(1)},${requestScope.jsonArray.get(2)},${requestScope.jsonArray.get(3)},${requestScope.jsonArray.get(4)},${requestScope.jsonArray.get(5)}, ${requestScope.jsonArray.get(6)},${requestScope.jsonArray.get(7)},${requestScope.jsonArray.get(8)},${requestScope.jsonArray.get(9)},${requestScope.jsonArray.get(10)},${requestScope.jsonArray.get(11)}]
             },
+            {
+                id: 'pie',
+                type:'pie',
+                radius: '30%',
+                center: ['50%', '25%'],
+                label: {
+                    formatter: '{b}: {@[' + 0 + ']} ({d}%)'
+                },
+                data:[{value:${requestScope.jsonArray1.get(0)},name:"修车"},{value:${requestScope.jsonArray3.get(0)},name:"洗车"},{value:${requestScope.jsonArray2.get(0)},name:"保养"},{value:${requestScope.jsonArray.get(0)},name:"维护"}]
+            }
         ]
     };
-
-
-    // 使用刚指定的配置项和数据显示图表。
+    myChart.on('updateAxisPointer', function (event) {
+        var xAxisInfo = event.axesInfo[0];
+        if (xAxisInfo) {
+            var dimension = xAxisInfo.value;
+            myChart.setOption({
+                series: {
+                    id: 'pie',
+                    label: {
+                        formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                    },
+                    data:[{value:option.series[0].data[dimension],name:"修车"},{value:option.series[1].data[dimension],name:"洗车"},{value:option.series[2].data[dimension],name:"保养"},{value:option.series[3].data[dimension],name:"维护"}]
+                }
+            });
+        }
+    });
     myChart.setOption(option);
 </script>
-
 </body>
 </html>

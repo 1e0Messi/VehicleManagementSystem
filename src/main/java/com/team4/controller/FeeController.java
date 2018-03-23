@@ -130,8 +130,8 @@ public class FeeController {
             date1=date.split("-");
             date2=date1[1];
             type=fees.get(i).gettype();
-            System.out.println(date2);
-            System.out.println(type);
+           /* System.out.println(date2);
+            System.out.println(type);*/
             if(date2.compareTo("01")==0){
                 if(type.equals("加油")){
                     a[0]=a[0]+Integer.parseInt(fees.get(i).getcost());
