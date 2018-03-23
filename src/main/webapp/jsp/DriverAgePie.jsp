@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/feeCount">
+                            <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
                                 收入支出统计
                             </a>
@@ -111,8 +111,8 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-               ......................................................驾驶员年龄饼状图：根据20、30、40、50岁将驾驶员按年龄分成4个部分，统计人数和占比.................................................
+            <blockquote class="layui-elem-quote" style="text-align: center">
+              驾驶员年龄饼状图：根据20、30、40、50岁将驾驶员按年龄分成4个部分，统计人数和占比
             </blockquote>
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
             <div id="main" style="width: 100%;height:400px;"></div>
@@ -158,7 +158,6 @@
     option = {
         title : {
             text: '驾驶员年龄分布',
-            subtext: '纯属虚构',
             x:'center'
         },
         tooltip : {

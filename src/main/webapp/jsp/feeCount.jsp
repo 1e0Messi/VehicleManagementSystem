@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/feeCount">
+                            <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
                                 收入支出统计
                             </a>
@@ -113,8 +113,8 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-                ..................................................车辆开销统计图：超精确全方位地展现了今年各月的车辆开支...................................................................................
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                车辆开销统计图：超精确全方位地展现了今年各月的车辆开支
             </blockquote>
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
             <div id="main" style="width: 100%;height:650px;"></div>

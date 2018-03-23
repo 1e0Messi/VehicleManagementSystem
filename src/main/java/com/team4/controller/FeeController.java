@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -120,188 +121,192 @@ public class FeeController {
         String[] date1;
         String date2;
         String type;
+        Calendar cal=Calendar.getInstance();
+        int year=cal.get(Calendar.YEAR);
+        Integer h;
         Integer[] a={0,0,0,0,0,0,0,0,0,0,0,0};
         Integer[] b={0,0,0,0,0,0,0,0,0,0,0,0};
         Integer[] c={0,0,0,0,0,0,0,0,0,0,0,0};
         Integer[] d={0,0,0,0,0,0,0,0,0,0,0,0};
         List<Fee> fees=feeService.findAllFee();
-        for(int i=0;i<fees.size();i++){
-            date=fees.get(i).gettime();
-            date1=date.split("-");
-            date2=date1[1];
-            type=fees.get(i).gettype();
-           /* System.out.println(date2);
-            System.out.println(type);*/
-            if(date2.compareTo("01")==0){
-                if(type.equals("加油")){
-                    a[0]=a[0]+Integer.parseInt(fees.get(i).getcost());
+        for(int i=0;i<fees.size();i++) {
+            date = fees.get(i).gettime();
+            date1 = date.split("-");
+            date2 = date1[1];
+            type = fees.get(i).gettype();
+            h = Integer.parseInt(date1[0]);
+            if (h == year) {
+                if (date2.compareTo("01") == 0) {
+                    if (type.equals("加油")) {
+                        a[0] = a[0] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[0] = b[0] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[0] = c[0] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[0] = d[0] + Integer.parseInt(fees.get(i).getcost());
+                    }
+
                 }
-                if(type.equals("修车")){
-                    b[0]=b[0]+Integer.parseInt(fees.get(i).getcost());
+                if (date2.compareTo("02") == 0) {
+                    if (type.equals("加油")) {
+                        a[1] = a[1] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[1] = b[1] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[1] = c[1] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[1] = d[1] + Integer.parseInt(fees.get(i).getcost());
+                    }
                 }
-                if(type.equals("保养")){
-                    c[0]=c[0]+Integer.parseInt(fees.get(i).getcost());
+                if (date2.compareTo("03") == 0) {
+                    if (type.equals("加油")) {
+                        a[2] = a[2] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[2] = b[2] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[2] = c[2] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[2] = d[2] + Integer.parseInt(fees.get(i).getcost());
+                    }
                 }
-                if(type.equals("洗车")){
-                    d[0]=d[0]+Integer.parseInt(fees.get(i).getcost());
+                if (date2.compareTo("04") == 0) {
+                    if (type.equals("加油")) {
+                        a[3] = a[3] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[3] = b[3] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[3] = c[3] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[3] = d[3] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("05") == 0) {
+                    if (type.equals("加油")) {
+                        a[4] = a[4] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[4] = b[4] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[4] = c[4] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[4] = d[4] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("06") == 0) {
+                    if (type.equals("加油")) {
+                        a[5] = a[5] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[5] = b[5] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[5] = c[5] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[5] = d[5] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("07") == 0) {
+                    if (type.equals("加油")) {
+                        a[6] = a[6] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[6] = b[6] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[6] = c[6] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[6] = d[6] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("08") == 0) {
+                    if (type.equals("加油")) {
+                        a[7] = a[7] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[7] = b[7] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[7] = c[7] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[7] = d[7] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("09") == 0) {
+                    if (type.equals("加油")) {
+                        a[8] = a[8] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[8] = b[8] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[8] = c[8] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[8] = d[8] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("10") == 0) {
+                    if (type.equals("加油")) {
+                        a[9] = a[9] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[9] = b[9] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[9] = c[9] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[9] = d[9] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("11") == 0) {
+                    if (type.equals("加油")) {
+                        a[10] = a[10] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[10] = b[10] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[10] = c[10] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[10] = d[10] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                }
+                if (date2.compareTo("12") == 0) {
+                    if (type.equals("加油")) {
+                        a[11] = a[11] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("修车")) {
+                        b[11] = b[11] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("保养")) {
+                        c[11] = c[11] + Integer.parseInt(fees.get(i).getcost());
+                    }
+                    if (type.equals("洗车")) {
+                        d[11] = d[11] + Integer.parseInt(fees.get(i).getcost());
+                    }
                 }
 
             }
-            if(date2.compareTo("02")==0){
-                if(type.equals("加油")){
-                    a[1]=a[1]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[1]=b[1]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[1]=c[1]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[1]=d[1]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("03")==0){
-                if(type.equals("加油")){
-                    a[2]=a[2]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[2]=b[2]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[2]=c[2]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[2]=d[2]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("04")==0){
-                if(type.equals("加油")){
-                    a[3]=a[3]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[3]=b[3]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[3]=c[3]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[3]=d[3]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("05")==0){
-                if(type.equals("加油")){
-                    a[4]=a[4]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[4]=b[4]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[4]=c[4]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[4]=d[4]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("06")==0){
-                if(type.equals("加油")){
-                    a[5]=a[5]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[5]=b[5]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[5]=c[5]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[5]=d[5]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("07")==0){
-                if(type.equals("加油")){
-                    a[6]=a[6]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[6]=b[6]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[6]=c[6]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[6]=d[6]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("08")==0){
-                if(type.equals("加油")){
-                    a[7]=a[7]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[7]=b[7]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[7]=c[7]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[7]=d[7]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("09")==0){
-                if(type.equals("加油")){
-                    a[8]=a[8]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[8]=b[8]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[8]=c[8]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[8]=d[8]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("10")==0){
-                if(type.equals("加油")){
-                    a[9]=a[9]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[9]=b[9]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[9]=c[9]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[9]=d[9]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("11")==0){
-                if(type.equals("加油")){
-                    a[10]=a[10]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[10]=b[10]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[10]=c[10]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[10]=d[10]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-            if(date2.compareTo("12")==0){
-                if(type.equals("加油")){
-                    a[11]=a[11]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("修车")){
-                    b[11]=b[11]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("保养")){
-                    c[11]=c[11]+Integer.parseInt(fees.get(i).getcost());
-                }
-                if(type.equals("洗车")){
-                    d[11]=d[11]+Integer.parseInt(fees.get(i).getcost());
-                }
-            }
-
         }
         for(int m=0;m<12;m++){
             jsonArray.put(a[m]);

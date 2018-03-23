@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>后台登录-X-admin1.1</title>
+    <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/feeCount">
+                            <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
                                 收入支出统计
                             </a>
@@ -112,13 +112,13 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-                特别声明：ECharts，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的 Canvas 类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。如需使用，详细了解可以访问官网 <a href="http://echarts.baidu.com/" style="color:red">ECharts</a>。 x-admin不承担任何版权问题。
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                 下图展示了本公司今年各月收入支出情况，纵坐标为月份横坐标为收入(元)。
             </blockquote>
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
             <div id="main" style="width: 100%;height:400px;"></div>
-            <blockquote class="layui-elem-quote">
-                注意：本案例的Echarts图表库由cdn引入，需要在线才能正常使用，如想离想，请至Echarts官网下载。
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                 单击双向柱状图上方的收入支出方块可以单独查看收入或支出情况
             </blockquote>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
@@ -200,7 +200,7 @@
                 type : 'category',
                 axisTick : {show: false},
 
-                data : ['十二月', '十一月', '十月', '九月', '八月', '七月', '六月','五月','四月','三月','二月','一月']
+                data : ['一月', '二月', '三月', '四月', '五月', '六月', '七月','八月','九月','十月','十一月','十二月']
             }
         ],
         series : [

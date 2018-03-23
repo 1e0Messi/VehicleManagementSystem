@@ -23,6 +23,13 @@
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
     <script type="text/javascript" src="../static/js/echarts.js" charset="UTF-8"></script>
 
+
+    <style type="text/css">
+        .clear{
+            clear: both;
+        }
+    </style>
+
 </head>
 <body>
 <div class="container">
@@ -105,7 +112,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/feeCount">
+                            <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
                                 收入支出统计
                             </a>
@@ -120,16 +127,22 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-                .....................................................下列第一张表是统计本公司今年各月车辆违章和事故数...........................................................................................................................................................................第二张表是统计过去5年每年发生违章和事故数量.....................................................................................................................
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                下列第一张表是统计本公司今年各月车辆违章和事故数
             </blockquote>
             <div id="main1" style="float: left;width: 45%;height:500px;"></div>
             <div id="main2" style="float: right;width: 45%;height:500px;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
+            <div class="clear"></div>
+            <blockquote class="layui-elem-quote"  style="text-align: center;">
+                第二张表是统计过去5年每年发生违章和事故数量
+            </blockquote>
         </div>
+
     </div>
     <!-- 右侧主体结束 -->
 </div>
+
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">

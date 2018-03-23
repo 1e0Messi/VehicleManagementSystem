@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/feeCount">
+                            <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
                                 收入支出统计
                             </a>
@@ -113,13 +113,13 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-                ********************************************出车时间分布饼状图：将一天按4小时的跨度平均分成6个时间段统计出车次数与占比****************************************************
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                出车时间分布饼状图：将一天按4小时的跨度平均分成6个时间段统计出车次数与占比
             </blockquote>
             <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
             <div id="main" style="width: 100%;height:400px;"></div>
-            <blockquote class="layui-elem-quote">
-                ..........................................................鼠标浮在图上可查看具体的数字.....................................................................................................................................
+            <blockquote class="layui-elem-quote" style="text-align: center">
+                鼠标浮在图上可查看具体的数字
             </blockquote>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
@@ -164,7 +164,6 @@
     option = {
         title : {
             text: '驾驶员年龄分布',
-            subtext: '纯属虚构',
             x:'center'
         },
         tooltip : {

@@ -5,13 +5,14 @@ import com.team4.service.IncomeService;
 import com.team4.entity.Fee;
 import com.team4.service.FeeService;
 import org.json.JSONArray;
-import org.json.JSONObject;
+import java.util.Calendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -29,6 +30,10 @@ public class CountController{
         String date2;
         String date;
         Integer date3;
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        String y;
+        Integer h;
         Integer[][] m=new Integer[2][12];
         for(int i=0;i<2;i++){
             for(int j=0;j<12;j++){
@@ -45,15 +50,22 @@ public class CountController{
             date1=date.split("-");
             date2=date1[1];
             date3=Integer.parseInt(date2);
-            m[0][date3-1]=m[0][date3-1]+incomes.get(i).getAmount();
-        }
+            y=date1[0];
+            h=Integer.parseInt(y);
+            if(h==year) {
+                m[0][date3 - 1] = m[0][date3 - 1] + incomes.get(i).getAmount();
+            }
+            }
         for(int a=0;a<fees.size();a++){
             date=fees.get(a).gettime();
             date1=date.split("-");
             date2=date1[1];
             date3=Integer.parseInt(date2);
-            m[1][date3-1]=m[1][date3-1]+Integer.parseInt(fees.get(a).getcost());
-
+            y=date1[0];
+            h=Integer.parseInt(y);
+            if(h==year) {
+                m[1][date3 - 1] = m[1][date3 - 1] + Integer.parseInt(fees.get(a).getcost());
+            }
         }
 
         for(int i=0;i<2;i++)
@@ -63,7 +75,6 @@ public class CountController{
                 jsonArray.put(m[i][j]);
             }
         }
-        System.out.println(jsonArray);
         model.addAttribute("jsonArray",jsonArray);
         return "incomeCount";
     }
