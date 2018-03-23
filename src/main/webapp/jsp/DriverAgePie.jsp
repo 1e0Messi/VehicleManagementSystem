@@ -96,6 +96,12 @@
                                 车辆费用统计
                             </a>
                         </li>
+                        <li>
+                            <a href="/feeCount">
+                                <i class="iconfont">&#xe6a7;</i>
+                                收入支出统计
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

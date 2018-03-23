@@ -1,54 +1,59 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50720
-Source Host           : localhost:3306
-Source Database       : vms
+ Source Server         : lgy
+ Source Server Type    : MySQL
+ Source Server Version : 50721
+ Source Host           : localhost:3306
+ Source Schema         : demo
 
-Target Server Type    : MYSQL
-Target Server Version : 50720
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50721
+ File Encoding         : 65001
 
-Date: 2018-03-22 09:44:45
+ Date: 23/03/2018 20:13:01
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for income_management
 -- ----------------------------
 DROP TABLE IF EXISTS `income_management`;
-CREATE TABLE `income_management` (
-  `id` varchar(10) NOT NULL,
-  `time` varchar(20) NOT NULL,
-  `carID` varchar(10) NOT NULL,
+CREATE TABLE `income_management`  (
+  `id` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `time` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `carID` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `amount` int(20) NOT NULL,
-  `applicantID` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `applicantID` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of income_management
 -- ----------------------------
-INSERT INTO `income_management` VALUES ('1', '2018-03-21', '川A：1234', '325', '2');
-INSERT INTO `income_management` VALUES ('10', '2018-03-06', '川A：4321', '300', '3');
-INSERT INTO `income_management` VALUES ('11', '2018-03-01', '川A：1234', '200', '2');
-INSERT INTO `income_management` VALUES ('12', '2018-03-02', '川A：1234', '300', '1');
-INSERT INTO `income_management` VALUES ('13', '2018-03-04', '川A：1234', '200', '3');
-INSERT INTO `income_management` VALUES ('14', '2018-03-05', '川A：1234', '600', '1');
-INSERT INTO `income_management` VALUES ('15', '2018-03-06', '川A：1472', '800', '2');
-INSERT INTO `income_management` VALUES ('16', '2018-03-07', '川A：1234', '600', '3');
-INSERT INTO `income_management` VALUES ('17', '2018-03-09', '川A：1472', '412', '3');
-INSERT INTO `income_management` VALUES ('18', '2018-03-10', '川A：4321', '500', '2');
-INSERT INTO `income_management` VALUES ('19', '2018-03-11', '川A：1234', '200', '1');
-INSERT INTO `income_management` VALUES ('2', '2018-03-14', '川A：3421', '600', '1');
-INSERT INTO `income_management` VALUES ('21', '2018-03-02', '川A：1472', '300', '2');
-INSERT INTO `income_management` VALUES ('22', '2018-03-03', '川A：1472', '600', '2');
-INSERT INTO `income_management` VALUES ('23', '2018-03-09', '川A：4725', '500', '2');
-INSERT INTO `income_management` VALUES ('3', '2017-03-22', '川A：5678', '622', '2');
-INSERT INTO `income_management` VALUES ('4', '2017-03-08', '川A：1472', '250', '3');
-INSERT INTO `income_management` VALUES ('5', '2018-01-11', '川A：4725', '300', '1');
-INSERT INTO `income_management` VALUES ('7', '2018-02-15', '川A：4725', '500', '2');
-INSERT INTO `income_management` VALUES ('8', '2018-03-06', '川A：1234', '1234', '3');
-INSERT INTO `income_management` VALUES ('9', '2018-01-03', '川A：4725', '134', '1');
+INSERT INTO `income_management` VALUES ('1', '2018-03-01', '3', 300, '3');
+INSERT INTO `income_management` VALUES ('10', '2018-03-06', '川A：4321', 3000, '3');
+INSERT INTO `income_management` VALUES ('11', '2018-03-01', '川A：1234', 2000, '2');
+INSERT INTO `income_management` VALUES ('12', '2018-04-02', '川A：1234', 3000, '1');
+INSERT INTO `income_management` VALUES ('13', '2018-06-04', '川A：1234', 2000, '3');
+INSERT INTO `income_management` VALUES ('14', '2018-05-05', '川A：1234', 6000, '1');
+INSERT INTO `income_management` VALUES ('15', '2018-12-06', '川A：1472', 8000, '2');
+INSERT INTO `income_management` VALUES ('16', '2018-06-07', '川A：1234', 6000, '3');
+INSERT INTO `income_management` VALUES ('17', '2018-05-09', '川A：1472', 4120, '3');
+INSERT INTO `income_management` VALUES ('18', '2018-02-06', '川A：4321', 5000, '2');
+INSERT INTO `income_management` VALUES ('19', '2018-11-11', '川A：1234', 2000, '1');
+INSERT INTO `income_management` VALUES ('2', '2018-10-14', '川A：3421', 6000, '1');
+INSERT INTO `income_management` VALUES ('21', '2018-09-02', '川A：1472', 3000, '2');
+INSERT INTO `income_management` VALUES ('22', '2018-08-03', '川A：1472', 6000, '2');
+INSERT INTO `income_management` VALUES ('222', '2018-07-02', '222', 10000, '22222');
+INSERT INTO `income_management` VALUES ('23', '2018-06-09', '川A：4725', 5000, '2');
+INSERT INTO `income_management` VALUES ('3', '2017-05-22', '川A：5678', 6220, '2');
+INSERT INTO `income_management` VALUES ('4', '2017-04-08', '川A：1472', 2500, '3');
+INSERT INTO `income_management` VALUES ('5', '2018-01-11', '川A：4725', 3000, '1');
+INSERT INTO `income_management` VALUES ('7', '2018-02-15', '川A：4725', 5000, '2');
+INSERT INTO `income_management` VALUES ('8', '2018-03-06', '川A：1234', 12340, '3');
+INSERT INTO `income_management` VALUES ('9', '2018-01-03', '川A：4725', 1340, '1');
+
+SET FOREIGN_KEY_CHECKS = 1;
