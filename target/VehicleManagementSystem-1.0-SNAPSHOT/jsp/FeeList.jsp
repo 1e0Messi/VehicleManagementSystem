@@ -235,7 +235,7 @@
                 </div>
             </form>
 
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','500','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.fee.size()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加费用信息','/AddFee','500','600')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.length} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
@@ -271,51 +271,11 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
 
-                <c:forEach var = "fee" items = "${requestScope.fee}">
-                    <tr>
-                        <td>
-                            <input type="checkbox" value="${fee.feeid}" name="feeItem">
-                        </td>
-                        <td>
-                                ${fee.feeid}
-                        </td>
-                        <td>
-                                ${fee.time}
-                        </td>
-                        <td >
-                                ${fee.carid}
-                        </td>
-                        <td >
-                                ${fee.type}
-                        </td>
-                        <td >
-                                ${fee.cost}
-                        </td>
-                        <td >
-                                ${fee.applicantid}
-                        </td>
-                        <td>
-                                ${fee.approverid}
-                        </td>
-                        <td>
-                                ${fee.text}
-                        </td>
-                        <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/UpdateFeeInput?feeid=${fee.feeid}&time=${fee.time}&carid=${fee.carid}&type=${fee.type}&cost=${fee.cost}&applicantid=${fee.applicantid}&approverid=${fee.approverid}&text=${fee.text}','4','500','600')"
-                               class="ml-5" style="text-decoration:none">
-                                <i class="layui-icon">&#xe642;</i>
-                            </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'${fee.feeid}')"
-                               style="text-decoration:none">
-                                <i class="layui-icon">&#xe640;</i>
-                            </a>
-                        </td>
-                    </tr>
-                </c:forEach>
                 </tbody>
             </table>
+            <div id = "pageNum" align="right" style="bottom:5%;"></div>
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
@@ -351,6 +311,77 @@
 <!-- 背景切换结束 -->
 <!-- 页面动态效果 -->
 <script>
+    layui.use(['laypage'],function () {
+        laypage = layui.laypage;
+
+        var fees = ${requestScope.jsonArray};
+        var length = fees.length;
+
+        var size = 10;
+        var pageNum =  length/size;
+
+        var render = function (curr) {
+            var str = "";
+            var last = curr * size - 1;
+            last = last >= length ? (length-1) : last;
+            for(var i = (curr - 1) * size;i <= last;i++){
+                str += tbody(fees[i]);
+            }
+            return str;
+        };
+        laypage({
+            cont:$("#pageNum"),
+            pages:Math.ceil(pageNum),
+            skin: '#1E9FFF',
+            jump:function (obj,first) {
+                $("#tbody").html(render(obj.curr));
+            }
+        });
+    });
+
+    function tbody(fee) {
+        var str="<tr>\n" +
+            "<td>\n" +
+            "<input type=\"checkbox\" value=\""+fee.feeid+"\" name=\"feeItem\">\n" +
+            "</td>\n" +
+            "<td>\n" +
+            fee.feeid+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            fee.time+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            fee.carid+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            fee.type+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            fee.cost+"\n" +
+            "</td>\n" +
+            "<td >\n" +
+            fee.applicantid+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            fee.approverid+"\n" +
+            "</td>\n" +
+            "<td>\n" +
+            fee.text+"\n" +
+            "</td>\n" +
+            "<td class=\"td-manage\">\n" +
+            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/UpdateFeeInput?feeid="+fee.feeid+"&time="+fee.time+"&carid="+fee.carid+"&type="+fee.type+"&cost="+fee.cost+"&applicantid="+fee.applicantid+"&approverid="+fee.approverid+"&text="+fee.text+"','4','500','600')\"\n" +
+            " class=\"ml-5\" style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe642;</i>\n" +
+            "</a>\n" +
+            "<a title=\"删除\" href=\"javascript:;\" onclick=\"member_del(this,'"+fee.feeid+"')\"\n" +
+            " style=\"text-decoration:none\">\n" +
+            "<i class=\"layui-icon\">&#xe640;</i>\n" +
+            "</a>\n" +
+            "</td>\n" +
+            "</tr>";
+        return str;
+    }
+
 
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件

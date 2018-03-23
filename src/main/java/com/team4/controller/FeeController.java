@@ -1,5 +1,7 @@
 package com.team4.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team4.entity.Fee;
 import com.team4.service.FeeService;
 import org.json.JSONArray;
@@ -24,13 +26,12 @@ public class FeeController {
     private FeeService feeService;
 
     @RequestMapping("/AllFee")
-    public String getAllFee(ModelMap modelMap){
+    public String getAllFee(ModelMap modelMap) throws Exception{
         List<Fee> fee = feeService.findAllFee();
-        modelMap.addAttribute("fee",fee);
+        modelMap.addAttribute("jsonArray",new ObjectMapper().writeValueAsString(fee));
+        modelMap.addAttribute("length",fee.size());
         return "FeeList";
     }
-
-
 
     @RequestMapping("/AddFee")
     public String AddFee(Model m) {
@@ -100,11 +101,11 @@ public class FeeController {
 
 
     @RequestMapping("/findFee")
-    public ModelAndView findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime) {
-
+    public ModelAndView findFee(String feeid,String carid,String type,String cost,String applicantid,String approverid,String beginTime,String endTime) throws JsonProcessingException {
         ModelAndView mav = new ModelAndView();
         List<Fee> ffbid = feeService.findFee(feeid,carid,type,cost,applicantid,approverid,beginTime,endTime);
-        mav.addObject("ffbid",ffbid);
+        mav.addObject("ffbid",new ObjectMapper().writeValueAsString(ffbid));
+        mav.addObject("length",ffbid.size());
         mav.setViewName("findFee");
         return mav;
     }
