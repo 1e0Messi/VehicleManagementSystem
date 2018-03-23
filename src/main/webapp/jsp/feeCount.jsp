@@ -186,25 +186,21 @@
             {
                 name:'修车',
                 type:'line',
-                stack: '总量',
                 data:[${requestScope.jsonArray1.get(0)},${requestScope.jsonArray1.get(1)},${requestScope.jsonArray1.get(2)},${requestScope.jsonArray1.get(3)},${requestScope.jsonArray1.get(4)},${requestScope.jsonArray1.get(5)},${requestScope.jsonArray1.get(6)},${requestScope.jsonArray1.get(7)},${requestScope.jsonArray1.get(8)},${requestScope.jsonArray1.get(9)},${requestScope.jsonArray1.get(10)},${requestScope.jsonArray1.get(11)}]
             },
             {
                 name:'洗车',
                 type:'line',
-                stack: '总量',
                 data:[${requestScope.jsonArray3.get(0)},${requestScope.jsonArray3.get(1)},${requestScope.jsonArray3.get(2)},${requestScope.jsonArray3.get(3)},${requestScope.jsonArray3.get(4)},${requestScope.jsonArray3.get(5)},${requestScope.jsonArray3.get(6)},${requestScope.jsonArray3.get(7)},${requestScope.jsonArray3.get(8)},${requestScope.jsonArray3.get(9)},${requestScope.jsonArray3.get(10)},${requestScope.jsonArray3.get(11)}]
             },
             {
                 name:'保养',
                 type:'line',
-                stack: '总量',
                 data:[${requestScope.jsonArray2.get(0)},${requestScope.jsonArray2.get(1)},${requestScope.jsonArray2.get(2)},${requestScope.jsonArray2.get(3)},${requestScope.jsonArray2.get(4)},${requestScope.jsonArray2.get(5)},${requestScope.jsonArray2.get(6)},${requestScope.jsonArray2.get(7)},${requestScope.jsonArray2.get(8)},${requestScope.jsonArray2.get(9)},${requestScope.jsonArray2.get(10)},${requestScope.jsonArray2.get(11)}]
             },
             {
                 name:'维护',
                 type:'line',
-                stack: '总量',
                 data:[${requestScope.jsonArray.get(0)},${requestScope.jsonArray.get(1)},${requestScope.jsonArray.get(2)},${requestScope.jsonArray.get(3)},${requestScope.jsonArray.get(4)},${requestScope.jsonArray.get(5)}, ${requestScope.jsonArray.get(6)},${requestScope.jsonArray.get(7)},${requestScope.jsonArray.get(8)},${requestScope.jsonArray.get(9)},${requestScope.jsonArray.get(10)},${requestScope.jsonArray.get(11)}]
             },
             {

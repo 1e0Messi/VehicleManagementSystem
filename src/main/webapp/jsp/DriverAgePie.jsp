@@ -150,70 +150,108 @@
     // 指定图表的配置项和数据
     // 指定图表的配置项和数据
     option = {
-        backgroundColor: '#2c343c',
-
-        title: {
-            text: '驾驶员年龄',
-            left: 'center',
-            top: 20,
-            textStyle: {
-                color: '#ccc'
-            }
+        title : {
+            text: '驾驶员年龄分布',
+            subtext: '纯属虚构',
+            x:'center'
         },
-
         tooltip : {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
-
-        visualMap: {
-            show: false,
-            min: 80,
-            max: 600,
-            inRange: {
-                colorLightness: [0, 1]
-            }
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['20-30岁','30-40岁','40-50岁','50-60岁']
         },
         series : [
             {
-                name:'访问来源',
-                type:'pie',
+                name: '访问来源',
+                type: 'pie',
                 radius : '55%',
-                center: ['50%', '50%'],
+                center: ['50%', '60%'],
                 data:[
                     {value:${requestScope.jsonArray.get(0)}, name:'20-30岁'},
                     {value:${requestScope.jsonArray.get(1)}, name:'30-40岁'},
                     {value:${requestScope.jsonArray.get(2)}, name:'40-50岁'},
                     {value:${requestScope.jsonArray.get(3)}, name:'50-60岁'}
-                ].sort(function (a, b) { return a.value - b.value}),
-                roseType: 'angle',
-                label: {
-                    normal: {
-                        textStyle: {
-                            color: 'rgba(255, 255, 255, 0.3)'
-                        }
-                    }
-                },
-                labelLine: {
-                    normal: {
-                        lineStyle: {
-                            color: 'rgba(255, 255, 255, 0.3)'
-                        },
-                        smooth: 0.2,
-                        length: 10,
-                        length2: 20
-                    }
-                },
+                ],
                 itemStyle: {
-                    normal: {
-                        color: '#c21e2c',
-                        shadowBlur: 200,
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
                         shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
                 }
             }
         ]
     };
+
+    <%--option = {--%>
+        <%--backgroundColor: '#2c343c',--%>
+
+        <%--title: {--%>
+            <%--text: '驾驶员年龄',--%>
+            <%--left: 'center',--%>
+            <%--top: 20,--%>
+            <%--textStyle: {--%>
+                <%--color: '#ccc'--%>
+            <%--}--%>
+        <%--},--%>
+
+        <%--tooltip : {--%>
+            <%--trigger: 'item',--%>
+            <%--formatter: "{a} <br/>{b} : {c} ({d}%)"--%>
+        <%--},--%>
+
+        <%--visualMap: {--%>
+            <%--show: false,--%>
+            <%--min: 80,--%>
+            <%--max: 600,--%>
+            <%--inRange: {--%>
+                <%--colorLightness: [0, 1]--%>
+            <%--}--%>
+        <%--},--%>
+        <%--series : [--%>
+            <%--{--%>
+                <%--name:'访问来源',--%>
+                <%--type:'pie',--%>
+                <%--radius : '55%',--%>
+                <%--center: ['50%', '50%'],--%>
+                <%--data:[--%>
+                    <%--{value:${requestScope.jsonArray.get(0)}, name:'20-30岁'},--%>
+                    <%--{value:${requestScope.jsonArray.get(1)}, name:'30-40岁'},--%>
+                    <%--{value:${requestScope.jsonArray.get(2)}, name:'40-50岁'},--%>
+                    <%--{value:${requestScope.jsonArray.get(3)}, name:'50-60岁'}--%>
+                <%--].sort(function (a, b) { return a.value - b.value}),--%>
+                <%--roseType: 'angle',--%>
+                <%--label: {--%>
+                    <%--normal: {--%>
+                        <%--textStyle: {--%>
+                            <%--color: 'rgba(255, 255, 255, 0.3)'--%>
+                        <%--}--%>
+                    <%--}--%>
+                <%--},--%>
+                <%--labelLine: {--%>
+                    <%--normal: {--%>
+                        <%--lineStyle: {--%>
+                            <%--color: 'rgba(255, 255, 255, 0.3)'--%>
+                        <%--},--%>
+                        <%--smooth: 0.2,--%>
+                        <%--length: 10,--%>
+                        <%--length2: 20--%>
+                    <%--}--%>
+                <%--},--%>
+                <%--itemStyle: {--%>
+                    <%--normal: {--%>
+                        <%--color: '#c21e2c',--%>
+                        <%--shadowBlur: 200,--%>
+                        <%--shadowColor: 'rgba(0, 0, 0, 0.5)'--%>
+                    <%--}--%>
+                <%--}--%>
+            <%--}--%>
+        <%--]--%>
+    <%--};--%>
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 </script>

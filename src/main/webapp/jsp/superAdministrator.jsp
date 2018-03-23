@@ -103,6 +103,12 @@
                                 车辆费用统计
                             </a>
                         </li>
+                        <li>
+                            <a href="/IncomeCount">
+                                <i class="iconfont">&#xe6a7;</i>
+                                收入费用统计
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
