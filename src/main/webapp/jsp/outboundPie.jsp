@@ -163,7 +163,7 @@
     // 指定图表的配置项和数据
     option = {
         title : {
-            text: '驾驶员年龄分布',
+            text: '出车时间分布',
             x:'center'
         },
         tooltip : {

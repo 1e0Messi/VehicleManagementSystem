@@ -14,4 +14,18 @@ public interface AdminService {
     void adminModify(String id,String name,String tel,String email,String address);
     Admin getAdminById(String id);
     List<Admin> getAdminByDate(String startTime,String endTime);
+    int getAdminCount();
+    int getDriverCount();
+    int getVehicleCount();
+    int getIncomeCount();
+    int getFeeCount();
+
+    int getMonthIncome();
+    int getMonthFee();
+
+    int getYearIncome();
+    int getYearFee();
+
+    int getThreeYearIncome();
+    int getThreeYearFee();
 }

@@ -106,7 +106,7 @@
                         <li>
                             <a href="/IncomeCount">
                                 <i class="iconfont">&#xe6a7;</i>
-                                收入费用统计
+                                收入支出统计
                             </a>
                         </li>
                     </ul>
@@ -139,24 +139,43 @@
                 <tbody>
                 <tr>
                     <td>总数</td>
-                    <td>92</td>
-                    <td>9</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>20</td>
+                    <td>${requestScope.adminCount}</td>
+                    <td>${requestScope.driverCount}</td>
+                    <td>${requestScope.vehicleCount}</td>
+                    <td>${requestScope.incomeCount}</td>
+                    <td>${requestScope.feeCount}</td>
                 </tr>
                 </tbody>
             </table>
+            <br/>
+            <br/>
             <table class="layui-table">
                 <thead>
-                <tr>
-                    <th colspan="2" scope="col">提醒</th>
-                </tr>
+                    <tr>
+                        <th>统计</th>
+                        <th>收入</th>
+                        <th>支出</th>
+                        <th>利润</th>
+                    </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th width="30%">服务器计算机名</th>
-                    <td><span id="lbServerName">http://127.0.0.1/</span></td>
+                    <th>本月</th>
+                    <td>${requestScope.monthIncome}</td>
+                    <td>${requestScope.monthFee}</td>
+                    <td>${requestScope.monthProfit}</td>
+                </tr>
+                <tr>
+                    <th>本年</th>
+                    <td>${requestScope.yearIncome}</td>
+                    <td>${requestScope.yearFee}</td>
+                    <td>${requestScope.yearProfit}</td>
+                </tr>
+                <tr>
+                    <th>三年</th>
+                    <td>${requestScope.threeYearIncome}</td>
+                    <td>${requestScope.threeYearFee}</td>
+                    <td>${requestScope.threeYearProfit}</td>
                 </tr>
                 </tbody>
             </table>

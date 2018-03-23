@@ -59,4 +59,49 @@ public class AdminServiceImpl implements AdminService {
     public List<Admin> getAdminByDate(String startTime, String endTime) {
         return adminMapper.getAdminByDate(startTime,endTime);
     }
+
+    public int getAdminCount() {
+        return adminMapper.getAdminCount();
+    }
+
+    public int getDriverCount() {
+        return adminMapper.getDriverCount();
+    }
+
+    public int getVehicleCount() {
+        return adminMapper.getVehicleCount();
+    }
+
+    public int getIncomeCount() {
+        return adminMapper.getIncomeCount();
+    }
+
+    public int getFeeCount() {
+        return adminMapper.getFeeCount();
+    }
+
+
+    public int getMonthIncome() {
+        return adminMapper.getMonthIncome();
+    }
+
+    public int getMonthFee() {
+        return adminMapper.getMonthFee();
+    }
+
+    public int getYearIncome() {
+        return adminMapper.getYearIncome();
+    }
+
+    public int getYearFee() {
+        return adminMapper.getYearFee();
+    }
+
+    public int getThreeYearIncome() {
+        return adminMapper.getThreeYearIncome();
+    }
+
+    public int getThreeYearFee() {
+        return adminMapper.getThreeYearFee();
+    }
 }

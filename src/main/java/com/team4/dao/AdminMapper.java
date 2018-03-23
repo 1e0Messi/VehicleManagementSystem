@@ -31,4 +31,35 @@ public interface AdminMapper {
 
     @Select("select * from admin where authority = 1 and date between #{startTime} and  #{endTime};")
     List<Admin> getAdminByDate(@Param("startTime")String startTime,@Param("endTime")String endTime);
+
+    @Select("select count(*) from admin where authority = 1")
+    int getAdminCount();
+
+    @Select("select count(*) from driver")
+    int getDriverCount();
+
+    @Select("select count(*) from vehicleinformation")
+    int getVehicleCount();
+
+    @Select("select sum(amount) from income_management")
+    int getIncomeCount();
+
+    @Select("select sum(cost) from fee")
+    int getFeeCount();
+
+    @Select("select sum(amount) from income_management where date_format(time,'%Y-%m')=date_format(now(),'%Y-%m')")
+    int getMonthIncome();
+    @Select("select sum(cost) from fee where date_format(time,'%Y-%m')=date_format(now(),'%Y-%m')")
+    int getMonthFee();
+
+    @Select("select sum(amount) from income_management where YEAR(time)=YEAR(NOW())")
+    int getYearIncome();
+    @Select("select sum(cost) from fee where YEAR(time)=YEAR(NOW())")
+    int getYearFee();
+
+    @Select("select sum(amount) from income_management where YEAR(time) between YEAR(date_sub(now(),interval 3 year)) and YEAR(now())")
+    int getThreeYearIncome();
+    @Select("select sum(cost) from fee where YEAR(time) between YEAR(date_sub(now(),interval 3 year)) and YEAR(now())")
+    int getThreeYearFee();
+
 }

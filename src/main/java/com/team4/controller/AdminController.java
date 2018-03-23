@@ -4,21 +4,16 @@ package com.team4.controller;
 import com.team4.entity.Admin;
 import com.team4.service.AdminService;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @Controller
 public class AdminController {
@@ -40,12 +35,36 @@ public class AdminController {
 
         String pageReturn;
         if(admin != null){
-            modelMap.addAttribute("admin",admin);
             request.getSession().setAttribute("id",admin.getId());
             request.getSession().setAttribute("name",admin.getName());
             if(admin.getAuthority() != 0){
+                //普通管理员
                 pageReturn = "Administrator";
             }else {
+                //高级管理员
+                modelMap.addAttribute("adminCount",adminService.getAdminCount());
+                modelMap.addAttribute("driverCount",adminService.getDriverCount());
+                modelMap.addAttribute("vehicleCount",adminService.getVehicleCount());
+                modelMap.addAttribute("incomeCount",adminService.getIncomeCount());
+                modelMap.addAttribute("feeCount",adminService.getFeeCount());
+
+                int monthIncome = adminService.getMonthIncome();
+                int monthFee = adminService.getMonthFee();
+                int yearIncome = adminService.getYearIncome();
+                int yearFee = adminService.getYearFee();
+                int threeYearIncome = adminService.getThreeYearIncome();
+                int threeYearFee = adminService.getThreeYearFee();
+
+                modelMap.addAttribute("monthIncome",monthIncome);
+                modelMap.addAttribute("monthFee",monthFee);
+                modelMap.addAttribute("monthProfit",monthIncome - monthFee);
+                modelMap.addAttribute("yearIncome",yearIncome);
+                modelMap.addAttribute("yearFee",yearFee);
+                modelMap.addAttribute("yearProfit",yearIncome - yearFee);
+                modelMap.addAttribute("threeYearIncome",threeYearIncome);
+                modelMap.addAttribute("threeYearFee",threeYearFee);
+                modelMap.addAttribute("threeYearProfit",threeYearIncome - threeYearFee);
+
                 pageReturn = "superAdministrator";
             }
         }else{
@@ -68,7 +87,29 @@ public class AdminController {
     }
 
     @RequestMapping("/superAdministrator")
-    public String superAdministrator(){
+    public String superAdministrator(ModelMap modelMap){
+        modelMap.addAttribute("adminCount",adminService.getAdminCount());
+        modelMap.addAttribute("driverCount",adminService.getDriverCount());
+        modelMap.addAttribute("vehicleCount",adminService.getVehicleCount());
+        modelMap.addAttribute("incomeCount",adminService.getIncomeCount());
+        modelMap.addAttribute("feeCount",adminService.getFeeCount());
+
+        int monthIncome = adminService.getMonthIncome();
+        int monthFee = adminService.getMonthFee();
+        int yearIncome = adminService.getYearIncome();
+        int yearFee = adminService.getYearFee();
+        int threeYearIncome = adminService.getThreeYearIncome();
+        int threeYearFee = adminService.getThreeYearFee();
+
+        modelMap.addAttribute("monthIncome",monthIncome);
+        modelMap.addAttribute("monthFee",monthFee);
+        modelMap.addAttribute("monthProfit",monthIncome - monthFee);
+        modelMap.addAttribute("yearIncome",yearIncome);
+        modelMap.addAttribute("yearFee",yearFee);
+        modelMap.addAttribute("yearProfit",yearIncome - yearFee);
+        modelMap.addAttribute("threeYearIncome",threeYearIncome);
+        modelMap.addAttribute("threeYearFee",threeYearFee);
+        modelMap.addAttribute("threeYearProfit",threeYearIncome - threeYearFee);
         return "superAdministrator";
     }
 
