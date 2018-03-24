@@ -22,7 +22,7 @@ public class RefuelController {
     }
     @RequestMapping("/delete")
     public String Delete(String id,Model model) {
-        System.out.println("id:" + id);
+//        System.out.println("id:" + id);
         refuelService.delete(id);
         List<Refuel> refuels=refuelService.FindAll();
         model.addAttribute("refuels",refuels);
@@ -59,7 +59,7 @@ public String update(Model model,String id){
    }
    @RequestMapping("/updateResult")
    public String updateResult(Refuel refuel){
-        System.out.println(refuel);
+//        System.out.println(refuel);
        refuelService.update(refuel);
        return "Refuel";
    }
@@ -87,13 +87,20 @@ public String update(Model model,String id){
     @RequestMapping("/AddRefuel")
     public String AddRefuel(Model m){
         List<Refuel> refuels = refuelService.FindAll();
+        //Refuel refuel = new Refuel();
+        int maxid=0;
         String id;
-        if(refuels.size() == 0)
-            id = "0";
-        else
-            id=Integer.toString (Integer.valueOf(refuels.get(refuels.size() - 1).getId())+1);
-
-        m.addAttribute("id",id);
+        if(refuels.size() == 0) {
+            maxid=1;
+        }
+        else{for (int i=0;i<refuels.size();i++)
+            if (maxid<Integer.parseInt(refuels.get(i).getId()))
+                maxid=Integer.parseInt(refuels.get(i).getId());
+        }
+        //refuel.setId(String.valueOf(maxid+1));
+        maxid++;
+//            id=Integer.toString (Integer.valueOf(refuels.get(refuels.size() - 1).getId())+1);
+        m.addAttribute("id",String.valueOf(maxid));
         return "addRefuel";
     }
 }
