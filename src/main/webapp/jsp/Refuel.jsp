@@ -258,7 +258,9 @@
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除"  onclick=""
+                            <a title="删除" onclick="layer.confirm('是否删除？',function() {
+                                    location.href='/delete?id=${Temp.id}';
+                                    })"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
