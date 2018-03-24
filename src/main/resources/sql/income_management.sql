@@ -11,7 +11,7 @@
  Target Server Version : 50721
  File Encoding         : 65001
 
- Date: 23/03/2018 20:13:01
+ Date: 24/03/2018 13:59:01
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,6 @@ INSERT INTO `income_management` VALUES ('19', '2018-11-11', '川A：1234', 2000,
 INSERT INTO `income_management` VALUES ('2', '2018-10-14', '川A：3421', 6000, '1');
 INSERT INTO `income_management` VALUES ('21', '2018-09-02', '川A：1472', 3000, '2');
 INSERT INTO `income_management` VALUES ('22', '2018-08-03', '川A：1472', 6000, '2');
-INSERT INTO `income_management` VALUES ('222', '2018-07-02', '222', 10000, '22222');
 INSERT INTO `income_management` VALUES ('23', '2018-06-09', '川A：4725', 5000, '2');
 INSERT INTO `income_management` VALUES ('3', '2017-05-22', '川A：5678', 6220, '2');
 INSERT INTO `income_management` VALUES ('4', '2017-04-08', '川A：1472', 2500, '3');

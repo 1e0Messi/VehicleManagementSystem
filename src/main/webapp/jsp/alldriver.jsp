@@ -200,7 +200,7 @@
                     <ul class="sub-menu" style="display:none">
                         <li>
                             <a href="./viewalloutbound">
-                                <i class="current">&#xe6a7;</i>
+                                <i class="iconfont">&#xe6a7;</i>
                                 出车记录
                             </a>
                         </li>

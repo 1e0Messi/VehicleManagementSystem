@@ -120,7 +120,8 @@ public class AdminController {
     }
 
     @RequestMapping("/Administrator")
-    public String Administrator(){
+    public String Administrator(ModelMap modelMap){
+        modelMap.addAttribute("notice",noticeService.getAllUsingNotice());
         return "Administrator";
     }
 
