@@ -136,7 +136,7 @@
     <div class="page-content">
         <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/html/adminAdd.html','600','700')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.jsonArray.get(0).length()} 条</span></xblock>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="member_add('添加用户','/adminAddPage','600','700')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.jsonArray.get(0).length()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>

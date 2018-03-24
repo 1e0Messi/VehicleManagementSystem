@@ -274,7 +274,7 @@
             {
                 name: '事故',
                 type: 'bar',
-                data: [accident[thisyear][1],accident[thisyear][2],accident[thisyear][3],accident[thisyear][4],accident[thisyear][5],accident[thisyear][6],accident[thisyear][7],accident[8],accident[thisyear][9],accident[thisyear][10],accident[thisyear][11],accident[thisyear][12]]
+                data: [accident[thisyear][1],accident[thisyear][2],accident[thisyear][3],accident[thisyear][4],accident[thisyear][5],accident[thisyear][6],accident[thisyear][7],accident[thisyear][8],accident[thisyear][9],accident[thisyear][10],accident[thisyear][11],accident[thisyear][12]]
             }
         ]
     };
@@ -312,18 +312,18 @@
         },
         yAxis: {
             type: 'category',
-            data: [thisyear.toString(),(thisyear-1).toString(),(thisyear-2).toString(),(thisyear-3).toString(),(thisyear-4).toString(),(thisyear-5).toString()]
+            data: [thisyear.toString(),(thisyear-1).toString(),(thisyear-2).toString(),(thisyear-3).toString(),(thisyear-4).toString()]
         },
         series: [
             {
                 name: '违章',
                 type: 'bar',
-                data: [violationcount[thisyear],violationcount[thisyear-1],violationcount[thisyear-2],violationcount[thisyear-3],violationcount[thisyear-4],violationcount[thisyear-5]]
+                data: [violationcount[thisyear],violationcount[thisyear-1],violationcount[thisyear-2],violationcount[thisyear-3],violationcount[thisyear-4]]
             },
             {
                 name: '事故',
                 type: 'bar',
-                data: [accidentcount[thisyear],accidentcount[thisyear-1],accidentcount[thisyear-2],accidentcount[thisyear-3],accidentcount[thisyear-4],accidentcount[thisyear-5]]
+                data: [accidentcount[thisyear],accidentcount[thisyear-1],accidentcount[thisyear-2],accidentcount[thisyear-3],accidentcount[thisyear-4]]
             }
         ]
     };

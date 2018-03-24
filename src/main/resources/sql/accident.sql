@@ -1,52 +1,49 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : lgy
- Source Server Type    : MySQL
- Source Server Version : 50721
- Source Host           : localhost:3306
- Source Schema         : demo
+Source Server         : asdasd
+Source Server Version : 50718
+Source Host           : localhost:3306
+Source Database       : vms
 
- Target Server Type    : MySQL
- Target Server Version : 50721
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 50718
+File Encoding         : 65001
 
- Date: 23/03/2018 20:12:25
+Date: 2018-03-24 19:53:43
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for accident
 -- ----------------------------
 DROP TABLE IF EXISTS `accident`;
-CREATE TABLE `accident`  (
-  `accid` varchar(4) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `time` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `carid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `listid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `personid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `addr` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `text` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `accident` (
+  `accid` varchar(4) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `carid` varchar(10) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `listid` varchar(10) NOT NULL,
+  `personid` varchar(10) NOT NULL,
+  `addr` varchar(20) NOT NULL,
+  `text` varchar(50) NOT NULL,
   PRIMARY KEY (`accid`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of accident
 -- ----------------------------
-INSERT INTO `accident` VALUES ('10', '2016-03-09', '1', '事故', '4', '1', '1', '1');
-INSERT INTO `accident` VALUES ('12', '2016-07-07', '1', '违章', '1', '1', '1', '1');
-INSERT INTO `accident` VALUES ('16', '2017-03-15', '64', '违章', '13', '51', '12', '16');
-INSERT INTO `accident` VALUES ('2', '2018-03-20', '6', '违章', '6', '6', '6', '6');
-INSERT INTO `accident` VALUES ('3', '2018-03-21', '3', '违章', '3', '3', '3', '3');
-INSERT INTO `accident` VALUES ('33', '2018-03-20', '喵喵', '违章', '1', '1', '1', '1');
-INSERT INTO `accident` VALUES ('4', '2018-03-16', '2', '违章', '4', '7', '3', '2');
-INSERT INTO `accident` VALUES ('5', '2018-05-16', '1', '违章', '1', '1', '1', '1');
-INSERT INTO `accident` VALUES ('6', '2018-05-23', '1', '违章', '1', '1', '1', '1');
-INSERT INTO `accident` VALUES ('7', '2018-05-25', '1', '事故', '4', '8', '7', '7');
-INSERT INTO `accident` VALUES ('8', '2018-03-13', '2', '违章', '2', '2', '2', '2');
-INSERT INTO `accident` VALUES ('9', '2018-03-15', '7', '事故', '1', '1', '1', '1');
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `accident` VALUES ('1', '2018-08-13', '1', '违章', '46', '1', '1', '1');
+INSERT INTO `accident` VALUES ('10', '2014-03-18', '3', '违章', '9', '9', '9', '9');
+INSERT INTO `accident` VALUES ('11', '2015-03-10', '6', '事故', '6', '6', '6', '6');
+INSERT INTO `accident` VALUES ('12', '2018-08-13', '6', '事故', '6', '6', '6', '6');
+INSERT INTO `accident` VALUES ('14', '2018-06-14', '11', '违章', '3', '4', '4', '4');
+INSERT INTO `accident` VALUES ('15', '2018-10-10', '10', '事故', '10', '10', '10', '10');
+INSERT INTO `accident` VALUES ('3', '2017-03-13', '3', '违章', '3', '3', '3', '3');
+INSERT INTO `accident` VALUES ('4', '2018-08-07', '1', '违章', '1', '1', '1', '1');
+INSERT INTO `accident` VALUES ('5', '2018-08-06', '2', '事故', '2', '2', '2', '2');
+INSERT INTO `accident` VALUES ('6', '2017-03-07', '3', '违章', '5', '5', '5', '5');
+INSERT INTO `accident` VALUES ('7', '2017-06-20', '8', '事故', '8', '8', '8', '8');
+INSERT INTO `accident` VALUES ('8', '2014-09-09', '11', '违章', '11', '11', '11', '11');
+INSERT INTO `accident` VALUES ('9', '2014-03-10', '5', '违章', '5', '5', '5', '5');

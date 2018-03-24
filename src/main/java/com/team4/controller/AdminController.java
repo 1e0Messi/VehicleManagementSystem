@@ -169,6 +169,12 @@ public class AdminController {
         return "success";
     }
 
+    @RequestMapping("/adminAddPage")
+    public String adminAddPage(){
+        return "adminAdd";
+    }
+
+
     /**
      * 添加admin成员
      * @param adminData 添加的admin成员对象

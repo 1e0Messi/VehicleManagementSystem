@@ -1,37 +1,35 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : lgy
- Source Server Type    : MySQL
- Source Server Version : 50721
- Source Host           : localhost:3306
- Source Schema         : demo
+Source Server         : asdasd
+Source Server Version : 50718
+Source Host           : localhost:3306
+Source Database       : vms
 
- Target Server Type    : MySQL
- Target Server Version : 50721
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 50718
+File Encoding         : 65001
 
- Date: 23/03/2018 20:12:55
+Date: 2018-03-24 19:59:05
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for fee
 -- ----------------------------
 DROP TABLE IF EXISTS `fee`;
-CREATE TABLE `fee`  (
-  `feeid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `time` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `carid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `cost` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `applicantid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `approverid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `text` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+CREATE TABLE `fee` (
+  `feeid` varchar(20) NOT NULL,
+  `time` varchar(20) DEFAULT NULL,
+  `carid` varchar(20) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  `cost` varchar(20) DEFAULT NULL,
+  `applicantid` varchar(20) DEFAULT NULL,
+  `approverid` varchar(20) DEFAULT NULL,
+  `text` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`feeid`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of fee
@@ -57,7 +55,7 @@ INSERT INTO `fee` VALUES ('24', '2018-06-14', '川A·9527', '加油', '1200', '3
 INSERT INTO `fee` VALUES ('25', '2018-07-21', '川D·9028', '洗车', '1500', '4', '4', '无');
 INSERT INTO `fee` VALUES ('26', '2018-07-16', '川A·5807', '修车', '2000', '5', '5', '车灯坏了');
 INSERT INTO `fee` VALUES ('27', '2018-07-16', '川D·0865', '保养', '1000', '6', '6', '空调没冷气');
-INSERT INTO `fee` VALUES ('28', '2018-07-25', '川A·8543', '加油', '100', '7', '7', '上漆');
+INSERT INTO `fee` VALUES ('28', '2018-07-25', '川A·8543', '保养', '100', '7', '7', '上漆');
 INSERT INTO `fee` VALUES ('29', '2018-08-02', '川D·9769', '修车', '3000', '8', '8', '漏油');
 INSERT INTO `fee` VALUES ('3', '2018-01-07', '川A·7469', '修车', '1000', '11', '11', '无');
 INSERT INTO `fee` VALUES ('30', '2018-08-05', '川A·7895', '保养', '200', '9', '9', '广播没声音');
@@ -76,17 +74,15 @@ INSERT INTO `fee` VALUES ('42', '2018-10-07', '川A·7469', '修车', '1210', '1
 INSERT INTO `fee` VALUES ('45', '2018-10-22', '川D·3580', '保养', '2700', '12', '12', '无');
 INSERT INTO `fee` VALUES ('46', '2018-10-14', '川D·7324', '加油', '1000', '13', '13', '车胎漏气');
 INSERT INTO `fee` VALUES ('5', '2018-02-14', '川D·7324', '加油', '1000', '13', '13', '车胎漏气');
-INSERT INTO `fee` VALUES ('555', '2018-11-22', '川D·3580', '保养', '1700', '12', '12', '无');
+INSERT INTO `fee` VALUES ('55', '2018-11-22', '川D·3580', '保养', '1700', '12', '12', '无');
 INSERT INTO `fee` VALUES ('6', '2018-02-22', '川D·3497', '保养', '3000', '14', '14', '安装GPS');
+INSERT INTO `fee` VALUES ('60', '2018-12-14', '川D·7324', '加油', '2500', '13', '13', '车胎漏气');
 INSERT INTO `fee` VALUES ('65', '2018-10-22', '川D·3497', '洗车', '2000', '14', '14', '安装GPS');
-INSERT INTO `fee` VALUES ('666', '2018-12-22', '川D·3497', '洗车', '5000', '14', '14', '安装GPS');
+INSERT INTO `fee` VALUES ('66', '2018-12-22', '川D·3497', '洗车', '5000', '14', '14', '安装GPS');
 INSERT INTO `fee` VALUES ('7', '2018-02-13', '川A·5493', '修车', '1000', '15', '15', '更换尾翼');
 INSERT INTO `fee` VALUES ('8', '2018-02-16', '川A·0001', '洗车', '50', '2', '2', '车门打不开');
 INSERT INTO `fee` VALUES ('81', '2018-12-07', '川A·7469', '修车', '3000', '11', '11', '无');
 INSERT INTO `fee` VALUES ('84', '2018-11-22', '川D·3497', '洗车', '2500', '14', '14', '安装GPS');
 INSERT INTO `fee` VALUES ('87', '2018-11-14', '川D·7324', '加油', '1500', '13', '13', '车胎漏气');
+INSERT INTO `fee` VALUES ('89', '2018-12-22', '川D·3580', '保养', '1400', '12', '12', '无');
 INSERT INTO `fee` VALUES ('9', '2018-03-14', '川A·9527', '加油', '200', '3', '3', '无');
-INSERT INTO `fee` VALUES ('98', '2018-12-22', '川D·3580', '保养', '1400', '12', '12', '无');
-INSERT INTO `fee` VALUES ('99', '2018-12-14', '川D·7324', '加油', '2500', '13', '13', '车胎漏气');
-
-SET FOREIGN_KEY_CHECKS = 1;
