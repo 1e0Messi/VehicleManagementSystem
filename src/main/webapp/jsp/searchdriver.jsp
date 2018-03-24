@@ -403,13 +403,20 @@
             "class=\"ml-5\" style=\"text-decoration:none\">\n" +
             "<i class=\"layui-icon\">&#xe642;</i>\n" +
             "</a>\n" +
-            "<a title=\"删除\" onclick=\"layer.confirm('是否删除？',function(){location.href='/deldriver?staff_ID="+T.staff_ID+"'});\"\n" +
+            "<a title=\"删除\" onclick=\"layer.confirm('是否删除？',function(){searchSub('/deldriversearch?staff_ID="+T.staff_ID+"');});\"\n" +
             "style=\"text-decoration:none\">\n" +
             "<i class=\"layui-icon\">&#xe640;</i>\n" +
             "</a>\n" +
             "</td>\n" +
             "</tr>";
         return str;
+    }
+
+    function searchSub(url) {
+        $.post(url,{},function () {
+            layer.msg('删除成功!',{icon:1,time:1000});
+            setTimeout("window.location.reload()",1000);
+        });
     }
 
     //批量删除提交
