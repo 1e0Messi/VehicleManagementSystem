@@ -28,11 +28,11 @@
                         <span class="x-red">*</span>收入条例ID
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_email" name="id"
-                        autocomplete="off" class="layui-input" >
+                        <input type="text" id="L_email" name="id" value="${requestScope.id}"
+                        autocomplete="off" class="layui-input" readonly="readonly">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>不能与原有数据相同
+                        <span class="x-red">*</span>系统自动生成
                     </div>
                 </div>
                 <div class="layui-form-item">

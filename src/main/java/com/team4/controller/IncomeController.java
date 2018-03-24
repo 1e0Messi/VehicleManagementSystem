@@ -56,15 +56,34 @@ public class IncomeController {
      * @return 4收入条例网页
      */
     @RequestMapping("/AddIncomeItem")
-    public String addIncomeItem(){
+    public String addIncomeItem(Model m){
+        List<Income> incomes = IncomeService.getAllIncomeItem();
+        int maxid=0;
+        if (incomes.size()==0){maxid=0;}
+        else{
+            for (int i=0;i<incomes.size();i++)
+                if (maxid<Integer.parseInt(incomes.get(i).getId()))
+                    maxid=Integer.parseInt(incomes.get(i).getId());
+        }
+        maxid++;
+        m.addAttribute("id",String.valueOf(maxid));
         return "addIncomeItem";
     }
 
     @RequestMapping("/submitIncomeForm")
-    public String submitIncomeForm(Income income){
+    public String submitIncomeForm(Model m,Income income){
 
         IncomeService.saveIncomeItem(income);
-
+        List<Income> incomes = IncomeService.getAllIncomeItem();
+        int maxid=0;
+        if (incomes.size()==0){maxid=0;}
+        else{
+            for (int i=0;i<incomes.size();i++)
+                if (maxid<Integer.parseInt(incomes.get(i).getId()))
+                    maxid=Integer.parseInt(incomes.get(i).getId());
+        }
+        maxid++;
+        m.addAttribute("id",String.valueOf(maxid));
         return "addIncomeItem";
     }
 
