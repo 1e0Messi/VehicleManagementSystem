@@ -30,7 +30,6 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public boolean batchDelAdmin(String[] adminItems) throws RuntimeException{
         int flag = 0;
-        System.out.println(adminItems[0]);
         for (String adminItemId:adminItems) {
             flag = adminMapper.delAdminById(adminItemId);
             if(flag != 1){

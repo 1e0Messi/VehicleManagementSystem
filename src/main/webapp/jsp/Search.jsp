@@ -331,32 +331,6 @@
     function member_add(carID,carname,number,ctype,age,state,AIP){
         x_admin_show(carID,carname,number,ctype,age,state,AIP);
     }
-    /*用户-查看*/
-    function member_show(title,url,id,w,h){
-        x_admin_show(title,url,w,h);
-    }
-
-    /*用户-停用*/
-    function member_stop(obj,id){
-        layer.confirm('确认要停用吗？',function(index){
-            //发异步把用户状态进行更改
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="layui-icon">&#xe62f;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-disabled layui-btn-mini">已停用</span>');
-            $(obj).remove();
-            layer.msg('已停用!',{icon: 5,time:1000});
-        });
-    }
-
-    /*用户-启用*/
-    function member_start(obj,id){
-        layer.confirm('确认要启用吗？',function(index){
-            //发异步把用户状态进行更改
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="layui-icon">&#xe601;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>');
-            $(obj).remove();
-            layer.msg('已启用!',{icon: 6,time:1000});
-        });
-    }
     // 用户-编辑
     function member_edit (title,url,id,w,h) {
         x_admin_show(title,url,w,h);

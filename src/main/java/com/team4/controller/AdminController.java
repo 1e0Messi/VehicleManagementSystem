@@ -2,7 +2,9 @@ package com.team4.controller;
 
 
 import com.team4.entity.Admin;
+import com.team4.entity.Notice;
 import com.team4.service.AdminService;
+import com.team4.service.NoticeService;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,9 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private NoticeService noticeService;
 
     /**
      * 验证用户登陆，并添加用户登录状态记录
@@ -39,6 +44,7 @@ public class AdminController {
             request.getSession().setAttribute("name",admin.getName());
             if(admin.getAuthority() != 0){
                 //普通管理员
+                modelMap.addAttribute("notice",noticeService.getAllUsingNotice());
                 pageReturn = "Administrator";
             }else {
                 //高级管理员

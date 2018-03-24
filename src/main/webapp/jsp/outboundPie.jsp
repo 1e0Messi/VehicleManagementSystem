@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -63,6 +63,21 @@
                             <a href="/adminQuery">
                                 <i class="iconfont">&#xe6a7;</i>
                                 人员查询
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list">
+                    <a href="javascript:;" name="switch">
+                        <i class="iconfont">&#xe70b;</i>
+                        公告管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/Notice">
+                                <i class="iconfont">&#xe6a7;</i>
+                                公告列表
                             </a>
                         </li>
                     </ul>

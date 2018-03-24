@@ -1,19 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 缑元彪
-  Date: 2018/3/17
-  Time: 20:13
+  Date: 2018/3/24
+  Time: 10:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.Date"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>车辆管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../static/css/font.css">
     <link rel="stylesheet" href="../static/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
@@ -21,6 +24,7 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="../static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../static/js/xadmin.js"></script>
+
 </head>
 <body>
 <!-- 顶部开始 -->
@@ -44,20 +48,20 @@
     <div class="left-nav">
         <div id="side-nav">
             <ul id="nav">
-                <li class="list">
+                <li class="list" current>
                     <a href="/superAdministrator">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                 </li>
-                <li class="list" current>
-                    <a href="javascript:;" name="switch" class="open">
+                <li class="list">
+                    <a href="javascript:;" name="switch">
                         <i class="iconfont">&#xe70b;</i>
                         人员管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
+                    <ul class="sub-menu">
                         <li>
                             <a href="/allFrontAdmin">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -65,20 +69,20 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/adminQuery">
                                 <i class="iconfont">&#xe6a7;</i>
                                 人员查询
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="list">
-                    <a href="javascript:;" name="switch">
+                <li class="list" current>
+                    <a href="javascript:;" name="switch" class="open">
                         <i class="iconfont">&#xe70b;</i>
                         公告管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu opened">
                         <li>
                             <a href="/Notice">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -137,63 +141,98 @@
             <form class="layui-form xbs">
                 <div class="layui-form-pane" style="text-align: center;">
                     <div class="layui-form-item" style="display: inline-block;">
-                        <label class="layui-form-label xbs768">日期范围</label>
+                        <label class="layui-form-label xbs768">公告</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="title"  placeholder="标题" class="layui-input">
+                        </div>
                         <div class="layui-input-inline xbs768">
                             <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
                         </div>
                         <div class="layui-input-inline xbs768">
                             <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
                         </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="username" id="userid" placeholder="请输入用户名(优先)" autocomplete="off" class="layui-input">
+                        <div class="layui-input-inline" style="width:80px;" align="center">
+                            <div class="layui-btn" onclick="sub()">发布</div>
                         </div>
-                        <div class="layui-input-inline" style="width:80px">
-                            <div class="layui-btn" onclick="adminQuery()"><i class="layui-icon">&#xe615;</i></div>
-                        </div>
+                    </div>
+                    <div class="layui-input-block">
+                        <textarea placeholder="内容" id="context" class="layui-textarea"></textarea>
                     </div>
                 </div>
             </form>
-            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><span class="x-right" style="line-height:40px">共有数据：<span id="dataCount"></span> 条</span></xblock>
+            <br/>
+            <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><span class="x-right" style="line-height:40px">共有数据：${requestScope.notice.size()} 条</span></xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" name = "selectAllAdmin" onclick="selectAllAdmin()">
+                        <input type="checkbox" name = "selectAllNotice" onclick="selectAllNotice()">
                     </th>
                     <th>
-                        ID
+                        标题
                     </th>
                     <th>
-                        姓名
+                        开始时间
                     </th>
                     <th>
-                        性别
+                        结束时间
                     </th>
                     <th>
-                        手机
+                        内容
                     </th>
                     <th>
-                        邮箱
+                        发布人ID
                     </th>
                     <th>
-                        证件号
-                    </th>
-                    <th>
-                        地址
-                    </th>
-                    <th>
-                        加入时间
-                    </th>
-                    <th>
-                        密码
+                        状态
                     </th>
                     <th>
                         操作
                     </th>
                 </tr>
                 </thead>
-                <tbody id = "tbody">
-
+                <tbody>
+                <c:forEach items="${requestScope.notice}" var="notice">
+                <tr>
+                    <td>
+                        <input type="checkbox" value="${notice.id}" name="noticeItem">
+                    </td>
+                    <td>
+                            ${notice.title}
+                    </td>
+                    <td>
+                            ${notice.startTime}
+                    </td>
+                    <td >
+                            ${notice.endTime}
+                    </td>
+                    <td >
+                            ${notice.context}
+                    </td>
+                    <td>
+                            ${notice.adminID}
+                    </td>
+                    <td class="td-status">
+                        <c:set var="nowDate">
+                            <fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd " type="date"/>
+                        </c:set>
+                        <c:set var="endTime">
+                            <fmt:parseDate value="${notice.endTime}" var="yearMonth" pattern="yyyy-MM-dd"/>
+                            <fmt:formatDate value="${yearMonth}" pattern="yyyy-MM-dd " type="date"/>
+                        </c:set>
+                        <c:choose>
+                            <c:when test="${endTime <= nowDate}"><span class="layui-btn layui-btn-disabled layui-btn-mini">已过期</span></c:when>
+                            <c:otherwise><span class="layui-btn layui-btn-normal layui-btn-mini">发布中</span></c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td class="td-manage">
+                        <a title="删除" href="javascript:;" onclick="member_del(this,'${notice.id}')"
+                           style="text-decoration:none">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    </td>
+                </tr>
+                </c:forEach>
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
@@ -232,185 +271,95 @@
 <!-- 页面动态效果 -->
 <script>
 
-    function tbody(data) {
-        var html = "<tr>\n" +
-            "<td>\n" +
-            "<input type=\"checkbox\" value=\""+ data.id +"\" name=\"adminItem\">\n" +
-            "</td>\n" +
-            "<td>\n" +
-            data.id +"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            data.name +"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            data.gender +"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            data.tel +"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            data.email +"\n" +
-            "</td>\n" +
-            "<td >\n" +
-            data.id_card +"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            data.address +"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            data.date +"\n" +
-            "</td>\n" +
-            "<td>\n" +
-            data.password +"\n" +
-            "</td>\n" +
-            "<td class=\"td-manage\">\n" +
-            "<a title=\"编辑\" href=\"javascript:;\" onclick=\"member_edit('编辑','/adminEdit?id="+ data.id +"','4','500','420')\"\n" +
-            "class=\"ml-5\" style=\"text-decoration:none\">\n" +
-            "<i class=\"layui-icon\">&#xe642;</i>\n" +
-            "</a>\n" +
-            "<a style=\"text-decoration:none\"  onclick=\"member_password('修改密码','/passwordEdit?id="+ data.id +"&password="+ data.password +"','10001','500','400')\"\n" +
-            " href=\"javascript:;\" title=\"修改密码\">\n" +
-            "<i class=\"layui-icon\">&#xe631;</i>\n" +
-            "</a>\n" +
-            "<a title=\"删除\" href=\"javascript:;\" onclick=\"member_del(this,'"+ data.id +"')\"\n" +
-            "style=\"text-decoration:none\">\n" +
-            "<i class=\"layui-icon\">&#xe640;</i>\n" +
-            "</a>\n" +
-            "</td>\n" +
-            "</tr>";
-        return html;
+    function selectAllNotice() {
+        $("input[name = 'noticeItem']:checkbox").prop("checked",$("input[name = 'selectAllNotice']:checkbox").prop("checked"));
+    }
+
+    function sub() {
+        var title = $("#title").val();
+        var startTime = $("#LAY_demorange_s").val();
+        var endTime = $("#LAY_demorange_e").val();
+        var context = $("#context").val();
+
+        if(title == "" || startTime == "" || endTime == "" || context == ""){
+            layer.msg("输入项不能为空！",{icon:1,time:1000});
+        }else {
+            $.post("/releaseNotice",{
+                title:title,
+                startTime:startTime,
+                endTime:endTime,
+                context:context
+            },function () {
+                layer.msg('发布成功!',{icon:1,time:1000});
+                $("#title").val("");
+                $("#LAY_demorange_s").val("");
+                $("#LAY_demorange_e").val("");
+               $("#context").val("");
+                setTimeout("window.location.reload()",1000);
+            });
+        }
     }
 
     layui.use(['laydate'], function(){
         laydate = layui.laydate;//日期插件
+
         var start = {
-            min: '2000-01-01 00:00:00'
-            ,max: '2099-12-31 23:59:59'
+            min: '2000-00-00 00:00:00'
+            ,max: '2099-06-16 23:59:59'
             ,istoday: false
             ,choose: function(datas){
                 end.min = datas; //开始日选好后，重置结束日的最小日期
             }
         };
+
         var end = {
-            min: '2000-01-01 00:00:00'
-            ,max: '2099-12-31 23:59:59'
+            min: '2000-00-00 00:00:00'
+            ,max: '2099-06-16 23:59:59'
             ,istoday: false
             ,choose: function(datas){
                 start.max = datas; //结束日选好后，重置开始日的最大日期
             }
         };
+
         document.getElementById('LAY_demorange_s').onclick = function(){
             start.elem = this;
             laydate(start);
         }
         document.getElementById('LAY_demorange_e').onclick = function(){
-            end.elem = this;
+            end.elem = this
             laydate(end);
         }
+
     });
 
     //批量删除提交
     function delAll () {
         layer.confirm('确认要删除吗？',function(index){
-            var adminItems = new Array();
-            $("input[name = 'adminItem']:checkbox:checked").each(function (index,element) {
-                adminItems[index] = $(element).val();
+            var noticeItems = new Array();
+            $("input[name = 'noticeItem']:checkbox:checked").each(function (index,element) {
+                noticeItems[index] = $(element).val();
             });
-            $.post("/batchDelAdmin",{adminItems:JSON.stringify(adminItems)},function (data) {
+            $.post("/batchDelNotice",{noticeItems:JSON.stringify(noticeItems)},function (data) {
                 if(data.toString() == "success"){
-                    $("input[name = 'adminItem']:checkbox:checked").each(function (index,element) {
+                    $("input[name = 'noticeItem']:checkbox:checked").each(function (index,element) {
                         $(element).parents("tr").remove();
                     });
-                    layer.msg("已删除!");
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    setTimeout("window.location.reload()",1000);
                 }else
-                    layer.msg("删除失败!");
+                    layer.msg('删除失败!',{icon:1,time:1000});
             });
         });
     }
-
-
-    // 用户-编辑
-    function member_edit (title,url,id,w,h) {
-        x_admin_show(title,url,w,h);
-    }
-
-    /*密码-修改*/
-    function member_password(title,url,id,w,h){
-        x_admin_show(title,url,w,h);
-    }
-
     /*用户-删除*/
     function member_del(obj,id){
         layer.confirm('确认要删除吗？',function(index){
-            //发异步删除数据
-            $.post("/delAdmin",{id:id},function (data) {
-                if(data == "1"){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!',{icon:1,time:1000});
-                }else {
-                    layer.msg('删除失败!',{icon:1,time:1000});
-                }
+            $.post("/deleteNotice",{id:id},function () {
+                $(obj).parents("tr").remove();
+                layer.msg('已删除!',{icon:1,time:1000});
+                setTimeout("window.location.reload()",1000);
             });
         });
-    }
-
-    function selectAllAdmin() {
-        $("input[name = 'adminItem']:checkbox").prop("checked",$("input[name = 'selectAllAdmin']:checkbox").prop("checked"));
-    }
-    
-    function adminQuery() {
-        var id = $("#userid").val();
-        var startTime = $("#LAY_demorange_s").val();
-        var endTime = $("#LAY_demorange_e").val();
-
-        if(id == ""){
-            if(startTime == "" || endTime == ""){
-                layer.msg('请指定查询条件!',{icon:1,time:1000});
-            }else {
-                //根据时间查
-                $.ajax({
-                        method:"POST",
-                        url:"/adminQueryByDate",
-                        data: {startTime:startTime,endTime:endTime},
-                        success:function(data){
-                            var str = "";
-                            var dataCount = 0;
-                            $.each(data,function (index,value) {
-                                str += tbody(value);
-                                dataCount += 1;
-                            });
-                            $("#tbody").html(str);
-                            $("#dataCount").text(dataCount);
-                            layer.msg('查询成功!',{icon:1,time:1000});
-                        },
-                        error:function(data){
-                            layer.msg('查询失败!',{icon:1,time:1000});
-                        }
-                    }
-                );
-            }
-        }else{
-            //根据ID查
-            $.ajax({
-                    method:"POST",
-                    url:"/adminQueryById",
-                    data: {id:id},
-                    success:function(data){
-                        var dataCount = 0;
-                        if(!(data.id == undefined)){
-                            $("#tbody").html(tbody(data));
-                            dataCount = 1;
-                        }
-                        $("#dataCount").text(dataCount);
-                        layer.msg('查询成功!',{icon:1,time:1000});
-                    },
-                    error:function(data){
-                        layer.msg('查询失败!',{icon:1,time:1000});
-                    }
-                }
-            );
-        }
     }
 </script>
 </body>

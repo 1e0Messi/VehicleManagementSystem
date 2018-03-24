@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -206,36 +207,16 @@
             <table class="layui-table">
                 <thead>
                 <tr>
-                    <th>统计</th>
-                    <th>管理员</th>
-                    <th>驾驶员</th>
-                    <th>车辆数</th>
-                    <th>总收入</th>
-                    <th>总支出</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>总数</td>
-                    <td>92</td>
-                    <td>9</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>20</td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="layui-table">
-                <thead>
-                <tr>
                     <th colspan="2" scope="col">提醒</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th width="30%">服务器计算机名</th>
-                    <td><span id="lbServerName">http://127.0.0.1/</span></td>
-                </tr>
+               <c:forEach items="${requestScope.notice}" var="notice">
+                   <tr>
+                       <th width="30%">${notice.title}</th>
+                       <td><span id="lbServerName">${notice.context}</span></td>
+                   </tr>
+               </c:forEach>
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
