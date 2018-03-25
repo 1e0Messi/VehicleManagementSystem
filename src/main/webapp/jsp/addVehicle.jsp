@@ -32,9 +32,6 @@
                             <input type="text" id="L_carID" name="carID" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">
-                            <span class="x-red">*</span>将会成为唯一的编号
-                        </div>
                 </div>
                 <div class="layui-form-item">
                     <label for="L_carname" class="layui-form-label">

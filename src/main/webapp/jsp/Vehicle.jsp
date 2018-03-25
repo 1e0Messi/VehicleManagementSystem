@@ -210,9 +210,6 @@
                     <th>
                         <input type="checkbox" name="selectAllVehicle" value="" onclick="selectAllVehicle()">
                     </th>
-                    <td>
-                        ID
-                    </td>
                     <th>
                         编号
                     </th>
@@ -240,13 +237,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="Temp" items="${requestScope.vehicles}" varStatus="status">
+                <c:forEach var="Temp" items="${requestScope.vehicles}" >
                     <tr>
                         <td>
                             <input type="checkbox" value="${Temp.carID}" name="TempItem">
-                        </td>
-                        <td>
-                        ${ status.index + 1}
                         </td>
                         <td>
                                 ${Temp.carID}
@@ -276,7 +270,7 @@
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除"  onclick="if(confirm('确认要删除吗？')) { location.href='/Delete?id='+${Temp.carID}}"
+                            <a title="删除"  onclick="layer.confirm('确认要删除吗？', function(){ location.href='/Delete?id='+${Temp.carID}})"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>

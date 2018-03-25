@@ -276,7 +276,7 @@
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除"  onclick="if(confirm('确认要删除吗？')) { location.href='/Delete?id='+${Temp.carID}}"
+                            <a title="删除"  onclick="layer.confirm('确认要删除吗？',function (){ location.href='/Delete?id='+${Temp.carID}})"
                                style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
