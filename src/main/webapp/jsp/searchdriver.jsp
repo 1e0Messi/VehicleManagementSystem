@@ -426,7 +426,7 @@
             $("input[name='simplebutton']:checkbox:checked").each(function (index,element){
                 simplebuttons[index] = $(element).val();
             });
-            $.post("/delalloilcard",{simplebuttons:JSON.stringify(simplebuttons)},function(data){
+            $.post("/delalldriver",{simplebuttons:JSON.stringify(simplebuttons)},function(data){
                 if (data.toString()=="success"){
                     $("input[name='simplebutton']:checkbox:checked").each(function(index,element){
                         $(element).parents("tr").remove();
