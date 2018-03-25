@@ -53,7 +53,7 @@
                         autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
-                        6到16个字符
+
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -65,7 +65,7 @@
                                autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
-                        6到16个字符
+
                     </div>
                 </div>
 

@@ -210,9 +210,6 @@
                     <th>
                         <input type="checkbox" name="selectAllVehicle" value="" onclick="selectAllVehicle()">
                     </th>
-                    <td>
-                        ID
-                    </td>
                     <th>
                         编号
                     </th>
@@ -240,13 +237,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="Temp" items="${requestScope.vehicle}" varStatus="status">
+                <c:forEach var="Temp" items="${requestScope.vehicle}">
                     <tr>
                         <td>
                             <input type="checkbox" value="${Temp.carID}" name="TempItem">
-                        </td>
-                        <td>
-                                ${ status.index + 1}
                         </td>
                         <td>
                                 ${Temp.carID}
