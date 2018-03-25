@@ -272,7 +272,7 @@
                                 ${Temp.AIP}
                         </td>
                         <td class="td-manage">
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=+${Temp.carID}','4','500','520')"
+                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','/Update?id=${Temp.carID}','4','500','520')"
                                class="ml-5" style="text-decoration:none">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
